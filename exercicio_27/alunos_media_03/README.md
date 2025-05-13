@@ -15,3 +15,5 @@ Este projeto é um sistema simples para gerenciar informações de alunos, inclu
 
 ## Diagrama UML
 O projeto segue o seguinte o diagrama UML.
+
+### 📌 

@@ -192,4 +192,4 @@ public class Main {
 
 ---
 
-### 📌 Possíveis Extensões Futuras
+### 📌 
