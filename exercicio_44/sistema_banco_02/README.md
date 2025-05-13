@@ -1,6 +1,3 @@
-Claro! Vou simplificar o cenário para você. Aqui está uma versão mais direta e objetiva:
-
----
 
 # 🧪 Cenário 1 – p.46
 
@@ -36,9 +33,7 @@ Claro! Vou simplificar o cenário para você. Aqui está uma versão mais direta
 * Verificar a disponibilidade de vagas com o método `temVaga()`.
 * Usar o método `promover()` para tentar promover os funcionários.
 
----
 
-Isso é o essencial! Se quiser, posso te ajudar com a implementação do código em Java. O que acha?
 
 ---
 
@@ -216,4 +211,4 @@ public class Main {
 
 ---
 
-### 📌 Possíveis Extensões Futuras
+### 📌 

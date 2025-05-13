@@ -26,9 +26,6 @@ Implemente um programa em **Java** que modele essa situação utilizando **heran
   - `Horista`: Representa funcionários que recebem um valor por hora trabalhada e deve ter um método para calcular o salário com base nas horas trabalhadas.  
 ```
 
-Esse formato melhora a **legibilidade** e a **organização** do conteúdo, tornando-o mais claro e estruturado. 🚀
----
-
 ### 📦 Estrutura de Classes
 
 ```java
