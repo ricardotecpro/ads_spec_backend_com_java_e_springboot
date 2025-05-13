@@ -1,0 +1,19 @@
+@startuml
+class Main {
+    +main(String[] args)
+}
+
+class Aluno {
+    -String nome
+    -int idade
+    -int matricula
+    -double prova1
+    -double prova2
+    +cadastrarDados(String nome, int idade, int matricula)
+    +setNotas(double prova1, double prova2)
+    +calcularMedia(): double
+    +exibirInformacoes()
+}
+
+Main --> Aluno
+@enduml

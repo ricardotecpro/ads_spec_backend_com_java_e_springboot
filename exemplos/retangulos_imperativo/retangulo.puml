@@ -1,0 +1,7 @@
+@startuml
+class Main {
+    +main(String[] args) : void
+}
+
+Main --> Scanner : "Entrada de dados"
+@enduml

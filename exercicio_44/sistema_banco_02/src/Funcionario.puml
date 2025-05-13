@@ -1,0 +1,20 @@
+@startuml
+class Funcionario {
+    - String nome
+    - String cpf
+    - Cargo cargo
+    - Setor setor
+    - int experiencia
+    --
+    + Funcionario(String nome, String cpf, int experiencia)
+    + void contratar(Setor setor)
+    + void promover()
+    + void demitir()
+    + String getNome()
+    + String getCpf()
+    + Cargo getCargo()
+    + Setor getSetor()
+    + int getExperiencia()
+    + void setExperiencia(int experiencia)
+}
+@enduml

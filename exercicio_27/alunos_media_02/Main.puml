@@ -1,0 +1,20 @@
+@startuml
+
+class Aluno {
+    - String nome
+    - int idade
+    - int matricula
+    - float media
+
+    + void cadastrarDados(String nome, int idade, int matricula)
+    + void cadastrarMediaNotas(float media)
+    + void exibirInformacoes()
+}
+
+class Main {
+    + static void main(String[] args)
+}
+
+Main --> Aluno : uses
+
+@enduml

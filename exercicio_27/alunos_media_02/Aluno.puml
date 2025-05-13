@@ -1,0 +1,14 @@
+@startuml
+
+class Aluno {
+    - string nome
+    - int idade
+    - int matricula
+    - float media
+
+    + void cadastrarDados()
+    + void cadastrarMediaNotas()
+    + void exibirInformacoes()
+}
+
+@enduml
