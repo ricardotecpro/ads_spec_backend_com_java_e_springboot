@@ -195,31 +195,51 @@ Quando você trabalha com matrizes (e objetos em geral) em Java, é importante e
 
 -   **Stack (Pilha):** Armazena variáveis de tipos primitivos (como `int n` no exemplo abaixo) e referências a objetos. As variáveis na pilha são acessadas de forma muito rápida, mas têm um escopo limitado (geralmente dentro do método onde são declaradas).
 -   **Heap (Monte):** É onde os objetos (incluindo os arrays/matrizes) são alocados. Quando você usa `new int[N][N]`, a memória para a matriz é reservada no Heap. A variável na Stack (por exemplo, `mat`) armazena o endereço de memória onde o objeto da matriz reside no Heap.
+Claro! Aqui está a **versão corrigida do código Markdown**, com o **diagrama formatado corretamente** e **sem causar erro de sintaxe Liquid** (escapando o uso de `{{...}}`):
 
+---
+
+
+```markdown
 **Diagrama de Memória (Exemplo do Exercício):**
 
 ```
+
 Memória
 +----------------------------------------------------+
-| Stack                  | Heap                      |
-|                        |                           |
-|  +---+                 |   +---+---+---+           |
-|  | n | --> 3           | 0 | 5 | -3| 10| <-----+   |
-|  +---+                 |   +---+---+---+       |   |
-|                        | 1 | 15| 8 | 2 |       |   |
-|  +-----+               |   +---+---+---+       |   |
-|  | mat |---------------|-> 2 | 7 | 9 | -4|       |   |
-|  +-----+               |   +---+---+---+       |   |
-|                        |      ^                |   |
-|                        |      | (Objeto Matriz) |   |
+\| Stack                  | Heap                      |
+\|                        |                           |
+\|  +---+                 |   +---+---+---+           |
+\|  | n | --> 3           | 0 | 5 | -3| 10| <-----+   |
+\|  +---+                 |   +---+---+---+       |   |
+\|                        | 1 |15 |  8|  2|       |   |
+\|  +-----+               |   +---+---+---+       |   |
+\|  | mat |---------------|-> 2 | 7 |  9| -4|     |   |
+\|  +-----+               |   +---+---+---+       |   |
+\|                        |      ^                |   |
+\|                        |      | (Objeto Matriz)|   |
 +----------------------------------------------------+
+
 ```
 
 Neste diagrama:
--   `n` é uma variável primitiva (inteiro) na Stack, armazenando o valor `3`.
--   `mat` é uma variável de referência na Stack. Ela não armazena a matriz em si, mas sim o endereço de memória onde o objeto da matriz (o conjunto de dados `{{5,-3,10}, {15,8,2}, {7,9,-4}}`) está localizado no Heap.
+- `n` é uma variável primitiva (inteiro) na Stack, armazenando o valor `3`.
+- `mat` é uma variável de referência na Stack. Ela não armazena a matriz em si, mas sim o endereço de memória onde o objeto da matriz está localizado no Heap.
 
-Este modelo de memória é fundamental para entender o comportamento de objetos em Java, incluindo passagem de parâmetros para métodos (passagem por valor da referência) e o papel do coletor de lixo (garbage collector), que automaticamente libera a memória no Heap que não está mais sendo referenciada.
+A matriz representada é:
+
+```
+
+{ {5, -3, 10},
+{15, 8, 2},
+{7, 9, -4} }
+
+```
+
+Este modelo de memória é fundamental para entender o comportamento de objetos em Java, incluindo passagem de parâmetros para métodos (passagem por valor da referência) e o papel do coletor de lixo (*garbage collector*), que automaticamente libera a memória no Heap que não está mais sendo referenciada.
+```
+
+
 
 ---
 ## 📚
