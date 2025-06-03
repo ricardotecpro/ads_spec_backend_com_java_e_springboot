@@ -188,35 +188,60 @@ Você pode compilar e executar este código Java em diversos ambientes de desenv
 4.  Crie uma classe Java (`ProgramaMatriz`) dentro do pacote: clique com o botão direito no pacote > `New` > `Java Class`.
 5.  Cole o código na classe.
 6.  Para executar, clique na seta verde ao lado da declaração do método `main` ou da classe e selecione "Run 'ProgramaMatriz.main()' ". A entrada e saída de dados ocorrerão na janela "Run" na parte inferior.
+Claro! Aqui está a correção e aprimoramento do trecho em Markdown, com melhorias na clareza, formatação e indentação do diagrama de memória:
+
+---
 
 ## 🧠 Memória
 
-Quando você trabalha com matrizes (e objetos em geral) em Java, é importante entender como a memória é gerenciada:
+Quando você trabalha com **matrizes** (e objetos em geral) em **Java**, é importante entender como a memória é gerenciada:
 
--   **Stack (Pilha):** Armazena variáveis de tipos primitivos (como `int n` no exemplo abaixo) e referências a objetos. As variáveis na pilha são acessadas de forma muito rápida, mas têm um escopo limitado (geralmente dentro do método onde são declaradas).
--   **Heap (Monte):** É onde os objetos (incluindo os arrays/matrizes) são alocados. Quando você usa `new int[N][N]`, a memória para a matriz é reservada no Heap. A variável na Stack (por exemplo, `mat`) armazena o endereço de memória onde o objeto da matriz reside no Heap.
+### 📌 Stack (Pilha)
 
-**Diagrama de Memória (Exemplo do Exercício):**
+* Armazena:
+
+  * Variáveis de **tipos primitivos** (como `int n`)
+  * **Referências** a objetos
+* Tem acesso rápido
+* Escopo limitado ao bloco de execução (por exemplo, dentro do método `main`)
+
+### 📌 Heap (Monte)
+
+* Onde os **objetos reais** são alocados (como arrays e instâncias de classes)
+* Quando usamos `new int[N][N]`, a matriz é criada no **Heap**
+* A variável `mat` (na Stack) armazena o **endereço de memória** da matriz no Heap
+
+---
+
+### 🧩 Diagrama de Memória (baseado no exercício anterior)
 
 ```
 Memória
-+----------------------------------------------------+
-| Stack                  | Heap                      |
-|                        |                           |
-|  +---+                 |   +---+---+---+           |
-|  | n | --> 3           | 0 | 5 | -3| 10| <-----+   |
-|  +---+                 |   +---+---+---+       |   |
-|                        | 1 | 15| 8 | 2 |       |   |
-|  +-----+               |   +---+---+---+       |   |
-|  | mat |---------------|-> 2 | 7 | 9 | -4|       |   |
-|  +-----+               |   +---+---+---+       |   |
-|                        |      ^                |   |
-|                        |      | (Objeto Matriz) |   |
-+----------------------------------------------------+
++--------------------------+     +-----------------------------+
+|         Stack            |     |            Heap             |
++--------------------------+     +-----------------------------+
+| int n = 3                |     | int[][]                      |
+|                          |     | +-----+-----+-----+         |
+| int[][] mat ------------ | --> | |  5  | -3  | 10  | <-- linha 0
+|                          |     | +-----+-----+-----+         |
+|                          |     | | 15  |  8  |  2  | <-- linha 1
+|                          |     | +-----+-----+-----+         |
+|                          |     | |  7  |  9  | -4  | <-- linha 2
++--------------------------+     +-----------------------------+
 ```
 
-Neste diagrama:
--   `n` é uma variável primitiva (inteiro) na Stack, armazenando o valor `3`.
--   `mat` é uma variável de referência na Stack. Ela não armazena a matriz em si, mas sim o endereço de memória onde o objeto da matriz (o conjunto de dados `{{5,-3,10}, {15,8,2}, {7,9,-4}}`) está localizado no Heap.
+### 🔍 Explicação
 
-Este modelo de memória é fundamental para entender o comportamento de objetos em Java, incluindo passagem de parâmetros para métodos (passagem por valor da referência) e o papel do coletor de lixo (garbage collector), que automaticamente libera a memória no Heap que não está mais sendo referenciada.
+* `n` é um **tipo primitivo** armazenado diretamente na **Stack**, com valor `3`.
+* `mat` é uma **referência** (tipo objeto), também na **Stack**, mas aponta para o objeto real no **Heap**.
+* A matriz de inteiros é armazenada no Heap e acessada indiretamente por meio de `mat`.
+
+---
+
+### 💡 Importância prática
+
+* A passagem de arrays e objetos para métodos em Java é feita **por valor da referência**.
+* O **Garbage Collector** (coletor de lixo) é responsável por liberar automaticamente a memória no Heap que **não está mais sendo referenciada** em nenhum lugar do código.
+* Isso permite que você se concentre mais na lógica do programa e menos na gestão manual de memória, como seria necessário em linguagens como C/C++.
+
+---
