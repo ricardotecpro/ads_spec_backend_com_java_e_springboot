@@ -1,116 +1,185 @@
-# ☕ Java e Orientação a Objetos: Matrizes
+```markdown
+# 🌌 Matrizes em Java
 
-Este material aborda o conceito de matrizes em Java, incluindo sua declaração, instanciação, manipulação e o uso da propriedade `length`.
+Bem-vindo ao guia sobre matrizes em Java! Aqui, vamos revisar o conceito de matrizes, como declará-las, instanciá-las, acessar seus elementos e utilizar a propriedade `length`.
 
-## 📋 Checklist
+---
 
--   Revisão do conceito de matriz
--   Declaração e instanciação
--   Acesso aos elementos / como percorrer uma matriz
--   Propriedade `length`
+## 🧩 Revisão do Conceito de Matriz
 
-## 📐 Matrizes
+Em programação, **matriz** é o nome dado a arranjos bidimensionais. Pense nelas como uma tabela com linhas e colunas, onde cada célula pode armazenar um dado. Uma forma comum de entender matrizes é como um **"vetor de vetores"**. Isso significa que uma matriz é, na essência, um vetor onde cada elemento é, por sua vez, outro vetor (representando as linhas da matriz).
 
-Em programação, **matriz** é o nome dado a arranjos bidimensionais. Uma maneira útil de pensar em matrizes é como um "vetor de vetores". Imagine uma tabela ou uma grade; isso é essencialmente como uma matriz organiza os dados.
+Um **arranjo (array)**, seja ele unidimensional (vetor) ou bidimensional (matriz), é uma estrutura de dados que possui as seguintes características:
 
-Um **arranjo (array)** é uma estrutura de dados fundamental que possui as seguintes características:
--   **Homogênea**: Todos os dados armazenados na matriz devem ser do mesmo tipo (por exemplo, todos inteiros, todos strings).
--   **Ordenada**: Os elementos são acessados por meio de suas posições (índices), geralmente representados por um par `[linha][coluna]`.
--   **Alocada de uma vez só**: A memória para a matriz é alocada em um bloco contíguo quando a matriz é criada.
+* **Homogênea**: Todos os dados armazenados na matriz devem ser do mesmo tipo (por exemplo, todos inteiros, todos `double`, ou todos `String`).
+* **Ordenada**: Os elementos são acessados por meio de suas posições (índices), que geralmente começam em zero. Para uma matriz, você precisará de dois índices: um para a linha e um para a coluna (ex: `minhaMatriz[linha][coluna]`).
+* **Alocada de uma vez só**: A memória necessária para armazenar todos os elementos da matriz é reservada em um bloco contíguo quando a matriz é criada.
 
-**Exemplo de uma Matriz 2D (3x4):**
+### Vantagens das Matrizes:
 
-|       | Coluna 0 | Coluna 1 | Coluna 2 | Coluna 3 |
-| :---- | :------- | :------- | :------- | :------- |
-| Linha 0 | 3.5      | 17.0     | 12.3     | 8.2      |
-| Linha 1 | 4.1      | 6.2      | 7.5      | 2.9      |
-| Linha 2 | 11.0     | 9.5      | 14.8     | 21.7     |
+* 👍 **Acesso imediato aos elementos**: Acessar um elemento é rápido se você souber sua posição (índice), pois a localização na memória pode ser calculada diretamente.
 
-### Declaração e Instanciação de Matrizes em Java
+### Desvantagens das Matrizes:
 
-Para usar uma matriz em Java, você primeiro precisa declará-la e depois instanciá-la (criar o objeto matriz e alocar memória).
+* 👎 **Tamanho fixo**: Uma vez que uma matriz é criada, seu tamanho (número de linhas e colunas) não pode ser alterado. Se você precisar de mais ou menos espaço, terá que criar uma nova matriz e, possivelmente, copiar os elementos da antiga.
+* 👎 **Dificuldade para realizar inserções e deleções**: Adicionar ou remover elementos no meio de uma matriz pode ser ineficiente, pois pode exigir o deslocamento de muitos outros elementos para manter a estrutura ordenada e contígua.
+
+---
+
+## 🛠️ Declaração e Instanciação de Matrizes em Java
+
+Para usar uma matriz em Java, você primeiro precisa declará-la e depois instanciá-la.
+
+**Declaração**: Aqui você informa ao compilador o nome da sua matriz e o tipo de dados que ela armazenará.
 
 ```java
 // Declaração de uma matriz de inteiros
-int[][] minhaMatriz;
+int[][] numeros;
 
-// Instanciação: criando uma matriz com 3 linhas e 4 colunas
-minhaMatriz = new int[3][4];
+// Declaração de uma matriz de Strings
+String[][] nomes;
 
-// Declaração e instanciação em uma única linha
-double[][] matrizDeReais = new double[2][5];
+// Declaração de uma matriz de doubles
+double[][] salarios;
+```
 
-// Também é possível inicializar com valores diretamente
-String[][] nomes = {
-    {"Ana", "Beatriz"},
-    {"Carlos", "Daniel"},
-    {"Eduarda", "Fernanda"}
+**Instanciação**: Aqui você define o tamanho da matriz (quantas linhas e colunas ela terá) e aloca a memória para ela.
+
+```java
+// Instancia uma matriz de inteiros com 3 linhas e 4 colunas
+numeros = new int[3][4];
+
+// Declaração e instanciação na mesma linha
+String[][] nomes = new String[5][2]; // 5 linhas, 2 colunas
+
+// Você também pode inicializar uma matriz com valores diretamente
+double[][] matrizPreenchida = {
+    {1.0, 2.5, 3.7}, // Linha 0
+    {4.2, 5.1, 6.9}, // Linha 1
+    {7.3, 8.6, 9.0}  // Linha 2
 };
 ```
 
-### Acesso aos Elementos e Como Percorrer uma Matriz
+### 🧠 Memória: Stack vs. Heap
 
-Os elementos de uma matriz são acessados usando seus índices de linha e coluna, começando do zero. Para acessar o elemento na primeira linha e primeira coluna de `minhaMatriz`, você usaria `minhaMatriz[0][0]`.
+Quando você declara uma variável de matriz como `int[][] mat;`, a referência `mat` é armazenada na memória **Stack**.
+Quando você instancia a matriz com `mat = new int[3][3];`, o objeto da matriz (que contém os elementos) é criado na memória **Heap**. A variável `mat` na Stack então aponta para a localização desse objeto na Heap.
 
-Para percorrer (ou iterar sobre) todos os elementos de uma matriz, geralmente se utilizam laços `for` aninhados:
+No exemplo fornecido no material original:
+`n` (um inteiro, representando a ordem da matriz) é armazenado na Stack.
+`mat` (a referência para a matriz) é armazenada na Stack.
+Os dados da matriz `{{5, -3, 10}, {15, 8, 2}, {7, 9, -4}}` são armazenados na Heap.
+
+Visualmente:
+
+```
+Memória
++-----------------------------------------------------+
+| Stack                   | Heap                        |
+| +-------+               |                             |
+| |   3   | <--- n        |   +---+---+----+            |
+| +-------+               | 0 | 5 | -3| 10 |            |
+|                         |   +---+---+----+            |
+| +-------+   --------->  | 1 | 15| 8 | 2  |            |
+| |  mat  | ----          |   +---+---+----+            |
+| +-------+   |           | 2 | 7 | 9 | -4 |            |
+|             |           |   +---+---+----+            |
++-----------------------------------------------------+
+```
+
+---
+
+## 🚶‍♂️ Acesso aos Elementos e Como Percorrer uma Matriz
+
+Para acessar um elemento específico em uma matriz, você usa seus índices de linha e coluna:
 
 ```java
-// Supondo que matrizDeInteiros já foi declarada e instanciada
-// por exemplo: int[][] matrizDeInteiros = new int[3][3];
+int[][] matriz = {
+    {10, 20, 30}, // Linha 0
+    {40, 50, 60}, // Linha 1
+    {70, 80, 90}  // Linha 2
+};
 
-// Preenchendo a matriz com valores (exemplo: produto dos índices)
-for (int i = 0; i < matrizDeInteiros.length; i++) { // Itera sobre as linhas
-    for (int j = 0; j < matrizDeInteiros[i].length; j++) { // Itera sobre as colunas da linha i
-        matrizDeInteiros[i][j] = (i + 1) * (j + 1);
+int elemento = matriz[1][2]; // Acessa o elemento na linha 1, coluna 2 (que é 60)
+System.out.println(elemento); // Saída: 60
+
+matriz[0][0] = 5; // Modifica o elemento na linha 0, coluna 0 para 5
+```
+
+Para percorrer (ou iterar sobre) todos os elementos de uma matriz, você geralmente usará laços `for` aninhados: um para as linhas e outro para as colunas.
+
+```java
+public class PercorrerMatriz {
+    public static void main(String[] args) {
+        int[][] minhaMatriz = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Loop externo para as linhas
+        for (int i = 0; i < minhaMatriz.length; i++) {
+            // Loop interno para as colunas de cada linha
+            // minhaMatriz[i].length nos dá o número de colunas na linha i
+            for (int j = 0; j < minhaMatriz[i].length; j++) {
+                System.out.print(minhaMatriz[i][j] + " ");
+            }
+            System.out.println(); // Nova linha após cada linha da matriz
+        }
     }
 }
+```
+**Saída Esperada:**
+```
+1 2 3
+4 5 6
+7 8 9
+```
 
-// Imprimindo os elementos da matriz
-System.out.println("Elementos da matriz:");
-for (int i = 0; i < matrizDeInteiros.length; i++) {
-    for (int j = 0; j < matrizDeInteiros[i].length; j++) {
-        System.out.print(matrizDeInteiros[i][j] + "\t"); // \t para tabular
+---
+
+## 📏 Propriedade `length`
+
+A propriedade `length` é muito útil ao trabalhar com matrizes.
+
+* `matriz.length`: Retorna o **número de linhas** da matriz.
+* `matriz[i].length`: Retorna o **número de colunas** da linha `i` da matriz. Isso é particularmente útil para matrizes "irregulares" ou "denteadas" (jagged arrays), onde cada linha pode ter um número diferente de colunas.
+
+```java
+public class TamanhoMatriz {
+    public static void main(String[] args) {
+        int[][] matriz = new int[3][4]; // 3 linhas, 4 colunas
+
+        System.out.println("Número de linhas: " + matriz.length); // Saída: 3
+        System.out.println("Número de colunas na primeira linha: " + matriz[0].length); // Saída: 4
+
+        // Exemplo com matriz irregular (jagged array)
+        String[][] jaggedArray = {
+            {"Java", "Python"},
+            {"C++", "C#", "JavaScript"},
+            {"Ruby"}
+        };
+
+        System.out.println("\nMatriz Irregular:");
+        System.out.println("Número de linhas: " + jaggedArray.length); // Saída: 3
+        System.out.println("Colunas na linha 0: " + jaggedArray[0].length); // Saída: 2
+        System.out.println("Colunas na linha 1: " + jaggedArray[1].length); // Saída: 3
+        System.out.println("Colunas na linha 2: " + jaggedArray[2].length); // Saída: 1
     }
-    System.out.println(); // Nova linha após cada linha da matriz
 }
 ```
 
-### Propriedade `length`
+---
 
-A propriedade `length` é crucial ao trabalhar com matrizes:
--   `nomeDaMatriz.length` retorna o **número de linhas** da matriz.
--   `nomeDaMatriz[i].length` retorna o **número de colunas** da *i*-ésima linha.
+## 🎯 Exercício Resolvido
 
-Isso é particularmente importante em Java porque as matrizes podem ser "irregulares" (jagged arrays), onde cada linha pode ter um número diferente de colunas.
+Vamos analisar um exercício comum para praticar o uso de matrizes.
 
-```java
-int[][] matrizIrregular = new int[3][];
-matrizIrregular[0] = new int[2]; // Linha 0 tem 2 colunas
-matrizIrregular[1] = new int[4]; // Linha 1 tem 4 colunas
-matrizIrregular[2] = new int[3]; // Linha 2 tem 3 colunas
+**Problema**: Fazer um programa para ler um número inteiro N e uma matriz de ordem N (N linhas e N colunas) contendo números inteiros. Em seguida, mostrar a diagonal principal e a quantidade de valores negativos da matriz.
 
-System.out.println("Número de linhas: " + matrizIrregular.length); // Saída: 3
-System.out.println("Número de colunas na linha 0: " + matrizIrregular[0].length); // Saída: 2
-System.out.println("Número de colunas na linha 1: " + matrizIrregular[1].length); // Saída: 4
-```
+**Exemplo de Entrada e Saída**:
 
-### 👍 Vantagens das Matrizes:
-
--   **Acesso imediato aos elementos pela sua posição**: Se você sabe os índices `[i][j]`, pode acessar o elemento diretamente em tempo constante, O(1).
--   **Estrutura de dados simples e eficiente** para representar grades, tabelas e outros dados bidimensionais.
-
-### 👎 Desvantagens das Matrizes:
-
--   **Tamanho fixo**: Uma vez que uma matriz é criada, seu tamanho (número de linhas e colunas) não pode ser alterado. Para adicionar ou remover linhas/colunas, é necessário criar uma nova matriz e copiar os elementos.
--   **Dificuldade para se realizar inserções e deleções**: Inserir ou deletar um elemento no meio da matriz pode exigir o deslocamento de muitos outros elementos, o que é ineficiente. Para operações dinâmicas de inserção/deleção, estruturas como `ArrayList` de `ArrayLists` (`ArrayList<ArrayList<Integer>>`) podem ser mais adequadas, embora com um custo maior de memória e complexidade.
-
-## 💡 Exercício Resolvido
-
-Fazer um programa para ler um número inteiro N e uma matriz de ordem N (quadrada) contendo números inteiros. Em seguida, mostrar a diagonal principal e a quantidade de valores negativos da matriz.
-
-**Exemplo:**
-
-**Input:**
+**Entrada:**
 ```
 3
 5 -3 10
@@ -118,33 +187,43 @@ Fazer um programa para ler um número inteiro N e uma matriz de ordem N (quadrad
 7 9 -4
 ```
 
-**Output:**
+**Saída:**
 ```
 Diagonal principal:
 5 8 -4
-Números negativos = 2
+Numeros negativos = 2
 ```
 
-### Solução em Java
+### 💡 Solução em Java
+
+Vamos criar um programa Java para resolver este problema. Usaremos a classe `Scanner` para ler a entrada do usuário.
+
+**Configuração do Ambiente (VS Code ou IntelliJ IDEA):**
+
+1.  **Crie um novo projeto Java.**
+    * **VS Code**: Use a extensão "Java Extension Pack". Crie um novo arquivo Java (ex: `ProcessarMatriz.java`).
+    * **IntelliJ IDEA**: Crie um novo projeto ("File" > "New" > "Project..."), selecione "Java", e siga as instruções. Crie uma nova classe Java (ex: `ProcessarMatriz`).
+
+2.  **Escreva o código:**
 
 ```java
-package aplicacao;
+package exercicios; // ou qualquer outro nome de pacote que você preferir
 
 import java.util.Scanner;
 
-public class ProgramaMatriz {
+public class ProcessarMatriz {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Digite a ordem da matriz (N): ");
         int n = sc.nextInt();
-        int[][] matriz = new int[n][n]; // Matriz quadrada N x N
+        int[][] matriz = new int[n][n];
 
         System.out.println("Digite os elementos da matriz:");
         for (int i = 0; i < n; i++) { // ou matriz.length
+            System.out.println("Elementos da linha " + i + ":");
             for (int j = 0; j < n; j++) { // ou matriz[i].length
-                System.out.printf("Elemento [%d][%d]: ", i, j);
                 matriz[i][j] = sc.nextInt();
             }
         }
@@ -163,83 +242,24 @@ public class ProgramaMatriz {
                 }
             }
         }
-        System.out.println("Quantidade de números negativos = " + contadorNegativos);
+        System.out.println("Numeros negativos = " + contadorNegativos);
 
-        sc.close();
+        sc.close(); // Boa prática: fechar o Scanner quando não for mais necessário
     }
 }
 ```
 
-### 💻 Executando o Código Java
+**Explicação do Código:**
 
-Você pode compilar e executar este código Java em diversos ambientes de desenvolvimento (IDEs) ou diretamente pelo terminal.
+1.  **Importação do `Scanner`**: `import java.util.Scanner;` permite que usemos a classe `Scanner` para ler dados do teclado.
+2.  **Leitura da Ordem N**: O programa solicita ao usuário o tamanho `N` da matriz.
+3.  **Instanciação da Matriz**: `int[][] matriz = new int[n][n];` cria uma matriz quadrada de `N` linhas e `N` colunas.
+4.  **Preenchimento da Matriz**: Dois laços `for` aninhados são usados para percorrer cada célula da matriz e solicitar ao usuário que insira um valor.
+5.  **Diagonal Principal**: Para encontrar os elementos da diagonal principal, os índices da linha e da coluna são iguais (`matriz[i][i]`). Um laço `for` simples percorre esses elementos.
+6.  **Contagem de Números Negativos**: Dois laços `for` aninhados verificam cada elemento da matriz. Se um elemento for menor que zero, o `contadorNegativos` é incrementado.
+7.  **Fechamento do `Scanner`**: `sc.close();` libera os recursos do sistema associados ao `Scanner`.
 
-**No VS Code:**
-1.  Certifique-se de ter o Java Development Kit (JDK) instalado.
-2.  Instale o pacote de extensões "Extension Pack for Java" da Microsoft no VS Code.
-3.  Crie um arquivo chamado `ProgramaMatriz.java` (ou o nome da sua classe principal) dentro de uma pasta de projeto (por exemplo, `src/aplicacao/ProgramaMatriz.java` se estiver usando a estrutura de pacotes).
-4.  Cole o código no arquivo.
-5.  Para executar, você pode clicar com o botão direito no editor e selecionar "Run Java" ou usar o ícone de "play" que aparece no canto superior direito. A saída e a entrada de dados ocorrerão no painel "TERMINAL".
-
-**No IntelliJ IDEA:**
-1.  Certifique-se de ter o JDK instalado.
-2.  Crie um novo projeto Java: `File` > `New` > `Project...`. Selecione "Java" e seu JDK.
-3.  Dentro da pasta `src` do seu projeto, crie um pacote (se desejar, por exemplo, `aplicacao`) clicando com o botão direito em `src` > `New` > `Package`.
-4.  Crie uma classe Java (`ProgramaMatriz`) dentro do pacote: clique com o botão direito no pacote > `New` > `Java Class`.
-5.  Cole o código na classe.
-6.  Para executar, clique na seta verde ao lado da declaração do método `main` ou da classe e selecione "Run 'ProgramaMatriz.main()' ". A entrada e saída de dados ocorrerão na janela "Run" na parte inferior.
-
-## 🧠 Memória
-
-Quando você trabalha com matrizes (e objetos em geral) em Java, é importante entender como a memória é gerenciada:
-
--   **Stack (Pilha):** Armazena variáveis de tipos primitivos (como `int n` no exemplo abaixo) e referências a objetos. As variáveis na pilha são acessadas de forma muito rápida, mas têm um escopo limitado (geralmente dentro do método onde são declaradas).
--   **Heap (Monte):** É onde os objetos (incluindo os arrays/matrizes) são alocados. Quando você usa `new int[N][N]`, a memória para a matriz é reservada no Heap. A variável na Stack (por exemplo, `mat`) armazena o endereço de memória onde o objeto da matriz reside no Heap.
-Claro! Aqui está a **versão corrigida do código Markdown**, com o **diagrama formatado corretamente** e **sem causar erro de sintaxe Liquid** (escapando o uso de `{{...}}`):
-
----
-
-
-```markdown
-**Diagrama de Memória (Exemplo do Exercício):**
-
+Este exemplo demonstra os conceitos fundamentais de declaração, instanciação, preenchimento, acesso e processamento de elementos em uma matriz Java.
 ```
-
-Memória
-+----------------------------------------------------+
-\| Stack                  | Heap                      |
-\|                        |                           |
-\|  +---+                 |   +---+---+---+           |
-\|  | n | --> 3           | 0 | 5 | -3| 10| <-----+   |
-\|  +---+                 |   +---+---+---+       |   |
-\|                        | 1 |15 |  8|  2|       |   |
-\|  +-----+               |   +---+---+---+       |   |
-\|  | mat |---------------|-> 2 | 7 |  9| -4|     |   |
-\|  +-----+               |   +---+---+---+       |   |
-\|                        |      ^                |   |
-\|                        |      | (Objeto Matriz)|   |
-+----------------------------------------------------+
-
-```
-
-Neste diagrama:
-- `n` é uma variável primitiva (inteiro) na Stack, armazenando o valor `3`.
-- `mat` é uma variável de referência na Stack. Ela não armazena a matriz em si, mas sim o endereço de memória onde o objeto da matriz está localizado no Heap.
-
-A matriz representada é:
-
-```
-
-{ {5, -3, 10},
-{15, 8, 2},
-{7, 9, -4} }
-
-```
-
-Este modelo de memória é fundamental para entender o comportamento de objetos em Java, incluindo passagem de parâmetros para métodos (passagem por valor da referência) e o papel do coletor de lixo (*garbage collector*), que automaticamente libera a memória no Heap que não está mais sendo referenciada.
-```
-
-
-
 ---
 ## 📚
