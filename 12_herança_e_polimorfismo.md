@@ -1,4 +1,4 @@
-# Java e Orientação a Objetos: Herança e Polimorfismo  наследство и полиморфизм
+# Java e Orientação a Objetos: Herança e Polimorfismo
 
 ## Herança 🧬
 
@@ -37,7 +37,7 @@ class A extends B {
 
 Suponha um sistema bancário que possui uma conta comum (`Conta`) e uma conta para empresas (`ContaEmpresarial`). A conta para empresa possui todos os membros da conta comum, mais um limite de empréstimo e uma operação para realizar empréstimo.
 
-**Classe `Conta` (Account)**
+**Classe `Conta`**
 
 ```java
 // Representação conceitual
@@ -67,7 +67,7 @@ public class Conta {
 }
 ```
 
-**Classe `ContaEmpresarial` (BusinessAccount)**
+**Classe `ContaEmpresarial`**
 
 Esta classe herda de `Conta` e adiciona funcionalidades específicas.
 

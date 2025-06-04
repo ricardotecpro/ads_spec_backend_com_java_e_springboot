@@ -119,7 +119,7 @@ public class Pedido {
 }
 ```
 
-### 文字列から列挙型への変換 (Conversão de String para Enum)
+### Conversão de String para Enum
 É comum receber o valor de um enum como uma string (por exemplo, de uma entrada do usuário ou de uma API). Java permite converter uma `String` para um `enum` usando o método estático `valueOf()`.
 
 ```java
