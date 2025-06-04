@@ -2,7 +2,7 @@
 
 Este repositório contém o material utilizado nas aulas do curso de Java. Os conteúdos estão organizados por tópicos, seguindo a ordem didática apresentada em sala.
 
-Clique em cada item para acessar o conteúdo correspondente em formato Markdown.
+Clique em cada item para acessar o conteúdo correspondente.
 
 ---
 
@@ -30,7 +30,7 @@ Clique em cada item para acessar o conteúdo correspondente em formato Markdown.
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](license).
 
 ---
 
@@ -43,5 +43,3 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 ## 👨‍🏫 Sobre
 
 Material desenvolvido e atualizado para uso em sala de aula nas disciplinas de Programação com Java.
-
-## 📧 Contato

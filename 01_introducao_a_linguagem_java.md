@@ -9,7 +9,7 @@ A linguagem Java passou por diversas versões ao longo dos anos, com algumas del
 * Java 8 LTS
 * Java 11 LTS
 * Java 17 LTS
-* Java 21 LTS (Embora não listada explicitamente no documento original, é a LTS mais recente no momento da última atualização deste conteúdo contextual).
+* Java 21 LTS, é a LTS mais recente no momento da última atualização deste conteúdo contextual).
 
 Outras versões intermediárias (10, 12, 13, 14, 15, 16, etc.) introduzem novas funcionalidades que são posteriormente consolidadas nas versões LTS.
 
