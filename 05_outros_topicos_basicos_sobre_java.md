@@ -102,9 +102,12 @@ public class Conta {
     }
 }
 ```
+
+<!-- commentario
 **Nota sobre o código original:**
 - O código original `balance + amount;` e `balance amount;` nos métodos `deposit` e `withdraw` respectivamente, não alterariam o saldo. Foram corrigidos para `saldo += valor;` e `saldo -= valor;`.
 - Foram adicionadas verificações básicas nos métodos `depositar` e `sacar` para melhorar a robustez.
+-->
 
 ## Funções Interessantes para `String` 🧵
 
@@ -161,7 +164,7 @@ public class ExemploStrings {
 }
 ```
 
-## Operação `split` 쪼
+## Operação `split` 
 
 O método `split()` é muito útil para quebrar uma string em várias partes (tokens) com base em um delimitador. Ele retorna um array de strings.
 
@@ -404,8 +407,11 @@ public class ProgramaMaiorNumeroV2 { // Classe renomeada para Solução 2
     }
 }
 ```
+
+<!-- comentario 
 **Nota sobre o código original:**
 - O `else if (y+z)` no método `max` (agora `encontrarMaior`) foi corrigido para `else if (y > z)`, que é a lógica correta para encontrar o maior número.
+
 
 ## Executando os Exemplos em IDEs Populares 💻
 
@@ -448,5 +454,6 @@ Os exemplos de código Java fornecidos podem ser compilados e executados em qual
 
 Lembre-se de que o nome do arquivo `.java` deve corresponder exatamente ao nome da classe `public` declarada dentro dele. Os pacotes (`package curso;`) implicam uma estrutura de pastas (ex: `src/curso/NomeDaClasse.java`). Se você não estiver usando essa estrutura de pastas, pode remover a declaração de `package` para exemplos simples que estão na raiz do `src` ou da pasta do projeto.
 
+-->
 ---
 ## 📚

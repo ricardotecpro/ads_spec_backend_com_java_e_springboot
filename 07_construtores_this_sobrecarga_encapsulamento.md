@@ -600,6 +600,8 @@ Essas ferramentas economizam tempo e reduzem a chance de erros de digitação ao
 
 Modificadores de acesso definem a visibilidade (onde pode ser acessado) de classes, atributos, construtores e métodos.
 
+[https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+
 * **`private`**: O membro (atributo, método, construtor) só pode ser acessado **de dentro da própria classe** onde foi declarado. É o nível mais restritivo.
     * *Exemplo:* Atributos de dados em encapsulamento (`private String nome;`).
 
@@ -611,6 +613,8 @@ Modificadores de acesso definem a visibilidade (onde pode ser acessado) de class
 
 * **`public`**: O membro pode ser acessado por **qualquer classe, de qualquer pacote**. É o nível menos restritivo.
     * *Exemplo:* A interface pública de uma classe (construtores, métodos principais, getters/setters).
+
+[https://stackoverflow.com/questions/215497/in-java-difference-between-package-private-public-protected-and-private]{https://stackoverflow.com/questions/215497/in-java-difference-between-package-private-public-protected-and-private}
 
 **Resumo da Acessibilidade:**
 

@@ -12,11 +12,11 @@ Fazer um programa para ler as medidas dos lados de dois triângulos X e Y (supon
 
 A fórmula para calcular a área de um triângulo a partir das medidas de seus lados a, b e c é a seguinte (fórmula de Heron):
 
-$area = \sqrt{p(p-a)(p-b)(p-c)}$
+area = raiz(p(p-a)(p-b)(p-c))
 
 onde
 
-$p = \frac{a+b+c}{2}$
+p = ((a+b+c)/2))
 
 **Exemplo de Execução:**
 
@@ -486,8 +486,10 @@ Membros de uma classe (atributos e métodos) podem ser de instância ou estátic
 Fazer um programa para ler um valor numérico qualquer (raio) e, daí, mostrar quanto seria o valor de uma circunferência e do volume de uma esfera para um raio daquele valor. Informar também o valor de PI com duas casas decimais.
 
 **Fórmulas:**
-* Circunferência = $2 \cdot \pi \cdot raio$
-* Volume da esfera = $\frac{4 \cdot \pi \cdot raio^3}{3}$
+* Circunferência: C = 2 * π * r
+* Volume da esfera: V = (4/3) * π * r^3
+* Valor de PI: 3.14159 (ou 3.14, dependendo do nível de precisão desejado)
+
 
 **Exemplo de Execução:**
 ```

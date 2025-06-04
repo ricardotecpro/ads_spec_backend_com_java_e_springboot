@@ -200,6 +200,9 @@ Saída: 543
 Valor final de y: 12
 ```
 
+
+<!-- comentado para não poluir a saída do exemplo, mas pode ser usado para referência futura
+
 **Exemplo 2:**
 
 ```java
@@ -422,6 +425,7 @@ Saída:
 36
 410
 ```
+-->
 
 ## 🔢 Estrutura Repetitiva `for` (Para)
 
@@ -545,6 +549,8 @@ Valor de i: 0
 
 ## ✏️ Exercícios de Teste de Mesa com `for`
 
+
+<!-- comentado para não poluir a saída do exemplo, mas pode ser usado para referência futura
 **Exemplo 1:**
 
 ```java
@@ -763,6 +769,8 @@ Saída:
 1
 ```
 
+-->
+
 ## 🔄 Estrutura Repetitiva `do-while` (Faça-Enquanto)
 
 A estrutura `do-while` é menos utilizada em comparação com `while` e `for`, mas possui uma característica distintiva importante: o bloco de comandos associado a ela é **executado pelo menos uma vez**, pois a condição de repetição é verificada **no final** da iteração.
@@ -793,7 +801,7 @@ do {
 
 Fazer um programa para ler uma temperatura em Celsius e mostrar o equivalente em Fahrenheit. Após cada conversão, o programa deve perguntar ao usuário se ele deseja repetir a operação (respondendo com 's' para sim ou 'n' para não). O programa deve continuar repetindo enquanto o usuário digitar 's'.
 
-**Fórmula de conversão:** $F = \frac{9C}{5} + 32$
+**Fórmula de conversão:** F = ((9C/5) + 32)
 
 **Exemplo de Interação:**
 ```
