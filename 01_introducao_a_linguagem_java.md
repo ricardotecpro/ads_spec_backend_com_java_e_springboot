@@ -337,3 +337,7 @@ Com esses passos, você terá configurado seu ambiente e executado seu primeiro 
 
 ---
 ## 📚
+Referências
+* [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
+* [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
+* 
