@@ -9,7 +9,7 @@ Este documento aborda os conceitos fundamentais da estrutura sequencial em Java,
 Uma **expressão aritmética** é uma combinação de operandos (valores, variáveis) e operadores aritméticos que resulta em um valor numérico.
 
 **Exemplo:**
-$4 + 5$ resulta em $9$
+4 + 5 resulta em 9
 
 ---
 
@@ -35,16 +35,11 @@ Parênteses `()` podem ser usados para alterar a ordem de avaliação padrão.
 
 ### Exemplos de Expressões Aritméticas
 
--   $2 * 6 / 3$
-    * Resultado: $4$
--   $3 + 2 * 4$
-    * Resultado: $11$ (Multiplicação primeiro: $2 * 4 = 8$, depois $3 + 8 = 11$)
--   $(3 + 2) * 4$
-    * Resultado: $20$ (Parênteses primeiro: $3 + 2 = 5$, depois $5 * 4 = 20$)
--   $60 / (3 + 2) * 4$
-    * Resultado: $48$ (Parênteses: $3+2=5$; Divisão: $60/5=12$; Multiplicação: $12*4=48$)
--   $60 / ((3 + 2) * 4)$
-    * Resultado: $3$ (Parênteses internos: $3+2=5$; Multiplicação dentro dos parênteses externos: $5*4=20$; Divisão: $60/20=3$)
+-   2 * 6 / 3  = Resultado: 4
+-   3 + 2 * 4  = Resultado: 11 (Multiplicação primeiro: 2 * 4 = 8, depois 3 + 8 = 11)
+-   (3 + 2) * 4 = Resultado: 20 (Parênteses primeiro: 3 + 2 = 5, depois 5 * 4 = 20)
+-   60 / (3 + 2) * 4 = Resultado: 48 (Parênteses: 3+2=5; Divisão: 60/5=12; Multiplicação: 12*4=48)
+-   60 / ((3 + 2) * 4) = Resultado: 3 (Parênteses internos: 3+2=5; Multiplicação dentro dos parênteses externos: 5*4=20; Divisão: 60/20=3)
 
 ---
 
@@ -52,12 +47,10 @@ Parênteses `()` podem ser usados para alterar a ordem de avaliação padrão.
 
 O operador `%` (mod) retorna o resto de uma divisão inteira.
 
--   `14 % 3`
-    * Resultado: $2$
-    * Pois: $14$ dividido por $3$ é $4$ com resto $2$. ($14 = 3 * 4 + 2$)
--   `19 % 5`
-    * Resultado: $4$
-    * Pois: $19$ dividido por $5$ é $3$ com resto $4$. ($19 = 5 * 3 + 4$)
+-   `14 % 3` = Resultado: 2
+    * Pois: 14 dividido por 3 é 4 com resto 2. (14 = 3 * 4 + 2)
+-   `19 % 5` =  Resultado: 4
+    * Pois: 19 dividido por 5 é 3 com resto 4. (19 = 5 * 3 + 4)
 
 ---
 
@@ -113,17 +106,17 @@ Java possui oito tipos de dados primitivos:
 | Representa um byte                 | `byte`    | 8 bits  | -128 a 127                                 | `0`          |
 | Inteiro curto                      | `short`   | 16 bits | -32768 a 32767                             | `0`          |
 | Inteiro padrão                     | `int`     | 32 bits | -2.147.483.648 a 2.147.483.647             | `0`          |
-| Inteiro longo                      | `long`    | 64 bits | -9 x $10^{18}$ a 9 x $10^{18}$ (aproximadamente) | `0L`         |
+| Inteiro longo                      | `long`    | 64 bits | -9 x 10^{18} a 9 x 10^{18} (aproximadamente) | `0L`         |
 | **Tipos Numéricos com Ponto Flutuante** |        |         |                                            |              |
-| Ponto flutuante de precisão simples| `float`   | 32 bits | +/- 3.4 x $10^{38}$                          | `0.0f`       |
-| Ponto flutuante de precisão dupla  | `double`  | 64 bits | +/- 1.8 x $10^{308}$                         | `0.0`        |
+| Ponto flutuante de precisão simples| `float`   | 32 bits | +/- 3.4 x 10^{38}                          | `0.0f`       |
+| Ponto flutuante de precisão dupla  | `double`  | 64 bits | +/- 1.8 x 10^{308}                         | `0.0`        |
 | **Outros Tipos** |           |         |                                            |              |
 | Um caractere Unicode               | `char`    | 16 bits | '\u0000' a '\uFFFF' (0 a 65535)            | `'\u0000'`   |
 | Valor verdade (booleano)           | `boolean` | 1 bit   | `true` ou `false`                            | `false`      |
 
 **Nota sobre Bits e Possibilidades:**
 -   Um bit pode armazenar 2 valores possíveis (0 ou 1).
--   Com 8 bits, temos $2^8 = 256$ possibilidades.
+-   Com 8 bits, temos 2^8 = 256 possibilidades.
 
 **Tipo `String`**:
 -   Embora não seja um tipo primitivo, a `String` é fundamental em Java para representar cadeias de caracteres (palavras, textos). Exemplo: `String mensagem = "Olá, Mundo!";`
@@ -133,7 +126,7 @@ Java possui oito tipos de dados primitivos:
 ### Nomes de Variáveis
 
 Regras e convenções para nomear variáveis em Java:
--   **Não pode começar com dígito**: Deve iniciar com uma letra, underscore (`_`) ou cifrão (`$`). É convenção iniciar com letra minúscula.
+-   **Não pode começar com dígito**: Deve iniciar com uma letra, underscore (`_`) ou cifrão (``). É convenção iniciar com letra minúscula.
 -   **Não pode ter espaço em branco**.
 -   **Não usar acentos ou til** (embora permitido, não é uma boa prática para portabilidade e consistência).
 -   **Case-sensitive**: `minhaVariavel` é diferente de `minhavariavel`.
@@ -431,7 +424,7 @@ System.out.println(y); // Saída: 10.0
 ```
 
 **Exemplo 3: Cálculo de Área de Trapézio**
-A fórmula da área de um trapézio é $Area = \frac{(baseMenor + baseMaior) \times altura}{2}$.
+A fórmula da área de um trapézio é Area = \frac{(baseMenor + baseMaior) \times altura}{2}.
 
 ```java
 double baseMenor, baseMaior, altura, area;
@@ -670,8 +663,10 @@ public class FuncoesMatematicas {
 
 ### Incluindo Funções em Expressões Maiores
 
-Funções matemáticas podem ser combinadas em expressões mais complexas, como no cálculo das raízes de uma equação quadrática ($ax^2 + bx + c = 0$) usando a fórmula de Bhaskara:
-$x = \frac{-b \pm \sqrt{\Delta}}{2a}$, onde $\Delta = b^2 - 4ac$.
+Funções matemáticas podem ser combinadas em expressões mais complexas, como no cálculo das raízes de uma equação quadrática (ax^2 + bx + c = 0) usando a fórmula de Bhaskara:
+x = \frac{-b \pm \sqrt{\Delta}}{2a}, onde \Delta = b^2 - 4ac.
+
+
 
 ```java
 // Supondo que a, b, c, delta, x1, x2 são declarados como double

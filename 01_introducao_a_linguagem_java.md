@@ -72,7 +72,7 @@ Para entender o modelo de execução do Java, é útil compará-lo com outros ti
     * O código fonte é traduzido diretamente para código de máquina específico de um processador e sistema operacional.
     * O executável resultante é rápido, mas não é portável entre diferentes sistemas operacionais sem recompilação (e, às vezes, adaptações no código).
 
-    *Exemplo conceitual em C++ (nota: o código original no PDF continha `average = (x+y)/2.8;` que é provavelmente um erro de digitação para o cálculo de uma média simples. Assumimos `2.0`):*
+    *Exemplo conceitual em C++ :*
     ```cpp
     #include <iostream> // Para std::cout e std::cin
 
@@ -144,7 +144,7 @@ Para entender o modelo de execução do Java, é útil compará-lo com outros ti
 
     public class Programa {
         public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in); // Mantido 'sc' conforme instrução
+            Scanner sc = new Scanner(System.in);
             double x, y, media;
 
             System.out.print("Digite o primeiro número: ");
@@ -155,7 +155,7 @@ Para entender o modelo de execução do Java, é útil compará-lo com outros ti
 
             media = (x + y) / 2.0; // Divisão de ponto flutuante
 
-            System.out.printf("Média = %.2f%n", media); // %.2f formata para 2 casas decimais, %n para nova linha portável
+            System.out.printf("Média = %.2f%n", media); // %.2f formata para 2 casas decimais, %n para nova linha
 
             sc.close(); // Fecha o Scanner para liberar recursos
         }
@@ -171,7 +171,7 @@ Uma aplicação Java é organizada de forma hierárquica:
 
 2.  **Pacotes (Packages)**: São usados para agrupar classes relacionadas logicamente, ajudando a organizar o código e a evitar conflitos de nomes. Fisicamente, pacotes correspondem a estruturas de diretórios.
     *Exemplo: `package com.minhaempresa.projeto.entidades;`*
-    * No diagrama do material original, são mostrados pacotes como `Entities`, `Services`, `Repositories`.
+    * No diagrama são mostrados pacotes como `Entities`, `Services`, `Repositories`.
 
 3.  **Módulos (Java 9+)**: Introduzidos a partir do Java 9, os módulos são um agrupamento lógico de pacotes relacionados. Eles permitem uma melhor encapsulação e organização de grandes aplicações, especificando quais pacotes são exportados (visíveis para outros módulos) e quais são as dependências de outros módulos.
     *Exemplo: um módulo `Financeiro` poderia agrupar pacotes de `entidades`, `servicos` e `repositorios` financeiros.*
