@@ -25,7 +25,7 @@
    Copie o **link do repositório no GitHub** e cole no campo de resposta da atividade no **Moodle**, respeitando o prazo estabelecido. Verifique se o link está acessível e se todos os arquivos necessários estão incluídos no repositório.
 
 6. **POO**
-   Os códigos devem seguir o paradigma de orientação  a objetos POO. 
+   Os códigos podem ser feitos em Java C++ Python Node mas devem obrigatoriamente seguir o paradigma de orientação a objetos POO. 
 
 
 ---
