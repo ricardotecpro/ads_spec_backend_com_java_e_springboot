@@ -13,7 +13,9 @@
 
    * Qual **linguagem de programação** foi utilizada;
    * Qual **versão da linguagem** ou ambiente (ex: Python 3.11, Node.js 20.11, Java 17, etc.);
-   * Instruções claracódigos e como **executar o código**, incluindo dependências, comandos e passos necessários para rodar o projeto localmente.
+   * Instruções claras códigos e como **executar o código**, incluindo dependências, comandos e passos necessários para rodar o projeto localmente.
+  
+   [Exemplo de Readme](https://gist.github.com/ricardotecpro/7470466accecb9384f74b12603d0eb0f)
 
 3. **Versionamento com Git**
    Utilize o **Git** para versionar o projeto. Faça *commits* frequentes com mensagens descritivas que indiquem as alterações realizadas em cada etapa do desenvolvimento.
