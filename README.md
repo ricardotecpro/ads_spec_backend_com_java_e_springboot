@@ -52,6 +52,8 @@ Este projeto está licenciado sob a [Licença MIT](license).
 ## 🧩 Exercícios
 
 - [Lista de Exercícios 01](lista_exercicios_01.md)
+- [Lista de Exercícios 02](lista_exercicios_02.md)
+ 
 - Vou adicionar mais exercícios em breve!
  
 
@@ -59,4 +61,4 @@ Este projeto está licenciado sob a [Licença MIT](license).
 
 ## 👨‍🏫 Sobre
 
-Material desenvolvido e atualizado para uso em sala de aula nas disciplinas de Programação com Java.
+Material desenvolvido e atualizado para uso em sala de aula nas disciplinas de Linguagens de Programação.
