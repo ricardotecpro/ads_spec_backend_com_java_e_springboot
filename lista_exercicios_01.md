@@ -6,7 +6,7 @@
 
 
 1. **Desenvolvimento do Código**
-   Cada atividade proposta deverá ser implementada em uma **IDE de sua preferência** (ex: Visual Studio Code, IntelliJ, Eclipse, etc.). Organize os arquivos de forma clara, utilizando nomes apropriados para pastas e scripts conforme especificado nos enunciados.
+   Cada atividade proposta deverá ser implementada em uma **IDE de sua preferência** (ex: Visual Studio Code, IntelliJ, Eclipse, etc.). Organize os arquivos de forma clara, utilizando nomes apropriados para pastas e scripts conforme especificado nos enunciados seguindo o paradigma de orientação a objetos POO.
 
 2. **Criação do README.md**
    No repositório, crie um arquivo `README.md` contendo as seguintes informações:
