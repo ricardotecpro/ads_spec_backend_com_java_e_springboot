@@ -51,7 +51,7 @@ Este projeto está licenciado sob a [Licença MIT](license).
 
 ## 🧩 Exercícios
 
-- [Lista de Exercícios 01](lista_exercicios_01)
+- [Lista de Exercícios 01](lista_exercicios_01.md)
 - Vou adicionar mais exercícios em breve!
  
 
