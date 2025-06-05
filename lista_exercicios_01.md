@@ -1,4 +1,3 @@
-
 # Lista de Exercícios Java 01
 
 ---
@@ -147,5 +146,7 @@ Escreva um programa que permita ao usuário:
 * **Adicionar até 10 contatos** a um `ArrayList<Contato>`
 * **Listar todos os contatos** armazenados
 * **Procurar e exibir telefone e email** de um contato, dado o seu nome
+
+# Fim da Lista de Exercícios
 
 
