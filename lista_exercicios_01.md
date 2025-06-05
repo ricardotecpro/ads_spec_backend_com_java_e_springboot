@@ -1,4 +1,4 @@
-# Lista de Exercícios Java 01
+# Lista de Exercícios POO Java 01
 
 ---
 
@@ -152,6 +152,3 @@ Escreva um programa que permita ao usuário:
 ---
 
 ### Fim da Lista de Exercícios
-
-
-
