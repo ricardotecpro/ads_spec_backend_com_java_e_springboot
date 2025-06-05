@@ -3,7 +3,7 @@
 ---
 
 ### 📌 **Descrição das Atividades**
-```
+
 
 1. **Desenvolvimento do Código**
    Cada atividade proposta deverá ser implementada em uma **IDE de sua preferência** (ex: Visual Studio Code, IntelliJ, Eclipse, etc.). Organize os arquivos de forma clara, utilizando nomes apropriados para pastas e scripts conforme especificado nos enunciados.
@@ -24,7 +24,7 @@
 5. **Entrega via Moodle**
    Copie o **link do repositório no GitHub** e cole no campo de resposta da atividade no **Moodle**, respeitando o prazo estabelecido. Verifique se o link está acessível e se todos os arquivos necessários estão incluídos no repositório.
 
-```
+
 ---
 
 ## 1. Métodos (equivalente a Funções)
@@ -151,7 +151,7 @@ Escreva um programa que permita ao usuário:
 
 ---
 
-# Fim da Lista de Exercícios
+### Fim da Lista de Exercícios
 
 
 
