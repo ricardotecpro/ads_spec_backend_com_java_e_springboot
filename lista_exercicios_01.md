@@ -6,14 +6,14 @@
 
 
 1. **Desenvolvimento do Código**
-   Cada atividade proposta deverá ser implementada em uma **IDE de sua preferência** (ex: Visual Studio Code, IntelliJ, Eclipse, etc.). Organize os arquivos de forma clara, utilizando nomes apropriados para pastas e scripts conforme especificado nos enunciados seguindo o paradigma de orientação a objetos POO.
+   Cada atividade proposta deverá ser implementada em uma **IDE de sua preferência** (ex: Visual Studio Code, IntelliJ, Eclipse, etc.). Organize os arquivos de forma clara, utilizando nomes apropriados para pastas e códigos conforme especificado nos enunciados.
 
 2. **Criação do README.md**
    No repositório, crie um arquivo `README.md` contendo as seguintes informações:
 
    * Qual **linguagem de programação** foi utilizada;
    * Qual **versão da linguagem** ou ambiente (ex: Python 3.11, Node.js 20.11, Java 17, etc.);
-   * Instruções claras de como **executar o código**, incluindo dependências, comandos e passos necessários para rodar o projeto localmente.
+   * Instruções claracódigos e como **executar o código**, incluindo dependências, comandos e passos necessários para rodar o projeto localmente.
 
 3. **Versionamento com Git**
    Utilize o **Git** para versionar o projeto. Faça *commits* frequentes com mensagens descritivas que indiquem as alterações realizadas em cada etapa do desenvolvimento.
@@ -23,6 +23,9 @@
 
 5. **Entrega via Moodle**
    Copie o **link do repositório no GitHub** e cole no campo de resposta da atividade no **Moodle**, respeitando o prazo estabelecido. Verifique se o link está acessível e se todos os arquivos necessários estão incluídos no repositório.
+
+6. **POO**
+   Os códigos devem seguir o paradigma de orientação  a objetos POO. 
 
 
 ---
