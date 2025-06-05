@@ -147,6 +147,9 @@ Escreva um programa que permita ao usuário:
 * **Listar todos os contatos** armazenados
 * **Procurar e exibir telefone e email** de um contato, dado o seu nome
 
+---
+
 # Fim da Lista de Exercícios
+
 
 
