@@ -40,10 +40,9 @@ REPROVADO
 
 Fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Bhaskara, o programa deve calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais. Se a equação não possuir raízes reais, o programa deve exibir uma mensagem apropriada.
 
-<img src="./assets/formula-de-bhaskara.png" alt="Fórmula de Bhaskara" width="50%" />
+![Fórmula de Bhaskara](./assets/formula-de-bhaskara.png)
 
-<img src="./assets/formula-da-discriminante.png" alt="Fórmula do Discriminante" width="50%" />
-
+![Fórmula do Discriminante](./assets/formula-da-discriminante.png)
 
 **Exemplo 1: Raízes Reais**
 
