@@ -369,3 +369,6 @@ Valor de X: 3.8
 Valor de Y: 0
 Eixo X
 ```
+
+---
+### Fim da Lista de Exercícios 03
