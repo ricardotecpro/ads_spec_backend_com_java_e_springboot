@@ -53,7 +53,8 @@ Este projeto está licenciado sob a [Licença MIT](license).
 
 - [Lista de Exercícios 01](lista_exercicios_01.md)
 - [Lista de Exercícios 02](lista_exercicios_02.md)
- 
+- [Lista de Exercícios 03](lista_exercicios_03.md)
+
 - Vou adicionar mais exercícios em breve!
  
 

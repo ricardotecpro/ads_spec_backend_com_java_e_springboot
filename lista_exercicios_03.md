@@ -40,7 +40,9 @@ REPROVADO
 
 Fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Bhaskara, o programa deve calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais. Se a equação não possuir raízes reais, o programa deve exibir uma mensagem apropriada.
 
-**Fórmula de Bhaskara:** $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$
+![Fórmula de Bhaskara](/assets/formula-de-bhaskara.png)
+
+![Fórmula do Discriminante](/assets/formula-da-discriminante.png)
 
 **Exemplo 1: Raízes Reais**
 
@@ -190,7 +192,7 @@ MAIOR DISTANCIA = 89.15
 
 Construa um programa para converter temperaturas entre as escalas Celsius e Fahrenheit. O programa deve primeiro perguntar ao usuário qual escala ele usará para inserir a temperatura ("C" ou "F"). Em seguida, ele deve ler a temperatura e convertê-la para a outra escala, exibindo o resultado com duas casas decimais.
 
-**Fórmula de Conversão:** $C = \\frac{5}{9}(F-32)$
+**Fórmula de Conversão:** C = (5/9) . (F-32)
 
 **Exemplo 1: Fahrenheit para Celsius**
 
@@ -329,6 +331,9 @@ O JOGO DUROU 14 HORA(S)
 
 Leia os valores das coordenadas X e Y de um ponto no plano cartesiano. A seguir, determine a qual quadrante o ponto pertence (Q1, Q2, Q3 ou Q4).
 
+![Coordenadas de um Ponto](/assets/uri1041.png)
+
+
 * Se o ponto estiver na origem, escreva a mensagem "Origem".
 * Se o ponto estiver sobre um dos eixos, escreva "Eixo X" ou "Eixo Y", conforme a situação.
 
@@ -343,15 +348,23 @@ Q4
 **Exemplo 2:**
 
 ```
-Valor de X: 0
-Valor de Y: 0
-Origem
+Valor de X: 3.1
+Valor de Y: 2.0
+Q1
+
 ```
 
 **Exemplo 3:**
 
 ```
+Valor de X: 0
+Valor de Y: 0
+Origem
+```
+
+**Exemplo 4:**
+
+```
 Valor de X: 3.8
 Valor de Y: 0
 Eixo X
-```
