@@ -40,9 +40,9 @@ REPROVADO
 
 Fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Bhaskara, o programa deve calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais. Se a equação não possuir raízes reais, o programa deve exibir uma mensagem apropriada.
 
-![Fórmula de Bhaskara](/assets/formula-de-bhaskara.png)
+![Fórmula de Bhaskara](./assets/formula-de-bhaskara.png)
 
-![Fórmula do Discriminante](/assets/formula-da-discriminante.png)
+![Fórmula do Discriminante](./assets/formula-da-discriminante.png)
 
 **Exemplo 1: Raízes Reais**
 
@@ -331,7 +331,7 @@ O JOGO DUROU 14 HORA(S)
 
 Leia os valores das coordenadas X e Y de um ponto no plano cartesiano. A seguir, determine a qual quadrante o ponto pertence (Q1, Q2, Q3 ou Q4).
 
-![Coordenadas de um Ponto](/assets/uri1041.png)
+![Coordenadas de um Ponto](./assets/uri1041.png)
 
 
 * Se o ponto estiver na origem, escreva a mensagem "Origem".
@@ -368,3 +368,4 @@ Origem
 Valor de X: 3.8
 Valor de Y: 0
 Eixo X
+```
