@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File file = new File("C:\\temp\\in.txt");
-        Scanner sc = null;
+        File file = new File("C:\\temp\\dino_actions_tactical_630k.csv");
+        Scanner sc = null;  
         try {
             sc = new Scanner(file);
             while (sc.hasNextLine()) {
