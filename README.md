@@ -28,6 +28,7 @@ Clique em cada item para acessar o conteúdo correspondente.
 16. [Generics, Set e Map](16_generics_set_map.md)
 17. [Programação Funcional e Expressões Lambda](17_programação_funcional_e_expressões_lambda.md)
 18. [SpringBoot](18_springboot.md)
+19. [Angular](19_angular.md)
 
 ---
 

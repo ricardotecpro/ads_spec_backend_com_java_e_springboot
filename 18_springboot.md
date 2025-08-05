@@ -63,7 +63,7 @@
 
 -----
 
-### **Módulo 1: Construindo o Coração da Aplicação - Backend com Spring Boot (8 horas)**
+### **Módulo 1: Construindo o Coração da Aplicação - Backend com Spring Boot**
 
 **Objetivo:** Criar a API REST completa que servirá como base para os clientes web e desktop.
 
