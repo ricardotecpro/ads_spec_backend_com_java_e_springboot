@@ -10,6 +10,7 @@ Clique em cada item para acessar o conteúdo correspondente.
 
 ## 📂 Conteúdo
 
+
 1. [Introdução à Linguagem Java](01_introducao_a_linguagem_java.md)
 2. [Estrutura Sequencial](02_estrutura_sequencial.md)
 3. [Estrutura Condicional](03_estrutura_condicional.md)
@@ -27,8 +28,11 @@ Clique em cada item para acessar o conteúdo correspondente.
 15. [Interfaces](15_interfaces.md)
 16. [Generics, Set e Map](16_generics_set_map.md)
 17. [Programação Funcional e Expressões Lambda](17_programação_funcional_e_expressões_lambda.md)
-18. [SpringBoot](18_springboot.md)
-19. [Angular](19_angular.md)
+
+## 🧩 NOVOS LINKS
+
+20. [SpringBoot](https://ricardotecpro.github.io/modulo_09_backend/)
+19. [Angular](https://modulo_10_frontend/)
 
 ---
 
