@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO
 
 ---
@@ -372,3 +370,7 @@ Eixo X
 
 ---
 ### Fim da Lista de Exercícios 03
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

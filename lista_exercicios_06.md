@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO
 
 ---
@@ -136,3 +134,7 @@
     ```
     Valor a ser pago em reais = 657.20
     ```
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

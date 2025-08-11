@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO 08
 
 ---
@@ -330,3 +328,7 @@ O programa também deve determinar e escrever o valor total de compra e de venda
 > Valor total de venda: 33.50
 > Lucro total: 3.50
 > ```
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

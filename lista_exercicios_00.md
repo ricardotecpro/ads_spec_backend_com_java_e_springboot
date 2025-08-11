@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO
 
 ---
@@ -48,4 +46,7 @@ Todos os códigos de exemplo podem ser executados facilmente nas IDEs mais popul
 3.  Copie e cole o código do exercício no arquivo.
 4.  O VS Code exibirá a opção "Run" acima do método `main`. Clique nela para executar.
 
--
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

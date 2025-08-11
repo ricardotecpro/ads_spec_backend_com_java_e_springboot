@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Matrizes
 
 Este material aborda o conceito de matrizes em Java, incluindo sua declaração, instanciação, manipulação e o uso da propriedade `length`.
@@ -247,3 +245,5 @@ Memória
 * Isso permite que você se concentre mais na lógica do programa e menos na gestão manual de memória, como seria necessário em linguagens como C/C++.
 
 ---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Generics, Set, Map
 
 Este documento aborda conceitos avançados em Java, incluindo Generics, as coleções Set e Map, e a importância dos métodos `hashCode` e `equals`.
@@ -1084,3 +1082,7 @@ Lembre-se de que, para exemplos que leem arquivos, você precisará fornecer o c
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

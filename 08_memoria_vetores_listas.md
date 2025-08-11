@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Memória, Vetores e Listas
 
 ## 🧠 Tipos Referência vs. Tipos Valor
@@ -1054,3 +1052,7 @@ public class ProgramaPrincipal {
     * Clique na seta verde ao lado do método `main` e selecione "Run 'ProgramaPrincipal.main()'".
 
 Este exercício cobre os principais tópicos abordados: uso de classes (OO), listas para coleções dinâmicas, encapsulamento para proteger dados (salário), e interação com o usuário.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

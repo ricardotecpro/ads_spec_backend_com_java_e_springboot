@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Estruturas Repetitivas
 
 Este material aborda as estruturas de repetição em Java, essenciais para executar blocos de código múltiplas vezes. Veremos como depurar seu código e as aplicações das estruturas `while`, `for` e `do-while`.
@@ -851,3 +849,7 @@ Este exemplo demonstra bem o uso do `do-while`: a conversão da temperatura e a 
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

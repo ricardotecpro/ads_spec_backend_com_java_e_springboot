@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Interfaces
 
 ## 📢 Aviso
@@ -861,3 +859,7 @@ Default methods são um recurso poderoso para a evolução de APIs e para a escr
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

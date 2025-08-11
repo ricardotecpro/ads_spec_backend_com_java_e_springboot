@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Java e Orientação a Objetos: Construtores, Palavra `this`, Sobrecarga e Encapsulamento ☕
 
 Este material aborda conceitos fundamentais da Programação Orientada a Objetos (POO) em Java, como construtores, o uso da palavra-chave `this`, sobrecarga de métodos e encapsulamento.
@@ -836,3 +834,7 @@ public class ProgramaPrincipal {
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

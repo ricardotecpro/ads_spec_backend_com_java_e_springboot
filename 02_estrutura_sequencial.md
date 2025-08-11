@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Java e Orientação a Objetos: Estrutura Sequencial
 
 Este documento aborda os conceitos fundamentais da estrutura sequencial em Java, incluindo expressões aritméticas, variáveis, tipos primitivos, entrada e saída de dados, processamento e casting, e funções matemáticas.
@@ -692,3 +690,7 @@ Para mais informações sobre outras funções matemáticas disponíveis, consul
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

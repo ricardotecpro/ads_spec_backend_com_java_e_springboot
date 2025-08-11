@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Estrutura Condicional
 
 Este documento aborda as estruturas condicionais em Java, um conceito fundamental para controlar o fluxo de execução de um programa.
@@ -465,3 +463,7 @@ System.out.println("Taxa de desconto aplicável: " + taxaDesconto); // Agora é 
 ```
 
 Entender o escopo é crucial para evitar erros e escrever código Java correto e manutenível.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Enumerações e Composição
 
 Este material aborda os conceitos de enumerações e composição em Java, fundamentais para a criação de código mais organizado, legível e robusto.
@@ -993,3 +991,7 @@ Este exercício reforça os conceitos de enumeração, composição, entrada de 
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

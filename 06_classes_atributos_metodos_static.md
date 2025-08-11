@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # ☕ Java e Orientação a Objetos: Classes, Atributos, Métodos e Static
 
 Este documento aborda os conceitos fundamentais de Orientação a Objetos em Java, incluindo classes, atributos, métodos e membros estáticos, com exemplos práticos.
@@ -721,3 +719,7 @@ As IDEs compilarão o código e executarão o programa, mostrando a saída no co
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

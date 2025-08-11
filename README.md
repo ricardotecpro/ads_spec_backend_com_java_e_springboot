@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # 📘 Curso de Java - Material de Apoio
 
 Este repositório contém o material utilizado nas aulas do curso de Java. Os conteúdos estão organizados por tópicos, seguindo a ordem didática apresentada em sala.
@@ -58,3 +56,7 @@ Este projeto está licenciado sob a [Licença MIT](license).
 ## 👨‍🏫 Sobre
 
 Material desenvolvido e atualizado para uso em sala de aula nas disciplinas de Linguagens de Programação.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

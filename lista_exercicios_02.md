@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO
 
 ---
@@ -300,3 +298,8 @@ Fazer um programa para ler uma duração de tempo em segundos, daí imprimir na 
     ```
     41:53:40
     ```
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
+  

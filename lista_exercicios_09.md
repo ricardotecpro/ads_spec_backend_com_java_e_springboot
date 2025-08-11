@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Lista de Exercícios POO 09
 
 ---
@@ -233,3 +231,7 @@ MATRIZ ALTERADA:
 4.0 3.0 5.0
 11.0 225.0 4.0
 ```
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

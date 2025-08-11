@@ -1,5 +1,3 @@
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
-
 # Java e Orientação a Objetos: Herança e Polimorfismo
 
 ## Herança 🧬
@@ -1153,3 +1151,7 @@ TOTAL DE IMPOSTOS: R$ 97000.00
 
 ---
 ## 📚
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
