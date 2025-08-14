@@ -1,4 +1,6 @@
-**"Trabalhando com arquivos em Java e Orientação a Objetos"**, usando as classes da API Java:
+# Trabalhando com arquivos em Java e Orientação a Objetos"**
+
+usando as classes da API Java:
 
 * `File`
 * `Scanner`

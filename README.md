@@ -1,4 +1,4 @@
-# 📘 Curso de Java - Material de Apoio
+# 📘 Java
 
 Este repositório contém o material utilizado nas aulas do curso de Java. Os conteúdos estão organizados por tópicos, seguindo a ordem didática apresentada em sala.
 
@@ -20,7 +20,7 @@ Clique em cada item para acessar o conteúdo correspondente.
 9. [Matrizes](09_matrizes.md)
 10. [Trabalhando com Datas em Java](10_trabalhando_com_datas_em_java.md)
 11. [Enumerações e Composição](11_enumeracoes_e_composicao.md)
-12. [Herança e Polimorfismo](12_herança_e_polimorfismo.md)
+12. [Herança e Polimorfismo](12_heranca_e_polimorfismo.md)
 13. [Tratamento de Exceções](13_tratamento_de_excecoes.md)
 14. [Trabalhando com Arquivos](14_trabalhando_com_arquivos.md)
 15. [Interfaces](15_interfaces.md)
