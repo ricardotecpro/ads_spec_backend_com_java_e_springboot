@@ -7,7 +7,7 @@
 
 ---
 
-# ☕ Java e Orientação a Objetos
+# ☕ Java
 
 # Estrutura Condicional: Exercícios em Java ☕
 

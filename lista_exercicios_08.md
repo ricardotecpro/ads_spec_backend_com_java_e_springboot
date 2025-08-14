@@ -7,7 +7,7 @@
 
 ---
 
-# Java e Orientação a Objetos: Exercícios de Fixação ☕
+# Java: Exercícios de Fixação ☕
 
 ## 🧩 Parte 8: Exercícios em Java: Memória Vetores e Listas
 

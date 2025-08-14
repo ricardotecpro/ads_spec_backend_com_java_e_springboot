@@ -8,6 +8,12 @@ Clique em cada item para acessar o conteúdo correspondente.
 
 ## 📂 Conteúdo
 
+---
+
+0. [Paradigma de Orientação a Objetos](../modulo_17_paradigmas/paradigma_oo.md)
+
+---
+
 
 1. [Introdução à Linguagem Java](01_introducao_a_linguagem_java.md)
 2. [Estrutura Sequencial](02_estrutura_sequencial.md)

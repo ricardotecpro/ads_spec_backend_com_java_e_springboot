@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Memória, Vetores e Listas
+# ☕ Java: Memória, Vetores e Listas
 
 ## 🧠 Tipos Referência vs. Tipos Valor
 

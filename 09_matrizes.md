@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Matrizes
+# ☕ Java: Matrizes
 
 Este material aborda o conceito de matrizes em Java, incluindo sua declaração, instanciação, manipulação e o uso da propriedade `length`.
 

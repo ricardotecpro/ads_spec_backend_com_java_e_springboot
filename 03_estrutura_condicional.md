@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Estrutura Condicional
+# ☕ Java: Estrutura Condicional
 
 Este documento aborda as estruturas condicionais em Java, um conceito fundamental para controlar o fluxo de execução de um programa.
 

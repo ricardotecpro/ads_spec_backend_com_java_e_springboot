@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Estruturas Repetitivas
+# ☕ Java: Estruturas Repetitivas
 
 Este material aborda as estruturas de repetição em Java, essenciais para executar blocos de código múltiplas vezes. Veremos como depurar seu código e as aplicações das estruturas `while`, `for` e `do-while`.
 

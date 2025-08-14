@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Interfaces
+# ☕ Java: Interfaces
 
 ## 📢 Aviso
 

@@ -1,4 +1,4 @@
-# ☕️ Java e Orientação a Objetos: Trabalhando com Arquivos 📁
+# ☕️ Java: Trabalhando com Arquivos 📁
 
 Este capítulo aborda como manipular arquivos em Java, cobrindo leitura, escrita e manipulação de diretórios, utilizando as classes principais do pacote `java.io`.
 

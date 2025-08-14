@@ -7,7 +7,7 @@
 
 ---
 
-#  - Java e Orientação a Objetos - Exercícios de Fixação ☕
+#  - Java - Exercícios de Fixação ☕
 
 ## 🧩 Parte 6: Classes, Atributos e Métodos
 

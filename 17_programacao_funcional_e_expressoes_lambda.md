@@ -1,4 +1,4 @@
-# ☕ Java e Orientação a Objetos: Programação Funcional e Expressões Lambda
+# ☕ Java: Programação Funcional e Expressões Lambda
 
 ## 🎯 Uma Experiência com Comparator
 

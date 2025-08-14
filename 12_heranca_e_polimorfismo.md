@@ -1,4 +1,4 @@
-# Java e Orientação a Objetos: Herança e Polimorfismo
+# Java: Herança e Polimorfismo
 
 ## Herança 🧬
 
