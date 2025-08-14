@@ -29,8 +29,6 @@ Clique em cada item para acessar o conteúdo correspondente.
 18. [Stream API](18_stream_api.md)
 19. [Tipos de Prints](19_prints_java.md)
  
-
-
 ---
 
 ## 📄 Licença
@@ -53,7 +51,6 @@ Este projeto está licenciado sob a [Licença MIT](license).
 - [Desafio Bar OO](desafio_03_bar_oo.md)
 
 - Vou adicionar mais exercícios em breve!
- 
 
 ---
 
