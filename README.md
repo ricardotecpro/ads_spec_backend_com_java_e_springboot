@@ -25,12 +25,7 @@ Clique em cada item para acessar o conteúdo correspondente.
 14. [Trabalhando com Arquivos](14_trabalhando_com_arquivos.md)
 15. [Interfaces](15_interfaces.md)
 16. [Generics, Set e Map](16_generics_set_map.md)
-17. [Programação Funcional e Expressões Lambda](17_programação_funcional_e_expressões_lambda.md)
-
-## 🧩 NOVOS LINKS
-
-20. [SpringBoot](https://ricardotecpro.github.io/modulo_09_backend/)
-19. [Angular](https://modulo_10_frontend/)
+17. [Programação Funcional e Expressões Lambda](17_programacao_funcional_e_expressoes_lambda.md)
 
 ---
 
@@ -42,20 +37,19 @@ Este projeto está licenciado sob a [Licença MIT](license).
 
 ## 🧩 Exercícios
 
+- [Lista de Exercícios 00](lista_exercicios_00.md)
 - [Lista de Exercícios 01](lista_exercicios_01.md)
 - [Lista de Exercícios 02](lista_exercicios_02.md)
 - [Lista de Exercícios 03](lista_exercicios_03.md)
+- [Lista de Exercícios 04](lista_exercicios_04.md)
+- [Lista de Exercícios 06](lista_exercicios_06.md)
+- [Lista de Exercícios 08](lista_exercicios_08.md)
+- [Lista de Exercícios 09](lista_exercicios_09.md)
 - [Lista de Exercícios 14](lista_exercicios_14.md)
-- [Desafio Bar OO](desafio_bar_oo.md)
+- [Desafio Bar OO](desafio_03_bar_oo.md)
 
 - Vou adicionar mais exercícios em breve!
  
-
----
-
-## 👨‍🏫 Sobre
-
-Material desenvolvido e atualizado para uso em sala de aula nas disciplinas de Linguagens de Programação.
 
 ---
 
