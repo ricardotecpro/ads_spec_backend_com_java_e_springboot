@@ -53,5 +53,5 @@ Este projeto está licenciado sob a [Licença MIT](license).
 - Vou adicionar mais exercícios em breve!
 
 ---
-
+📌
 ### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
