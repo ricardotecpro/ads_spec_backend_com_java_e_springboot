@@ -26,6 +26,10 @@ Clique em cada item para acessar o conteúdo correspondente.
 15. [Interfaces](15_interfaces.md)
 16. [Generics, Set e Map](16_generics_set_map.md)
 17. [Programação Funcional e Expressões Lambda](17_programacao_funcional_e_expressoes_lambda.md)
+18. [Stream API](18_stream_api.md)
+19. [Tipos de Prints](19_prints_java.md)
+ 
+
 
 ---
 
