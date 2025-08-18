@@ -10,11 +10,11 @@ Clique em cada item para acessar o conteúdo correspondente.
 
 ---
 
-- [Paradigmas de Programação](../modulo_17_paradigmas/paradigmas_de_programacao.md)
-- [Paradigma de Orientação a Objetos](../modulo_17_paradigmas/paradigma_oo.md)
-- [Paradigmas de Programação 1](../modulo_17_paradigmas/paradigma_funcional_1.md)
-- [Paradigmas de Programação 2](../modulo_17_paradigmas/paradigma_funcional_2.md)
-- [Paradigma Lógico](../modulo_17_paradigmas/programacao_logica.md)
+- [Paradigmas de Programação](../modulo_17_paradigmas/topicos/paradigmas_de_programacao.md)
+- [Paradigma de Orientação a Objetos](../modulo_17_paradigmas/topicos/paradigma_oo.md)
+- [Paradigmas de Programação 1](../modulo_17_paradigmas/topicos/paradigma_funcional_1.md)
+- [Paradigmas de Programação 2](../modulo_17_paradigmas/topicos/paradigma_funcional_2.md)
+- [Paradigma Lógico](../modulo_17_paradigmas/topicos/programacao_logica.md)
  
 
 ---
