@@ -1,68 +1,79 @@
 # 📘 Java
 
-Este repositório contém o material utilizado nas aulas do curso de Java. Os conteúdos estão organizados por tópicos, seguindo a ordem didática apresentada em sala.
-
-Clique em cada item para acessar o conteúdo correspondente.
+Este repositório contém o material utilizado nas aulas do curso de Java. Os conteúdos estão organizados por tópicos, exemplos, exercícios e desafios.
 
 ---
 
-## 📂 Conteúdo
+## 📂 Tópicos
+
+- [Paradigmas de Programação](topicos/paradigmas_de_programacao.md)
+- [Paradigma de Orientação a Objetos](topicos/paradigma_oo.md)
+- [Paradigmas de Programação 1](topicos/paradigma_funcional_1.md)
+- [Paradigmas de Programação 2](topicos/paradigma_funcional_2.md)
+- [Paradigma Lógico](topicos/programacao_logica.md)
 
 ---
 
-- [Paradigmas de Programação](../modulo_17_paradigmas/topicos/paradigmas_de_programacao.md)
-- [Paradigma de Orientação a Objetos](../modulo_17_paradigmas/topicos/paradigma_oo.md)
-- [Paradigmas de Programação 1](../modulo_17_paradigmas/topicos/paradigma_funcional_1.md)
-- [Paradigmas de Programação 2](../modulo_17_paradigmas/topicos/paradigma_funcional_2.md)
-- [Paradigma Lógico](../modulo_17_paradigmas/topicos/programacao_logica.md)
- 
+## 📚 Conteúdo
 
----
-
-
-1. [Introdução à Linguagem Java](01_introducao_a_linguagem_java.md)
-2. [Estrutura Sequencial](02_estrutura_sequencial.md)
-3. [Estrutura Condicional](03_estrutura_condicional.md)
-4. [Estruturas Repetitivas](04_estruturas_repetitivas.md)
-5. [Outros Tópicos Básicos sobre Java](05_outros_topicos_basicos_sobre_java.md)
-6. [Classes, Atributos, Métodos e `static`](06_classes_atributos_metodos_static.md)
-7. [Construtores, `this`, Sobrecarga e Encapsulamento](07_construtores_this_sobrecarga_encapsulamento.md)
-8. [Memória, Vetores e Listas](08_memoria_vetores_listas.md)
-9. [Matrizes](09_matrizes.md)
-10. [Trabalhando com Datas em Java](10_trabalhando_com_datas_em_java.md)
-11. [Enumerações e Composição](11_enumeracoes_e_composicao.md)
-12. [Herança e Polimorfismo](12_heranca_e_polimorfismo.md)
-13. [Tratamento de Exceções](13_tratamento_de_excecoes.md)
-14. [Trabalhando com Arquivos](14_trabalhando_com_arquivos.md)
-15. [Interfaces](15_interfaces.md)
-16. [Generics, Set e Map](16_generics_set_map.md)
-17. [Programação Funcional e Expressões Lambda](17_programacao_funcional_e_expressoes_lambda.md)
-18. [Stream API](18_stream_api.md)
-19. [Tipos de Prints](19_prints_java.md)
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [Licença MIT](license).
+- [Introdução à Linguagem Java](topicos/01_introducao_a_linguagem_java.md)
+- [Estrutura Sequencial](topicos/02_estrutura_sequencial.md)
+- [Estrutura Condicional](topicos/03_estrutura_condicional.md)
+- [Estruturas Repetitivas](topicos/04_estruturas_repetitivas.md)
+- [Outros Tópicos Básicos sobre Java](topicos/05_outros_topicos_basicos_sobre_java.md)
+- [Classes, Atributos, Métodos e `static`](topicos/06_classes_atributos_metodos_static.md)
+- [Construtores, `this`, Sobrecarga e Encapsulamento](topicos/07_construtores_this_sobrecarga_encapsulamento.md)
+- [Memória, Vetores e Listas](topicos/08_memoria_vetores_listas.md)
+- [Matrizes](topicos/09_matrizes.md)
+- [Trabalhando com Datas em Java](topicos/10_trabalhando_com_datas_em_java.md)
+- [Enumerações e Composição](topicos/11_enumeracoes_e_composicao.md)
+- [Herança e Polimorfismo](topicos/12_heranca_e_polimorfismo.md)
+- [Tratamento de Exceções](topicos/13_tratamento_de_excecoes.md)
+- [Trabalhando com Arquivos](topicos/14_trabalhando_com_arquivos.md)
+- [Interfaces](topicos/15_interfaces.md)
+- [Generics, Set e Map](topicos/16_generics_set_map.md)
+- [Programação Funcional e Expressões Lambda](topicos/17_programacao_funcional_e_expressoes_lambda.md)
+- [Stream API](topicos/18_stream_api.md)
+- [Tipos de Prints](topicos/19_prints_java.md)
 
 ---
 
 ## 🧩 Exercícios
 
-- [Lista de Exercícios 00](lista_exercicios_00.md)
-- [Lista de Exercícios 01](lista_exercicios_01.md)
-- [Lista de Exercícios 02](lista_exercicios_02.md)
-- [Lista de Exercícios 03](lista_exercicios_03.md)
-- [Lista de Exercícios 04](lista_exercicios_04.md)
-- [Lista de Exercícios 06](lista_exercicios_06.md)
-- [Lista de Exercícios 08](lista_exercicios_08.md)
-- [Lista de Exercícios 09](lista_exercicios_09.md)
-- [Lista de Exercícios 14](lista_exercicios_14.md)
-- [Desafio Bar OO](desafio_03_bar_oo.md)
-
-- Vou adicionar mais exercícios em breve!
+- [Lista de Exercícios 00](exercicios/lista_exercicios_00.md)
+- [Lista de Exercícios 01](exercicios/lista_exercicios_01.md)
+- [Lista de Exercícios 02](exercicios/lista_exercicios_02.md)
+- [Lista de Exercícios 03](exercicios/lista_exercicios_03.md)
+- [Lista de Exercícios 04](exercicios/lista_exercicios_04.md)
+- [Lista de Exercícios 06](exercicios/lista_exercicios_06.md)
+- [Lista de Exercícios 08](exercicios/lista_exercicios_08.md)
+- [Lista de Exercícios 09](exercicios/lista_exercicios_09.md)
+- [Lista de Exercícios 14](exercicios/lista_exercicios_14.md)
 
 ---
-📌
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
+
+## 💡 Exemplos
+
+- [Exemplo 01](exemplos/exemplo_01.md)
+- [Exemplo 02](exemplos/exemplo_02.md)
+- [Exemplo 03](exemplos/exemplo_03.md)
+- [Exemplo 04](exemplos/exemplo_04.md)
+
+---
+
+## 🏆 Desafios
+
+- [Desafio Bar OO](desafios/desafio_03_bar_oo.md)
+- [Desafio 01](desafios/desafio_01.md)
+- [Desafio 02](desafios/desafio_02.md)
+---
+
+## 🔗 Tópicos
+
+* **[Tópicos](./Topicos.md)**: Trilhas de Aprendizagem.
+
+---
+
+## ✉️ Contatos
+
+* **[Contatos](./Contatos.md)**: Contatos / Contacts
