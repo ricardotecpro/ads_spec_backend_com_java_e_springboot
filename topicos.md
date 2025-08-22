@@ -73,10 +73,10 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ## 🔗 Tópicos
 
-* **[Tópicos](./ricardotecpro.github.io/topicos.md)**: Trilhas de Aprendizagem.
+* **[Tópicos](/ricardotecpro.github.io/topicos.md)**: Trilhas de Aprendizagem.
 
 ---
 
 ## ✉️ Contatos
 
-* **[Contatos](./ricardotecpro.github.io/contatos.md)**: Contatos / Contacts
+* **[Contatos](/ricardotecpro.github.io/contatos.md)**: Contatos / Contacts

@@ -120,10 +120,14 @@ Java é uma escolha popular para aplicações que exigem alta performance, estab
 
 ## 🔗 Tópicos
 
-* **[Tópicos](./ricardotecpro.github.io/topicos.md)**: Trilhas de Aprendizagem.
+* **[Tópicos](/topicos.md)**: Trilhas de Aprendizagem.
 
 ---
 
 ## ✉️ Contatos
 
-* **[Contatos](./ricardotecpro.github.io/contatos.md)**: Contatos / Contacts
+* **[Contatos](https://ricardotecpro.github.io/contatos.html)**: Contatos / Contacts
+
+---
+
+### 📌 [ricardotecpro.github.io](https://ricardotecpro.github.io/)
