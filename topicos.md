@@ -66,14 +66,17 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 - [Desafio Bar OO](desafios/desafio_03_bar_oo.md)
 - [Desafio 01](desafios/desafio_01.md)
 - [Desafio 02](desafios/desafio_02.md)
+
+
+
 ---
 
 ## 🔗 Tópicos
 
-* **[Tópicos](./Topicos.md)**: Trilhas de Aprendizagem.
+* **[Tópicos](./ricardotecpro.github.io/topicos.md)**: Trilhas de Aprendizagem.
 
 ---
 
 ## ✉️ Contatos
 
-* **[Contatos](./Contatos.md)**: Contatos / Contacts
+* **[Contatos](./ricardotecpro.github.io/contatos.md)**: Contatos / Contacts
