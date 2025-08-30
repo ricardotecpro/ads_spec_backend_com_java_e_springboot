@@ -6,11 +6,7 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ## 📂 Tópicos
 
-- [Paradigmas de Programação](topicos/paradigmas_de_programacao.md)
-- [Paradigma de Orientação a Objetos](topicos/paradigma_oo.md)
-- [Paradigmas de Programação 1](topicos/paradigma_funcional_1.md)
-- [Paradigmas de Programação 2](topicos/paradigma_funcional_2.md)
-- [Paradigma Lógico](topicos/programacao_logica.md)
+- [Paradigmas de Programação](https://ricardotecpro.github.io/ads_mod_10_paradigmas_e_padroes_de_projeto/)
 
 ---
 
