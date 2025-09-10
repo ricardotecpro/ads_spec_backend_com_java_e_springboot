@@ -508,13 +508,13 @@ Podemos colocar os métodos de cálculo e a constante PI diretamente na classe `
 **Importante:** Dentro de um método estático (como `main`), você não pode chamar membros de instância da *mesma classe* diretamente, pois métodos estáticos não estão associados a um objeto específico (não há `this`). No entanto, você pode chamar outros métodos estáticos ou acessar atributos estáticos da mesma classe.
 
 ```java
-// Arquivo: ProgramaCalculadoraV1.java
+// Arquivo: CalculadoraV1.java
 package aplicacao;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ProgramaCalculadoraV1 {
+public class CalculadoraV1 {
 
     // Atributo estático (constante)
     public static final double PI = 3.14159; // 'final' indica que o valor não pode ser alterado
@@ -575,7 +575,7 @@ public class CalculadoraV2 {
 **Usando `CalculadoraV2`:**
 
 ```java
-// Arquivo: ProgramaCalculadoraV2.java
+// Arquivo: CalculadoraV2.java
 package aplicacao;
 
 import java.util.Locale;

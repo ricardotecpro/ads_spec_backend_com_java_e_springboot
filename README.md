@@ -4,6 +4,12 @@ Java é uma linguagem de programação de alto nível, orientada a objetos, e fo
 
 Sua principal promessa é a de ser uma linguagem de programação para a qual você pode escrever um programa uma vez e, em seguida, executá-lo em qualquer dispositivo, independentemente do sistema operacional.
 
+---
+
+## 🔗 Tópicos
+
+* **[Tópicos](/topicos.md)**: Trilhas de Aprendizagem.
+
 -----
 
 ## 📜 O Princípio "WORA": Escreva Uma Vez, Rode em Qualquer Lugar
@@ -115,12 +121,6 @@ Java é uma escolha popular para aplicações que exigem alta performance, estab
     # 2. Executa o bytecode na JVM
     java HelloWorld
     ```
-
----
-
-## 🔗 Tópicos
-
-* **[Tópicos](/topicos.md)**: Trilhas de Aprendizagem.
 
 ---
 

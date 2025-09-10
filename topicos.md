@@ -36,7 +36,7 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ## 🧩 Exercícios
 
-- [Lista de Exercícios 00](exercicios/lista_exercicios_00.md)
+- [Lista de Exercícios 00](exercicios/lista_exercicios_orientacoes.md)
 - [Lista de Exercícios 01](exercicios/lista_exercicios_01.md)
 - [Lista de Exercícios 02](exercicios/lista_exercicios_02.md)
 - [Lista de Exercícios 03](exercicios/lista_exercicios_03.md)
@@ -50,6 +50,8 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ## 💡 Exemplos
 
+Em revisão 
+
 - [Exemplo 01](exemplos/exemplo_01.md)
 - [Exemplo 02](exemplos/exemplo_02.md)
 - [Exemplo 03](exemplos/exemplo_03.md)
@@ -59,10 +61,11 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ## 🏆 Desafios
 
-- [Desafio Bar OO](desafios/desafio_03_bar_oo.md)
+Em revisão
+
+- [Desafio Bar OO](./desafios/desafio_03_bar_oo.md)
 - [Desafio 01](desafios/desafio_01.md)
 - [Desafio 02](desafios/desafio_02.md)
-
 
 
 ---

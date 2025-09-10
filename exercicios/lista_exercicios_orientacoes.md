@@ -10,7 +10,7 @@
 2. **Criação do README.md**
    No repositório, crie um arquivo `README.md` contendo as seguintes informações:
 * Qual **linguagem de programação** foi utilizada;
-* Qual **versão da linguagem** ou ambiente (ex: Python 3.11, Node.js 20.11, Java 17, etc.);
+* Qual **versão da linguagem** ou ambiente (ex: Java 21, Python 3.12, Node.js 22.x, etc.);
 * Instruções claras códigos e como **executar o código**, incluindo dependências, comandos e passos necessários para rodar o projeto localmente.
 * [Exemplo de Readme](https://gist.github.com/ricardotecpro/7470466accecb9384f74b12603d0eb0f)
 * [Exemplo de Estrutura de Exercícios](https://github.com/ricardotecpro/lista_de_exercicios_exemplo_estrutura)

@@ -3,7 +3,7 @@
 ---
 
 ### 📌 **Descrição das Atividades**
-[Orientação sobre como desenvolver as atividades](lista_exercicios_00.md)
+[Orientação sobre como desenvolver as atividades](lista_exercicios_orientacoes.md)
 
 ---
 
