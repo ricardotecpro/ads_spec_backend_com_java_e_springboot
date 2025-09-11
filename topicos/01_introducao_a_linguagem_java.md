@@ -1,4 +1,4 @@
-# Introdução à Linguagem Java
+# ☕ Introdução à Linguagem Java
 
 Este documento oferece uma introdução à linguagem de programação Java, abordando seu histórico, características, edições, o processo de compilação e execução, e os passos iniciais para configurar um ambiente de desenvolvimento.
 
@@ -9,7 +9,7 @@ A linguagem Java passou por diversas versões ao longo dos anos, com algumas del
 * Java 8 LTS
 * Java 11 LTS
 * Java 17 LTS
-* Java 21 LTS, é a LTS mais recente no momento da última atualização deste conteúdo contextual).
+* Java 21 LTS, e a 25 a LTS mais recente no momento da última atualização deste conteúdo contextual).
 
 Outras versões intermediárias (10, 12, 13, 14, 15, 16, etc.) introduzem novas funcionalidades que são posteriormente consolidadas nas versões LTS.
 
@@ -334,6 +334,107 @@ Quase todas as IDEs permitem ajustar o tamanho da fonte para melhor legibilidade
 * Você também pode encontrar configurações detalhadas de fonte nas preferências ou configurações da IDE (ex: `File -> Settings/Preferences -> Editor -> Font`).
 
 Com esses passos, você terá configurado seu ambiente e executado seu primeiro programa Java! A partir daqui, você pode começar a explorar os vastos recursos e bibliotecas que a linguagem Java oferece.
+
+
+Uma aplicação Java é estruturada em uma hierarquia de componentes que organizam o código de forma lógica e física. A base dessa estrutura são as classes, que são agrupadas em pacotes, os quais por sua vez podem ser agrupados em módulos para formar a aplicação final.
+
+### Níveis da Estrutura de uma Aplicação Java:
+
+  * **Classes**: A aplicação é fundamentalmente composta por classes. Elas são as unidades básicas que contêm os dados e os comportamentos do sistema.
+
+    ```mermaid
+    graph TD
+        subgraph Aplicação
+            A[Class]
+            B[Class]
+            C[Class]
+            D[Class]
+            E[Class]
+            F[Class]
+        end
+    ```
+
+  * **Pacotes (Packages)**: Um pacote é um agrupamento lógico de classes que possuem funcionalidades relacionadas. Essa organização ajuda a evitar conflitos de nomes e a estruturar o projeto de forma coesa. Exemplos comuns de pacotes em uma arquitetura de software são `Entities`, `Services` e `Repositories`.
+
+    ```mermaid
+    graph TD
+        subgraph "Package: Entities"
+            direction LR
+            ClassE1[Class]
+            ClassE2[Class]
+            ClassE3[Class]
+        end
+
+        subgraph "Package: Services"
+            direction LR
+            ClassS1[Class]
+            ClassS2[Class]
+            ClassS3[Class]
+        end
+
+        subgraph "Package: Repositories"
+            direction LR
+            ClassR1[Class]
+            ClassR2[Class]
+            ClassR3[Class]
+        end
+    ```
+
+  * **Módulos (Java 9+)**: Um módulo é um agrupamento lógico de pacotes que estão relacionados. O sistema de módulos, introduzido no Java 9, permite um encapsulamento mais forte e uma declaração explícita das dependências, resultando em um agrupamento físico no *runtime*. Por exemplo, um módulo `Financial` pode agrupar os pacotes `Entities`, `Services` e `Repositories`, enquanto um módulo `Graphics` pode conter os pacotes `Graphics2D` e `Graphics3D`.
+
+    ```mermaid
+     graph TD
+        subgraph "Módulo: Financial"
+            direction TB
+            P1["Package: Entities"]
+            P2["Package: Services"]
+            P3["Package: Repositories"]
+        end
+
+        subgraph "Módulo: Graphics"
+            direction TB
+            P4["Package: Graphics2D"]
+            P5["Package: Graphics3D"]
+        end
+    ```
+
+  * **Aplicação**: A aplicação completa é o resultado do agrupamento de módulos relacionados que trabalham juntos para entregar a funcionalidade final do software. Um exemplo é um "Sistema de comércio eletrônico", que seria composto por diversos módulos, cada um responsável por uma parte do sistema.
+
+    ```mermaid
+    graph TD
+        subgraph "Aplicação: Sistema de Comércio Eletrônico"
+            direction LR
+            M1[Módulo A]
+            M2[Módulo B]
+            M3[Módulo C]
+            M4[Módulo D]
+        end
+    ```
+    
+Em Java, a comunidade de desenvolvimento adota um conjunto de convenções de nomenclatura (*naming conventions*) para tornar o código mais legível, consistente e profissional.
+
+### 🏷️ Padrões de Nomes (Naming Conventions) em Java
+
+* **Classes e Interfaces**
+    * **Padrão**: `PascalCase` (também conhecido como *UpperCamelCase*).
+    * **Descrição**: Nomes de classes devem ser substantivos e começar com uma letra maiúscula. Se o nome for composto, cada palavra subsequente também começa com uma letra maiúscula.
+    * **Exemplos**: `public class Program`, `String`, `Scanner`.
+
+* **Pacotes (Packages)**
+    * **Padrão**: `lowercase` (letras minúsculas).
+    * **Descrição**: Nomes de pacotes, que são agrupamentos lógicos de classes relacionadas, devem ser escritos inteiramente em letras minúsculas para evitar conflitos em diferentes sistemas de arquivos. O padrão comum é usar o domínio da internet da organização de forma invertida.
+    * **Exemplos**: `package course;`, `java.util`, `com.oracle.jdbc`.
+
+* **Variáveis e Métodos**
+    * **Padrão**: `camelCase` (também conhecido como *lowerCamelCase*).
+    * **Descrição**: A primeira letra do nome é minúscula, e a primeira letra de cada palavra subsequente é maiúscula. Nomes de métodos geralmente são verbos que indicam uma ação.
+    * **Exemplos de Variáveis**: `double x, y, average;`, `scanner`, `somaTotal`.
+    * **Exemplos de Métodos**: `main(String[] args)`, `nextInt()`, `close()`.
+
+* **Constantes**
+    * **Padrão**: `SNAKE_CASE` (também conhecido como *UPPER_CASE*).
+    * **Descrição**: Nomes de constantes (variáveis declaradas como `static final`) são escritos inteiramente em letras maiúsculas, com palavras separadas por um subtraço (`_`).
+    * **Exemplos**: `Math.PI`, `Integer.MAX_VALUE`.
 
 ---
 ## 📚

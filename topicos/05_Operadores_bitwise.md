@@ -6,11 +6,11 @@ Pense neles como interruptores. Enquanto operadores lógicos como `&&` e `||` av
 
 ## Os Operadores Bitwise em Ação 🧮
 
-| Operador | Nome | Descrição | Exemplo Prático (`5` e `3`) |
-| :---: | :--- | :--- | :--- |
-| `&` | **E** (AND) | O bit do resultado é `1` **apenas se** ambos os bits comparados forem `1`. | `0101 & 0011` → `0001` (1) |
-| `|` | **OU** (OR) | O bit do resultado é `1` **se pelo menos um** dos bits comparados for `1`. | `0101 | 0011` → `0111` (7) |
-| `^` | **OU-Exclusivo** (XOR) | O bit do resultado é `1` **apenas se** os bits comparados forem diferentes. | `0101 ^ 0011` → `0110` (6) |
+| Operador | Nome                   | Descrição                                                                   | Exemplo Prático (`5` e `3`)                                                |
+|:--------:|:-----------------------|:----------------------------------------------------------------------------|:---------------------------------------------------------------------------|
+|   `&`    | **E** (AND)            | O bit do resultado é `1` **apenas se** ambos os bits comparados forem `1`.  | `0101 & 0011` → `0001` (1)                                                 |
+|    `     | `                      | **OU** (OR)                                                                 | O bit do resultado é `1` **se pelo menos um** dos bits comparados for `1`. | `0101 | 0011` → `0111` (7) |
+|   `^`    | **OU-Exclusivo** (XOR) | O bit do resultado é `1` **apenas se** os bits comparados forem diferentes. | `0101 ^ 0011` → `0110` (6)                                                 |
 
 -----
 
@@ -23,11 +23,11 @@ A maneira mais fácil de visualizar a lógica é através de "tabelas verdade", 
 Retorna `1` apenas quando ambos os bits de entrada são `1`. É útil para "desligar" bits ou verificar se um bit específico está "ligado".
 
 | Bit A | Bit B | A & B |
-| :-: | :-: | :---: |
-| 0 | 0 | **0** |
-| 0 | 1 | **0** |
-| 1 | 0 | **0** |
-| 1 | 1 | **1** |
+|:-----:|:-----:|:-----:|
+|   0   |   0   | **0** |
+|   0   |   1   | **0** |
+|   1   |   0   | **0** |
+|   1   |   1   | **1** |
 
 ### Operador OU (`|`)
 
@@ -45,11 +45,11 @@ Retorna `1` se um dos bits de entrada (ou ambos) for `1`. É perfeito para "liga
 Retorna `1` apenas se os bits forem opostos. Uma aplicação interessante é a capacidade de alternar o estado de um bit (de `0` para `1` ou de `1` para `0`).
 
 | Bit A | Bit B | A ^ B |
-| :-: | :-: | :---: |
-| 0 | 0 | **0** |
-| 0 | 1 | **1** |
-| 1 | 0 | **1** |
-| 1 | 1 | **0** |
+|:-----:|:-----:|:-----:|
+|   0   |   0   | **0** |
+|   0   |   1   | **1** |
+|   1   |   0   | **1** |
+|   1   |   1   | **0** |
 
 -----
 
@@ -198,3 +198,5 @@ Para compilar e rodar estes exemplos, certifique-se de ter o **JDK (Java Develop
 3.  Dentro da pasta `src`, clique com o botão direito e escolha `New` \> `Java Class`.
 4.  Nomeie a classe (ex: `Programa`) e cole o código dentro dela.
 5.  Clique na seta verde (▶️) ao lado do método `main` para executar.
+
+---

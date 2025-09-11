@@ -24,6 +24,8 @@ Os operadores comparativos são utilizados para comparar dois valores. Eles são
 | `==`     | Igual            |
 | `!=`     | Diferente        |
 
+---
+
 ### Exemplos de Expressões Comparativas
 (Suponha `x` igual a 5)
 
@@ -33,6 +35,8 @@ Os operadores comparativos são utilizados para comparar dois valores. Eles são
 | `x == 3`  | Falso       |
 | `10 <= 30`| Verdadeiro  |
 | `x != 2`  | Verdadeiro  |
+
+---
 
 ## 🧠 Expressões Lógicas
 
@@ -50,6 +54,8 @@ Estes operadores são usados para criar condições mais complexas. São comuns 
 | `&&`     | E           |
 | `||`     | OU          |
 | `!`      | NÃO         |
+
+---
 
 ### Exemplos de Expressões Lógicas
 (Suponha `x` igual a 5)
@@ -86,6 +92,8 @@ Para que uma expressão com o operador "E" (`&&`) seja verdadeira, **todas** as 
 | Verd. | Falso | Falso  |
 | Verd. | Verd. | Verd.  |
 
+---
+
 ### Ideia por trás do Operador "OU" (||) 💡
 Para que uma expressão com o operador "OU" (`||`) seja verdadeira, **pelo menos uma** das condições individuais deve ser verdadeira.
 
@@ -121,6 +129,8 @@ Para que uma expressão com o operador "OU" (`||`) seja verdadeira, **pelo menos
 | Verd. | Falso | Verd.    |
 | Verd. | Verd. | Verd.    |
 
+---
+
 ### Ideia por trás do Operador "NÃO" (!) 💡
 O operador "NÃO" (`!`) inverte o valor verdade de uma condição. Se a condição é verdadeira, `!` a torna falsa, e vice-versa.
 
@@ -150,17 +160,20 @@ O operador "NÃO" (`!`) inverte o valor verdade de uma condição. Se a condiç�
 | Falso | Verd. |
 | Verd. | Falso |
 
+---
+
 ## ⚙️ Estrutura Condicional
 
 ### Conceito
 A estrutura condicional é uma estrutura de controle que permite definir que um certo bloco de comandos somente será executado dependendo de uma condição (uma expressão lógica).
 
-```
-          condição
-         /        \
-Verdadeiro (V)   Falso (F)
-   |                |
-Bloco 1          Bloco 2 (ou nada)
+```mermaid
+graph TD
+    A(Início) --> B{Condição};
+    B -- Verdadeiro --> C[Executa Bloco 1];
+    B -- Falso --> D[Executa Bloco 2];
+    C --> E(Fim);
+    D --> E;
 ```
 
 ### Sintaxe da Estrutura Condicional 📝
@@ -292,6 +305,8 @@ São atalhos para operações onde uma variável é atualizada com base em seu p
 | `/=`       | `a /= b;`  | `a = a / b;`  |
 | `%=`       | `a %= b;`  | `a = a % b;`  |
 
+---
+
 ### Sintaxe Opcional: Estrutura `switch-case` 🔄
 Quando se tem várias opções de fluxo a serem tratadas com base no valor de uma única variável (geralmente inteira, caractere ou String), ao invés de várias estruturas `if-else if` encadeadas, alguns preferem utilizar a estrutura `switch-case`. É útil para legibilidade quando há muitos casos discretos.
 
@@ -384,6 +399,8 @@ public class DiaDaSemanaSwitch {
     }
 }
 ```
+---
+
 **Observação sobre `switch-case`:**
 * A instrução `break` é crucial. Se omitida, o `switch` executa o bloco `case` correspondente e todos os blocos `case` subsequentes até encontrar um `break` ou o fim do `switch`. Isso é chamado de "fall-through".
 * O bloco `default` é opcional e é executado se nenhum dos `case` corresponder ao valor da expressão.

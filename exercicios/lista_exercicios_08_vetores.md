@@ -11,8 +11,6 @@
 
 ## 🧩 Parte 8: Exercícios em Java: Memória Vetores e Listas
 
-Claro, aqui estão os enunciados dos problemas, formatados em Markdown e sem as citações.
-
 ## Problema "negativos"
 
 Faça um programa que leia um número inteiro positivo N (máximo $=10)$ e depois N números inteiros e armazene-os em um vetor. Em seguida, o programa deve mostrar na tela todos os números negativos que foram lidos.

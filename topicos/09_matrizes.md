@@ -188,7 +188,6 @@ Você pode compilar e executar este código Java em diversos ambientes de desenv
 4.  Crie uma classe Java (`ProgramaMatriz`) dentro do pacote: clique com o botão direito no pacote > `New` > `Java Class`.
 5.  Cole o código na classe.
 6.  Para executar, clique na seta verde ao lado da declaração do método `main` ou da classe e selecione "Run 'ProgramaMatriz.main()' ". A entrada e saída de dados ocorrerão na janela "Run" na parte inferior.
-Claro! Aqui está a correção e aprimoramento do trecho em Markdown, com melhorias na clareza, formatação e indentação do diagrama de memória:
 
 ---
 

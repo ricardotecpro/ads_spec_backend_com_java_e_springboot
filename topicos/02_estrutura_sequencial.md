@@ -17,13 +17,15 @@ Uma **expressão aritmética** é uma combinação de operandos (valores, variá
 
 As linguagens C, C++, Java e C# utilizam os seguintes operadores aritméticos:
 
-| Operador | Significado             |
-| :------- | :---------------------- |
-| `+`      | Adição                  |
-| `-`      | Subtração               |
-| `*`      | Multiplicação           |
-| `/`      | Divisão                 |
+| Operador | Significado              |
+|:---------|:-------------------------|
+| `+`      | Adição                   |
+| `-`      | Subtração                |
+| `*`      | Multiplicação            |
+| `/`      | Divisão                  |
 | `%`      | Resto da divisão ("mod") |
+
+---
 
 **Precedência dos Operadores:**
 1.  `*` `/` `%` (Multiplicação, Divisão, Módulo)
@@ -100,19 +102,21 @@ String nome = "João"; // String não é um tipo primitivo, mas uma classe.
 
 Java possui oito tipos de dados primitivos:
 
-| Descrição                          | Tipo      | Tamanho | Valores Mínimos e Máximos Aproximados        | Valor Padrão |
-| :--------------------------------- | :-------- | :------ | :----------------------------------------- | :----------- |
-| **Tipos Numéricos Inteiros** |           |         |                                            |              |
-| Representa um byte                 | `byte`    | 8 bits  | -128 a 127                                 | `0`          |
-| Inteiro curto                      | `short`   | 16 bits | -32768 a 32767                             | `0`          |
-| Inteiro padrão                     | `int`     | 32 bits | -2.147.483.648 a 2.147.483.647             | `0`          |
-| Inteiro longo                      | `long`    | 64 bits | -9 x 10^{18} a 9 x 10^{18} (aproximadamente) | `0L`         |
-| **Tipos Numéricos com Ponto Flutuante** |        |         |                                            |              |
-| Ponto flutuante de precisão simples| `float`   | 32 bits | +/- 3.4 x 10^{38}                          | `0.0f`       |
-| Ponto flutuante de precisão dupla  | `double`  | 64 bits | +/- 1.8 x 10^{308}                         | `0.0`        |
-| **Outros Tipos** |           |         |                                            |              |
-| Um caractere Unicode               | `char`    | 16 bits | '\u0000' a '\uFFFF' (0 a 65535)            | `'\u0000'`   |
-| Valor verdade (booleano)           | `boolean` | 1 bit   | `true` ou `false`                            | `false`      |
+| Descrição                               | Tipo      | Tamanho | Valores Mínimos e Máximos Aproximados        | Valor Padrão |
+|:----------------------------------------|:----------|:--------|:---------------------------------------------|:-------------|
+| **Tipos Numéricos Inteiros**            |           |         |                                              |              |
+| Representa um byte                      | `byte`    | 8 bits  | -128 a 127                                   | `0`          |
+| Inteiro curto                           | `short`   | 16 bits | -32768 a 32767                               | `0`          |
+| Inteiro padrão                          | `int`     | 32 bits | -2.147.483.648 a 2.147.483.647               | `0`          |
+| Inteiro longo                           | `long`    | 64 bits | -9 x 10^{18} a 9 x 10^{18} (aproximadamente) | `0L`         |
+| **Tipos Numéricos com Ponto Flutuante** |           |         |                                              |              |
+| Ponto flutuante de precisão simples     | `float`   | 32 bits | +/- 3.4 x 10^{38}                            | `0.0f`       |
+| Ponto flutuante de precisão dupla       | `double`  | 64 bits | +/- 1.8 x 10^{308}                           | `0.0`        |
+| **Outros Tipos**                        |           |         |                                              |              |
+| Um caractere Unicode                    | `char`    | 16 bits | '\u0000' a '\uFFFF' (0 a 65535)              | `'\u0000'`   |
+| Valor verdade (booleano)                | `boolean` | 1 bit   | `true` ou `false`                            | `false`      |
+
+---
 
 **Nota sobre Bits e Possibilidades:**
 -   Um bit pode armazenar 2 valores possíveis (0 ou 1).
@@ -619,11 +623,13 @@ A classe `java.lang.Math` (que é importada automaticamente) fornece métodos es
 
 ### Algumas Funções Matemáticas Comuns
 
-| Exemplo de Uso         | Significado                                        |
-| :--------------------- | :------------------------------------------------- |
-| `A = Math.sqrt(x);`  | Variável A recebe a raiz quadrada de `x`.            |
+| Exemplo de Uso        | Significado                                         |
+|:----------------------|:----------------------------------------------------|
+| `A = Math.sqrt(x);`   | Variável A recebe a raiz quadrada de `x`.           |
 | `A = Math.pow(x, y);` | Variável A recebe o resultado de `x` elevado a `y`. |
-| `A = Math.abs(x);`   | Variável A recebe o valor absoluto (módulo) de `x`.|
+| `A = Math.abs(x);`    | Variável A recebe o valor absoluto (módulo) de `x`. |
+
+---
 
 **Exemplo Prático:**
 ```java

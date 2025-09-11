@@ -1,5 +1,3 @@
-Com certeza\! Como arquiteto de software, é um prazer refinar a documentação técnica para torná-la um guia prático e claro. A seguir, apresento uma versão aprimorada do conteúdo sobre JDBC e o padrão DAO, com foco na estrutura do projeto e em exemplos de código detalhados.
-
 ### **Visão Arquitetural: Acesso a Dados com JDBC e o Padrão DAO**
 
 O **JDBC (Java Database Connectivity)** é a API fundamental do Java que nos permite executar comandos SQL em um banco de dados relacional. Embora poderosa, a utilização direta do JDBC pode levar a um código repetitivo e acoplado à sua infraestrutura.
