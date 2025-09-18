@@ -400,6 +400,560 @@ Produto p2 = new Produto("TV LED", 1200.00, 10); // Usa o construtor com 3 parâ
 Produto p3 = new Produto("Mouse Sem Fio", 80.00); // Usa o construtor com 2 parâmetros (quantidade será 0)
 ```
 
+
+---
+Versão **sem encapsulamento**, ou seja, o atributo `saldo` será **público** e acessado diretamente, sem métodos `getSaldo()`, `depositar()` ou `sacar()`.
+
+---
+
+### 📁 `ContaBancaria.java`
+
+```java
+public class ContaBancaria {
+    public double saldo; // atributo público
+}
+```
+
+---
+
+### 📁 `Principal.java`
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+        
+        conta.saldo = 100; // depósito direto
+        conta.saldo -= 30; // saque direto
+
+        System.out.println("Saldo atual: R$" + conta.saldo);
+    }
+}
+```
+
+---
+
+Aqui está a **versão intermediária**: o atributo `saldo` **não é mais `private` (é `public`)**, mas ainda existem os **métodos para depositar, sacar e consultar o saldo**.
+
+---
+
+### 📁 `ContaBancaria.java`
+
+```java
+public class ContaBancaria {
+    public double saldo; // agora é público
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+```
+
+---
+
+### 📁 `Principal.java`
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+        
+        conta.depositar(100);
+        conta.sacar(30);
+
+        System.out.println("Saldo atual: R$" + conta.getSaldo());
+    }
+}
+```
+
+---
+
+Aqui está a **terceira versão**, onde você pode **usar tanto os métodos quanto acessar o atributo diretamente** — ou seja, `saldo` é público **e** os métodos continuam disponíveis:
+
+---
+
+### 📁 `ContaBancaria.java`
+
+```java
+public class ContaBancaria {
+    public double saldo; // público
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+```
+
+---
+
+### 📁 `Principal.java`
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+
+        // usando os métodos
+        conta.depositar(100);
+        conta.sacar(30);
+
+        System.out.println("Saldo via método: R$" + conta.getSaldo());
+
+        // acessando diretamente o atributo
+        conta.saldo += 50;  // depósito direto
+        conta.saldo -= 20;  // saque direto
+
+        System.out.println("Saldo via acesso direto: R$" + conta.saldo);
+    }
+}
+```
+
+---
+
+Abaixo estão as **três versões lado a lado** com seus códigos e **explicações das diferenças principais** 👇
+
+---
+
+## 🛡️ 1. Versão com Encapsulamento (padrão recomendado)
+
+**ContaBancaria.java**
+
+```java
+public class ContaBancaria {
+    private double saldo; // privado
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+```
+
+**Principal.java**
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+
+        conta.depositar(100);
+        conta.sacar(30);
+
+        System.out.println("Saldo atual: R$" + conta.getSaldo());
+    }
+}
+```
+
+🔒 **Características**
+
+* `saldo` é `private` → não pode ser alterado diretamente.
+* Só pode modificar o saldo usando os métodos `depositar()` e `sacar()`.
+* Garante **segurança e controle** sobre os dados.
+* É a **forma correta segundo o conceito de encapsulamento** da programação orientada a objetos.
+
+---
+
+## ⚙️ 2. Versão sem Encapsulamento (tudo público)
+
+**ContaBancaria.java**
+
+```java
+public class ContaBancaria {
+    public double saldo; // público
+}
+```
+
+**Principal.java**
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+
+        conta.saldo = 100; // depósito direto
+        conta.saldo -= 30; // saque direto
+
+        System.out.println("Saldo atual: R$" + conta.saldo);
+    }
+}
+```
+
+⚠️ **Características**
+
+* `saldo` é `public` → qualquer código pode mudar o valor direto.
+* Não existem métodos de controle (qualquer valor pode ser atribuído, inclusive negativo).
+* É **mais simples, mas inseguro**: pode causar inconsistências facilmente.
+
+---
+
+## ⚖️ 3. Versão Mista (público + métodos)
+
+**ContaBancaria.java**
+
+```java
+public class ContaBancaria {
+    public double saldo; // público
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+```
+
+**Principal.java**
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+
+        // usando métodos
+        conta.depositar(100);
+        conta.sacar(30);
+
+        System.out.println("Saldo via método: R$" + conta.getSaldo());
+
+        // acessando diretamente
+        conta.saldo += 50;  // depósito direto
+        conta.saldo -= 20;  // saque direto
+
+        System.out.println("Saldo via acesso direto: R$" + conta.saldo);
+    }
+}
+```
+
+⚖️ **Características**
+
+* `saldo` é `public`, mas ainda existem métodos que impõem regras (como impedir depósitos negativos).
+* Permite **duas formas de acesso**, mas isso pode **quebrar a segurança** se usarem o acesso direto.
+* É uma **fase intermediária**, útil para aprendizado, mas **não recomendada em sistemas reais**.
+
+---
+
+## 📝 Resumo das Diferenças
+
+| Versão                    | Atributo `saldo` | Métodos de controle | Segurança | Uso recomendado                |
+| ------------------------- | ---------------- | ------------------- | --------- | ------------------------------ |
+| Encapsulada               | `private`        | ✅ sim               | Alta      | Sistemas reais / profissionais |
+| Sem encapsulamento        | `public`         | ❌ não               | Baixa     | Apenas para testes simples     |
+| Mista (público + métodos) | `public`         | ✅ sim               | Média     | Estudos / transição            |
+
+---
+
+Aqui está um **diagrama conceitual simples** que mostra como o acesso ao atributo `saldo` muda em cada versão 👇
+
+---
+
+## 🛡️ Versão Encapsulada
+
+```
+Principal
+   |
+   | chama métodos
+   v
+ContaBancaria
+   - saldo (private)
+   + depositar()
+   + sacar()
+   + getSaldo()
+```
+
+* `saldo` é **privado** (`-`), só pode ser acessado indiretamente por métodos públicos (`+`).
+* Garante segurança e controle das regras de negócio.
+
+---
+
+## ⚠️ Versão Sem Encapsulamento
+
+```
+Principal
+   |
+   | acessa diretamente
+   v
+ContaBancaria
+   + saldo (public)
+```
+
+* `saldo` é **público** (`+`), qualquer parte do código pode mudar o valor livremente.
+* Não há proteção contra valores inválidos.
+
+---
+
+## ⚖️ Versão Mista (público + métodos)
+
+```
+Principal
+   |                \
+   | métodos          \ acesso direto
+   v                   v
+ContaBancaria
+   + saldo (public)
+   + depositar()
+   + sacar()
+   + getSaldo()
+```
+
+* Existem **duas formas de acesso**: direta e via métodos.
+* Pode causar **inconsistência** se os dois forem usados de forma misturada.
+
+
+
+
+🧩 Aqui estão os três diagramas usando o padrão ****.
+
+---
+
+## 🛡️ Versão Encapsulada
+
+```mermaid
+classDiagram
+    class Principal {
+        +main(String[] args)
+    }
+
+    class ContaBancaria {
+        -double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    Principal --> ContaBancaria : usa métodos
+```
+
+---
+
+## ⚠️ Versão Sem Encapsulamento
+
+```mermaid
+classDiagram
+    class Principal {
+        +main(String[] args)
+    }
+
+    class ContaBancaria {
+        +double saldo
+    }
+
+    Principal --> ContaBancaria : acesso direto
+```
+
+---
+
+## ⚖️ Versão Mista (público + métodos)
+
+```mermaid
+classDiagram
+    class Principal {
+        +main(String[] args)
+    }
+
+    class ContaBancaria {
+        +double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    Principal --> ContaBancaria : métodos e acesso direto
+```
+
+---
+
+Agora **unir os três diagramas em um só**, lado a lado, para facilitar a comparação visual.
+
+---
+
+classDiagram
+    %% =========================
+    %% Versão 1 - Encapsulada
+    %% =========================
+    class PrincipalEncapsulada {
+        +main(String[] args)
+    }
+
+    class ContaBancariaEncapsulada {
+        -double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    PrincipalEncapsulada --> ContaBancariaEncapsulada : usa métodos
+
+
+    %% =========================
+    %% Versão 2 - Sem Encapsulamento
+    %% =========================
+    class PrincipalSem {
+        +main(String[] args)
+    }
+
+    class ContaBancariaSem {
+        +double saldo
+    }
+
+    PrincipalSem --> ContaBancariaSem : acesso direto
+
+
+    %% =========================
+    %% Versão 3 - Mista
+    %% =========================
+    class PrincipalMista {
+        +main(String[] args)
+    }
+
+    class ContaBancariaMista {
+        +double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    PrincipalMista --> ContaBancariaMista : métodos e acesso direto
+
+
+---
+
+🖌️
+Aqui está o **mesmo diagrama  com cores e estereótipos** :
+
+---
+
+```mermaid
+classDiagram
+    %% =========================
+    %% Versão 1 - Encapsulada
+    %% =========================
+    class PrincipalEncapsulada {
+        <<Main>>
+        +main(String[] args)
+    }
+
+    class ContaBancariaEncapsulada {
+        <<Encapsulada>>
+        -double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    class PrincipalEncapsulada:::mainClass
+    class ContaBancariaEncapsulada:::encapsuladaClass
+
+    PrincipalEncapsulada --> ContaBancariaEncapsulada : usa métodos
+
+
+    %% =========================
+    %% Versão 2 - Sem Encapsulamento
+    %% =========================
+    class PrincipalSem {
+        <<Main>>
+        +main(String[] args)
+    }
+
+    class ContaBancariaSem {
+        <<Sem Encapsulamento>>
+        +double saldo
+    }
+
+    class PrincipalSem:::mainClass
+    class ContaBancariaSem:::semClass
+
+    PrincipalSem --> ContaBancariaSem : acesso direto
+
+
+    %% =========================
+    %% Versão 3 - Mista
+    %% =========================
+    class PrincipalMista {
+        <<Main>>
+        +main(String[] args)
+    }
+
+    class ContaBancariaMista {
+        <<Mista>>
+        +double saldo
+        +void depositar(double valor)
+        +void sacar(double valor)
+        +double getSaldo()
+    }
+
+    class PrincipalMista:::mainClass
+    class ContaBancariaMista:::mistaClass
+
+    PrincipalMista --> ContaBancariaMista : métodos e acesso direto
+
+
+    %% =========================
+    %% Estilos
+    %% =========================
+    %% classDef mainClass fill:#fef9c3,stroke:#d97706,stroke-width:2px;
+    %% classDef encapsuladaClass fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+    %% classDef semClass fill:#fee2e2,stroke:#dc2626,stroke-width:2px;
+    %% classDef mistaClass fill:#e0e7ff,stroke:#2563eb,stroke-width:2px;
+```
+
+---
+
+📌 **Legenda das cores**
+
+* 🟢 **Verde** = Encapsulada (segura e recomendada)
+* 🔴 **Vermelho** = Sem encapsulamento (insegura)
+* 🔵 **Azul** = Mista (intermediária)
+* 🟡 **Amarelo** = Classe principal `main`
+
+---
+
+---
+
 ## Encapsulamento 🛡️
 
 **Encapsulamento** é um dos pilares da Programação Orientada a Objetos. Consiste em **esconder detalhes de implementação** de uma classe, expondo apenas operações seguras e que mantenham os objetos em um estado consistente.
@@ -830,6 +1384,7 @@ public class ProgramaPrincipal {
         sc.close();
     }
 }
+
 ```
 
 ---

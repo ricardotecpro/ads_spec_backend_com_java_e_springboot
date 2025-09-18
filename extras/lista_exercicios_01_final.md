@@ -134,7 +134,3 @@ Escreva um programa que permita ao usuário:
 ---
 
 ### Fim da Lista de Exercícios
-
----
-
-### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
