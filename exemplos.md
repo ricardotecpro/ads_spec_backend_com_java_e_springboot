@@ -3,7 +3,7 @@
 
 Em revisão 
 
-- [Exemplos](exemplos/exemplo_01.md)
+* **[Exemplos](exemplos/exemplo_01.md)**
 
 
 ---
