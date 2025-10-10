@@ -4,12 +4,6 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ---
 
-## 📂 Tópicos
-
-- [Paradigmas de Programação](https://ricardotecpro.github.io/ads_mod_10_paradigmas_e_padroes_de_projeto/)
-
----
-
 ## 📚 Conteúdo
 
 - [Introdução à Linguagem Java](topicos/01_introducao_a_linguagem_java.md)
@@ -49,6 +43,18 @@ Este repositório contém o material utilizado nas aulas do curso de Java. Os co
 
 ---
 
+# ⚒️ Projetos
+
+* **[Projetos](./projetos/)**: Projetos: Estudo de Casos
+
+---
+
+
+--- 
+* **[Lista de Tarefa 01](./projetos/listadetarefas_01/)**: Lista de Tarefas 01
+* --[Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip) 
+
+
 ## 💡 Exemplos
 
 Em revisão 
@@ -63,6 +69,13 @@ Em revisão
 Em revisão
 
 - [Desafios](desafios/desafio_01.md)
+
+
+---
+
+## 📂 Tópicos
+
+- [Paradigmas de Programação](https://ricardotecpro.github.io/ads_mod_10_paradigmas_e_padroes_de_projeto/)
 
 ---
 
