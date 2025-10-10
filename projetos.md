@@ -1,7 +1,7 @@
-# Listas de Tarefas v5.0
+# Listas de Tarefas v1.1
 
 
-### **Desenvolvimento Full-Stackcom Java: Construindo um To-Do List**
+### **Desenvolvimento Full-Stack com Java: Construindo um To-Do List**
 
 **Objetivo Geral:** Ao final do curso, o aluno será capaz de projetar, desenvolver e integrar uma aplicação completa seguindo o padrão arquitetural MVC. Ele dominará a criação de um backend RESTful com Spring Boot, o consumo dessa API por um cliente web moderno com Angular e por um cliente desktop nativo com JavaFX.
 
@@ -59,8 +59,6 @@
           * **JDK (Java Development Kit):** Versão 17 ou superior.
           * **IDE (Ambiente de Desenvolvimento Integrado):** IntelliJ IDEA Community ou VS Code com extensões Java.
           * **Maven ou Gradle:** Gerenciador de dependências do Java.
-          * **Node.js e npm:** Para o ambiente Angular.
-          * **Angular CLI:** `npm install -g @angular/cli`
           * **Postman/Insomnia:** Ferramenta para testar a API REST.
           * **Scene Builder:** Ferramenta visual para criar as telas em JavaFX.
 
