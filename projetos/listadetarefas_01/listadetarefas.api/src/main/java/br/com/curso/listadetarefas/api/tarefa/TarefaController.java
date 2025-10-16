@@ -1,23 +1,13 @@
 package br.com.curso.listadetarefas.api.tarefa;
 
-// Novas importações
-
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-// Novas importações
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@RestController // Spring: Define que esta classe é um controller REST
-@RequestMapping("/tarefas") // Define a URL base para todos os métodos: http://localhost:8080/tarefas
+@RestController
+@RequestMapping("/api/v1/tarefas")
 public class TarefaController {
 
     private final TarefaService tarefaService;
@@ -26,25 +16,36 @@ public class TarefaController {
         this.tarefaService = tarefaService;
     }
 
-    @GetMapping // Mapeia requisições HTTP GET para este método
+    @GetMapping
     public List<Tarefa> listarTarefas() {
         return tarefaService.listarTodas();
     }
 
-    // NOVO MÉTODO
-    @PostMapping // Mapeia requisições HTTP POST
-    @ResponseStatus(HttpStatus.CREATED) // Retorna o status 201 Created em caso de sucesso
-    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
-        // @RequestBody indica que os dados da tarefa virão no corpo da requisição
-        return tarefaService.criarTarefa(tarefa);
+    @GetMapping("/{id}")
+    public ResponseEntity<Tarefa> buscarPorId(@PathVariable Long id) {
+        return tarefaService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    // NOVO MÉTODO
-    @PutMapping("/{id}") // Mapeia requisições HTTP PUT para /tarefas/{id}
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
+        return tarefaService.salvar(tarefa); // Use salvar
+    }
+
+    @PutMapping("/{id}")
     public ResponseEntity<Tarefa> atualizarTarefa(@PathVariable Long id, @RequestBody Tarefa tarefa) {
-        // @PathVariable extrai o 'id' da URL
         return tarefaService.atualizarTarefa(id, tarefa)
-                .map(tarefaAtualizada -> ResponseEntity.ok(tarefaAtualizada))
-                .orElse(ResponseEntity.notFound().build()); // Retorna 404 se não encontrar
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarTarefa(@PathVariable Long id) {
+        if (tarefaService.deletarTarefa(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }

@@ -2,17 +2,41 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-    <tr th:fragment="linha-tarefa" th:id="'tarefa-' + ${tarefa.id}">
-        <td th:classappend="${tarefa.concluida} ? 'concluida-texto'">
-            <input type="checkbox" th:checked="${tarefa.concluida}">
-        </td>
-        <td th:text="${tarefa.titulo}" th:classappend="${tarefa.concluida} ? 'concluida-texto'">
-            Título da Tarefa
-        </td>
-        <td>
-            <button class="btn-delete">Deletar</button>
-        </td>
-    </tr>
+<!-- FRAGMENTO: Linha da Tabela -->
+<tr th:fragment="linha-tarefa(tarefa)" th:id="'tarefa-' + ${tarefa.id}">
+    <!-- Célula do Checkbox -->
+    <td th:classappend="${tarefa.concluida} ? 'concluida-texto' : ''">
+        <input type="checkbox" th:checked="${tarefa.concluida}"
+               th:hx-post="'/tarefas/' + ${tarefa.id} + '/toggle'"  <!-- URL via concatenação -->
+               hx-target="'#tarefa-' + ${tarefa.id}"
+               hx-swap="outerHTML">
+    </td>
+    <!-- Célula do Título -->
+    <td th:text="${tarefa.titulo}" th:classappend="${tarefa.concluida} ? 'concluida-texto' : ''"></td>
+    <!-- Célula das Ações -->
+    <td class="actions">
+        <button class="btn-edit"
+                th:hx-get="'/tarefas/' + ${tarefa.id} + '/edit'" <!-- URL via concatenação -->
+                hx-target="'#tarefa-' + ${tarefa.id}"
+                hx-swap="outerHTML">Editar</button>
+        <button class="btn-delete"
+                th:hx-delete="'/tarefas/' + ${tarefa.id}" <!-- URL via concatenação -->
+                hx-target="'#tarefa-' + ${tarefa.id}"
+                hx-swap="outerHTML"
+                hx-confirm="Tem certeza que deseja apagar esta tarefa?">Deletar</button>
+    </td>
+</tr>
+
+<!-- FRAGMENTO: Formulário de Edição -->
+<tr th:fragment="edit-form(tarefa)" th:id="'tarefa-' + ${tarefa.id}">
+    <td colspan="3">
+        <form class="edit-form" th:hx-put="'/tarefas/' + ${tarefa.id}" hx-target="'#tarefa-' + ${tarefa.id}" hx-swap="outerHTML">
+            <input type="text" name="titulo" th:value="${tarefa.titulo}" class="edit-input">
+            <button type="submit" class="btn-save">Salvar</button>
+            <button type="button" class="btn-cancel" th:hx-get="'/tarefas/' + ${tarefa.id}" hx-target="'#tarefa-' + ${tarefa.id}">Cancelar</button>
+        </form>
+    </td>
+</tr>
 
 </body>
 </html>

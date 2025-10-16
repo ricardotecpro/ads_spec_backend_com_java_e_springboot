@@ -1,11 +1,15 @@
 # ⚒️ Projetos
 
-* **[Projetos](./projetos/)**: Projetos: Estudo de Casos
-
 --- 
 
-* **[Lista de Tarefa 01](./projetos/listadetarefas_01/)**: Lista de Tarefas 01
+* **[Lista de Tarefa 01 - Backend API](./projetos/listadetarefas_01/listadetarefas.api.md)**
+* **[Lista de Tarefa 01 - Frontend Web](./projetos/listadetarefas_01/listadetarefas.web.md)**
 * --[Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip) 
+
+---
+
+* **[Biblioteca de Jogos 01](./projetos/bibliotecajogos_01)**
+* --[Spring Initialzr](./projetos/bibliotecajogos_01/bibliotecajogos.zip)
 
 ---
 

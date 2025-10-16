@@ -1,0 +1,45 @@
+services:
+  # Serviço do banco de dados PostgreSQL (já existente)
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: seu_usuario
+      POSTGRES_PASSWORD: sua_senha
+      POSTGRES_DB: bibliotecajogos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Serviço da nossa aplicação (já existente)
+  app:
+    build: .
+    container_name: biblioteca-jogos-app
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bibliotecajogos
+      - SPRING_DATASOURCE_USERNAME=seu_usuario
+      - SPRING_DATASOURCE_PASSWORD=sua_senha
+      - SPRING_PROFILES_ACTIVE=prod
+
+  # NOVO SERVIÇO: pgAdmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4-web
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"  # Email para login no pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: "admin"         # Senha para login no pgAdmin
+    ports:
+      - "5050:80"  # Mapeia a porta 5050 do seu PC para a 80 do container
+    depends_on:
+      - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:  # Adiciona o volume para o pgAdmin

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout :: layout (title=~{::title}, content=~{::section})}"
+>
+  <head>
+    <title th:text="${jogo.id == null ? 'Novo Jogo' : 'Editar Jogo'}">
+      Formulário de Jogo
+    </title>
+  </head>
+  <body>
+    <section>
+      <h1 th:text="${jogo.id == null ? 'Adicionar Novo Jogo' : 'Editar Jogo'}">
+        Formulário
+      </h1>
+
+      <div class="card">
+        <div class="card-body">
+          <form th:action="@{/jogos}" th:object="${jogo}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Título:</label>
+              <input
+                type="text"
+                id="titulo"
+                class="form-control"
+                th:field="*{titulo}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="autor" class="form-label">Autor:</label>
+              <input
+                type="text"
+                id="autor"
+                class="form-control"
+                th:field="*{autor}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="anoPublicacao" class="form-label"
+                >Ano de Publicação:</label
+              >
+              <input
+                type="number"
+                id="anoPublicacao"
+                class="form-control"
+                th:field="*{anoPublicacao}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="genero" class="form-label">Gênero:</label>
+              <input
+                type="text"
+                id="genero"
+                class="form-control"
+                th:field="*{genero}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="urlCapa" class="form-label">URL da Capa:</label>
+              <input
+                type="text"
+                id="urlCapa"
+                class="form-control"
+                th:field="*{urlCapa}"
+              />
+            </div>
+            <div class="form-check mb-3">
+              <input
+                type="checkbox"
+                id="finalizado"
+                class="form-check-input"
+                th:field="*{finalizado}"
+              />
+              <label for="finalizado" class="form-check-label"
+                >Finalizado</label
+              >
+            </div>
+            <div>
+              <button type="submit" class="btn btn-success">Salvar</button>
+              <a th:href="@{/jogos}" class="btn btn-secondary">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

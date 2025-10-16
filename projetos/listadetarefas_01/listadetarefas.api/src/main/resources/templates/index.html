@@ -14,13 +14,55 @@
         tr:nth-child(even) { background-color: #f2f9ff; }
         tr:hover { background-color: #e6f2ff; }
         .concluida-texto { text-decoration: line-through; color: #888; }
-        button { cursor: pointer; border: none; padding: 8px 12px; border-radius: 4px; color: white; }
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            color: white;
+            white-space: nowrap; /* Impede que o texto do botão quebre */
+        }
         .btn-delete { background-color: #dc3545; }
         .btn-delete:hover { background-color: #c82333; }
-        form { margin-top: 2rem; display: flex; gap: 10px; }
-        input[type="text"] { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        button[type="submit"] { background-color: #007bff; padding: 10px 15px; }
-        button[type="submit"]:hover { background-color: #0069d9; }
+        .btn-edit { background-color: #ffc107; color: #212529; }
+        .btn-edit:hover { background-color: #e0a800; }
+        .btn-save { background-color: #28a745; }
+        .btn-save:hover { background-color: #218838; }
+        .btn-cancel { background-color: #6c757d; }
+        .btn-cancel:hover { background-color: #5a6268; }
+
+        /* Container para os botões de ação (Editar/Deletar) */
+        .actions {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        /* Estilo geral para inputs de texto */
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex-grow: 1;
+        }
+
+        /* Formulário de nova tarefa (na parte inferior da página) */
+        form#new-task-form {
+            margin-top: 2rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Formulário de edição que aparece na linha da tabela */
+        form.edit-form {
+            display: flex;
+            width: 100%;
+            gap: 5px;
+            align-items: center;
+            margin: 0; /* Remove margens para alinhar dentro da célula */
+        }
+
     </style>
 </head>
 <body>
@@ -32,21 +74,24 @@
             <tr>
                 <th style="width: 10%;">Status</th>
                 <th>Título</th>
-                <th style="width: 15%;">Ações</th>
+                <th style="width: 25%;">Ações</th>
             </tr>
         </thead>
         <tbody id="tabela-tarefas">
-    <tr th:replace="~{fragments :: linha-tarefa(tarefa=${tarefa})}" th:each="tarefa : ${tarefas}"></tr>
-</tbody>
+            <th:block th:each="tarefa : ${tarefas}">
+                <tr th:replace="~{fragments :: linha-tarefa(tarefa=${tarefa})}"></tr>
+            </th:block>
+        </tbody>
     </table>
 
     <h2>Nova Tarefa</h2>
-    <form hx-post="/tarefas"
-      hx-target="#tabela-tarefas"
-      hx-swap="beforeend"
-      hx-on::after-request="this.reset()"> <input type="text" name="titulo" placeholder="O que precisa ser feito?" required>
-    <button type="submit">Adicionar</button>
-</form>
+    <form id="new-task-form" hx-post="/tarefas"
+          hx-target="#tabela-tarefas"
+          hx-swap="beforeend"
+          hx-on::after-request="this.reset()">
+        <input type="text" name="titulo" placeholder="O que precisa ser feito?" required>
+        <button type="submit">Adicionar</button>
+    </form>
 
 </body>
 </html>
