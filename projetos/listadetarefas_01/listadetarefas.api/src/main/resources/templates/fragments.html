@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <tr th:fragment="linha-tarefa" th:id="'tarefa-' + ${tarefa.id}">
+        <td th:classappend="${tarefa.concluida} ? 'concluida-texto'">
+            <input type="checkbox" th:checked="${tarefa.concluida}">
+        </td>
+        <td th:text="${tarefa.titulo}" th:classappend="${tarefa.concluida} ? 'concluida-texto'">
+            Título da Tarefa
+        </td>
+        <td>
+            <button class="btn-delete">Deletar</button>
+        </td>
+    </tr>
+
+</body>
+</html>

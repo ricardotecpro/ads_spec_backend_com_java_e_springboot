@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas Dinâmica</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem; background-color: #f9f9f9; color: #333; }
+        h1, h2 { color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        thead { background-color: #0056b3; color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: middle; }
+        tr:nth-child(even) { background-color: #f2f9ff; }
+        tr:hover { background-color: #e6f2ff; }
+        .concluida-texto { text-decoration: line-through; color: #888; }
+        button { cursor: pointer; border: none; padding: 8px 12px; border-radius: 4px; color: white; }
+        .btn-delete { background-color: #dc3545; }
+        .btn-delete:hover { background-color: #c82333; }
+        form { margin-top: 2rem; display: flex; gap: 10px; }
+        input[type="text"] { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button[type="submit"] { background-color: #007bff; padding: 10px 15px; }
+        button[type="submit"]:hover { background-color: #0069d9; }
+    </style>
+</head>
+<body>
+
+    <h1>Minha Lista de Tarefas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 10%;">Status</th>
+                <th>Título</th>
+                <th style="width: 15%;">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-tarefas">
+    <tr th:replace="~{fragments :: linha-tarefa(tarefa=${tarefa})}" th:each="tarefa : ${tarefas}"></tr>
+</tbody>
+    </table>
+
+    <h2>Nova Tarefa</h2>
+    <form hx-post="/tarefas"
+      hx-target="#tabela-tarefas"
+      hx-swap="beforeend"
+      hx-on::after-request="this.reset()"> <input type="text" name="titulo" placeholder="O que precisa ser feito?" required>
+    <button type="submit">Adicionar</button>
+</form>
+
+</body>
+</html>
