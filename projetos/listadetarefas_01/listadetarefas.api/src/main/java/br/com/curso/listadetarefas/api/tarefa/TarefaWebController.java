@@ -28,25 +28,25 @@ public class TarefaWebController {
         return "index";
     }
 
-    @PostMapping("/tarefas")
+    @PostMapping("/web/tarefas")
     public String criarTarefa(@RequestParam String titulo, Model model) {
         Tarefa novaTarefa = new Tarefa();
         novaTarefa.setTitulo(titulo);
         novaTarefa.setDescricao("");
         novaTarefa.setConcluida(false);
-        Tarefa tarefaSalva = tarefaService.salvar(novaTarefa); // Use salvar
+        Tarefa tarefaSalva = tarefaService.salvar(novaTarefa);
         model.addAttribute("tarefa", tarefaSalva);
         return "fragments :: linha-tarefa";
     }
 
-    @DeleteMapping("/tarefas/{id}")
+    @DeleteMapping("/web/tarefas/{id}")
     @ResponseBody
     public ResponseEntity<Void> deletarTarefa(@PathVariable Long id) {
         tarefaService.deletarTarefa(id);
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/tarefas/{id}/toggle")
+    @PostMapping("/web/tarefas/{id}/toggle")
     public String toggleTarefa(@PathVariable Long id, Model model) {
         return tarefaService.atualizarStatusTarefa(id)
                 .map(tarefa -> {
@@ -56,7 +56,7 @@ public class TarefaWebController {
                 .orElse("");
     }
 
-    @GetMapping("/tarefas/{id}/edit")
+    @GetMapping("/web/tarefas/{id}/edit")
     public String getEditForm(@PathVariable Long id, Model model) {
         return tarefaService.findById(id)
                 .map(tarefa -> {
@@ -66,19 +66,19 @@ public class TarefaWebController {
                 .orElse("");
     }
 
-    @PutMapping("/tarefas/{id}")
+    @PutMapping("/web/tarefas/{id}")
     public String atualizarTarefaWeb(@PathVariable Long id, @RequestParam String titulo, Model model) {
         return tarefaService.findById(id)
                 .map(tarefaExistente -> {
                     tarefaExistente.setTitulo(titulo);
-                    Tarefa tarefaAtualizada = tarefaService.salvar(tarefaExistente); // Use salvar
+                    Tarefa tarefaAtualizada = tarefaService.salvar(tarefaExistente);
                     model.addAttribute("tarefa", tarefaAtualizada);
                     return "fragments :: linha-tarefa";
                 })
                 .orElse("");
     }
 
-    @GetMapping("/tarefas/{id}")
+    @GetMapping("/web/tarefas/{id}")
     public String getTarefa(@PathVariable Long id, Model model) {
         return tarefaService.findById(id)
                 .map(tarefa -> {

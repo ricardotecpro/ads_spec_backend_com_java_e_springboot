@@ -3,8 +3,9 @@
 --- 
 
 * **[Lista de Tarefa 01 - Backend API](./projetos/listadetarefas_01/listadetarefas.api.md)**
+* --[Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip)
 * **[Lista de Tarefa 01 - Frontend Web](./projetos/listadetarefas_01/listadetarefas.web.md)**
-* --[Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip) 
+* **[Lista de Tarefa 01 - Scripts](./projetos/listadetarefas_01/listadetarefas.scripts.md)**
 
 ---
 

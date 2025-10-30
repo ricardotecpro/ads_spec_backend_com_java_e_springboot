@@ -38,7 +38,8 @@
          <columns>
             <TableColumn fx:id="colunaSelecao" prefWidth="50.0" text="Sel." />
             <TableColumn fx:id="colunaConcluida" prefWidth="75.0" text="Status" />
-            <TableColumn fx:id="colunaDescricao" prefWidth="450.0" text="Descrição" />
+            <TableColumn fx:id="colunaTitulo" prefWidth="200.0" text="Título" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="250.0" text="Descrição" />
             <TableColumn fx:id="colunaAcoes" prefWidth="150.0" text="Ações" />
          </columns>
          <columnResizePolicy>

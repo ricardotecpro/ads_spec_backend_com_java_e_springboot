@@ -5,10 +5,12 @@ import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.List;
@@ -21,6 +23,7 @@ public class MainViewController implements Initializable {
     @FXML private TableView<Tarefa> tabelaTarefas;
     @FXML private TableColumn<Tarefa, Boolean> colunaSelecao;
     @FXML private TableColumn<Tarefa, Boolean> colunaConcluida;
+    @FXML private TableColumn<Tarefa, String> colunaTitulo;
     @FXML private TableColumn<Tarefa, String> colunaDescricao;
     @FXML private TableColumn<Tarefa, Void> colunaAcoes;
     @FXML private TextField novaTarefaTextField;
@@ -47,6 +50,9 @@ public class MainViewController implements Initializable {
             tarefa.setConcluida(event.getNewValue());
             atualizarTarefa(tarefa);
         });
+
+        // Coluna de Título
+        colunaTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
 
         // Coluna de Descrição
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
@@ -88,13 +94,14 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void adicionarTarefa() {
-        String descricao = novaTarefaTextField.getText().trim();
-        if (descricao.isEmpty()) {
-            exibirAlerta("Campo Vazio", "A descrição não pode ser vazia.");
+        String titulo = novaTarefaTextField.getText().trim();
+        if (titulo.isEmpty()) {
+            exibirAlerta("Campo Vazio", "O título não pode ser vazio.");
             return;
         }
         Tarefa novaTarefa = new Tarefa();
-        novaTarefa.setDescricao(descricao);
+        novaTarefa.setTitulo(titulo);
+        novaTarefa.setDescricao(""); // A descrição pode ser adicionada/editada depois
         novaTarefa.setConcluida(false);
 
         Task<Void> task = new Task<>() {
@@ -128,24 +135,49 @@ public class MainViewController implements Initializable {
     }
 
     private void abrirDialogoEdicao(Tarefa tarefa) {
-        TextInputDialog dialog = new TextInputDialog(tarefa.getDescricao());
+        Dialog<Tarefa> dialog = new Dialog<>();
         dialog.setTitle("Editar Tarefa");
-        dialog.setHeaderText("Editando a tarefa: " + tarefa.getDescricao());
-        dialog.setContentText("Nova descrição:");
 
-        dialog.showAndWait().ifPresent(novaDescricao -> {
-            if (!novaDescricao.trim().isEmpty()) {
-                tarefa.setDescricao(novaDescricao.trim());
-                atualizarTarefa(tarefa);
-                tabelaTarefas.refresh();
+        // Configura os botões
+        ButtonType salvarButtonType = new ButtonType("Salvar", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(salvarButtonType, ButtonType.CANCEL);
+
+        // Cria os campos de texto
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20, 150, 10, 10));
+
+        TextField tituloField = new TextField(tarefa.getTitulo());
+        tituloField.setPromptText("Título");
+        TextArea descricaoArea = new TextArea(tarefa.getDescricao());
+        descricaoArea.setPromptText("Descrição");
+
+        grid.add(new Label("Título:"), 0, 0);
+        grid.add(tituloField, 1, 0);
+        grid.add(new Label("Descrição:"), 0, 1);
+        grid.add(descricaoArea, 1, 1);
+
+        dialog.getDialogPane().setContent(grid);
+
+        // Converte o resultado para um objeto Tarefa
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == salvarButtonType) {
+                tarefa.setTitulo(tituloField.getText());
+                tarefa.setDescricao(descricaoArea.getText());
+                return tarefa;
             }
+            return null;
         });
+
+        Optional<Tarefa> result = dialog.showAndWait();
+        result.ifPresent(this::atualizarTarefa);
     }
 
     private void confirmarExclusao(Tarefa tarefa) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmar Exclusão");
-        alert.setHeaderText("Excluir tarefa: " + tarefa.getDescricao());
+        alert.setHeaderText("Excluir tarefa: " + tarefa.getTitulo());
         alert.setContentText("Você tem certeza?");
         alert.showAndWait().filter(r -> r == ButtonType.OK).ifPresent(r -> deletarTarefa(tarefa));
     }

@@ -9,7 +9,7 @@ A aplicação nativa, com layout e funcionalidades consistentes com a versão we
 
 ### 🛠️ Ferramentas Necessárias
 
-  * **Java Development Kit (JDK):** Versão 17 ou superior.
+  * **Java Development Kit (JDK):** Versão 21.
   * **IDE:** IntelliJ IDEA ou VS Code com o "Extension Pack for Java".
 
 ### \#\#\# 📂 Passo 1: Criação e Configuração do Projeto
@@ -127,6 +127,14 @@ listadetarefas-desktop/
                 <version>3.11.0</version>
             </plugin>
             <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>br.com.curso.listadetarefas.desktop.Launcher</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.5.1</version>
@@ -208,7 +216,8 @@ module br.com.curso.listadetarefas.desktop {
          <columns>
             <TableColumn fx:id="colunaSelecao" prefWidth="50.0" text="Sel." />
             <TableColumn fx:id="colunaConcluida" prefWidth="75.0" text="Status" />
-            <TableColumn fx:id="colunaDescricao" prefWidth="450.0" text="Descrição" />
+            <TableColumn fx:id="colunaTitulo" prefWidth="200.0" text="Título" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="250.0" text="Descrição" />
             <TableColumn fx:id="colunaAcoes" prefWidth="150.0" text="Ações" />
          </columns>
          <columnResizePolicy>
@@ -269,6 +278,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tarefa {
     private Long id;
+    private String titulo;
     private String descricao;
     private boolean concluida;
 
@@ -277,6 +287,10 @@ public class Tarefa {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
     public boolean isConcluida() { return concluida; }
@@ -286,6 +300,7 @@ public class Tarefa {
     public BooleanProperty selecionadaProperty() { return selecionada; }
     public void setSelecionada(boolean selecionada) { this.selecionada.set(selecionada); }
 }
+
 ```
 
 **7. `TarefaApiService.java`**
@@ -306,10 +321,14 @@ import java.util.List;
 public class TarefaApiService {
     private final HttpClient client = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private final String API_URL = "http://localhost:8080/api/tarefas";
+    private final String API_URL = "http://localhost:8080/tarefas";
 
     public List<Tarefa> listarTarefas() {
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(API_URL)).GET().build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(API_URL))
+                .header("Accept", "application/json")
+                .GET()
+                .build();
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() == 200) {
@@ -327,6 +346,7 @@ public class TarefaApiService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL))
                     .header("Content-Type", "application/json")
+                    .header("Accept", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -341,6 +361,7 @@ public class TarefaApiService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL + "/" + tarefa.getId()))
                     .header("Content-Type", "application/json")
+                    .header("Accept", "application/json")
                     .PUT(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -353,6 +374,7 @@ public class TarefaApiService {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL + "/" + id))
+                    .header("Accept", "application/json")
                     .DELETE()
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -373,10 +395,12 @@ import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.List;
@@ -389,6 +413,7 @@ public class MainViewController implements Initializable {
     @FXML private TableView<Tarefa> tabelaTarefas;
     @FXML private TableColumn<Tarefa, Boolean> colunaSelecao;
     @FXML private TableColumn<Tarefa, Boolean> colunaConcluida;
+    @FXML private TableColumn<Tarefa, String> colunaTitulo;
     @FXML private TableColumn<Tarefa, String> colunaDescricao;
     @FXML private TableColumn<Tarefa, Void> colunaAcoes;
     @FXML private TextField novaTarefaTextField;
@@ -415,7 +440,10 @@ public class MainViewController implements Initializable {
             tarefa.setConcluida(event.getNewValue());
             atualizarTarefa(tarefa);
         });
-        
+
+        // Coluna de Título
+        colunaTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+
         // Coluna de Descrição
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
 
@@ -456,13 +484,14 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void adicionarTarefa() {
-        String descricao = novaTarefaTextField.getText().trim();
-        if (descricao.isEmpty()) {
-            exibirAlerta("Campo Vazio", "A descrição não pode ser vazia.");
+        String titulo = novaTarefaTextField.getText().trim();
+        if (titulo.isEmpty()) {
+            exibirAlerta("Campo Vazio", "O título não pode ser vazio.");
             return;
         }
         Tarefa novaTarefa = new Tarefa();
-        novaTarefa.setDescricao(descricao);
+        novaTarefa.setTitulo(titulo);
+        novaTarefa.setDescricao(""); // A descrição pode ser adicionada/editada depois
         novaTarefa.setConcluida(false);
 
         Task<Void> task = new Task<>() {
@@ -496,24 +525,49 @@ public class MainViewController implements Initializable {
     }
 
     private void abrirDialogoEdicao(Tarefa tarefa) {
-        TextInputDialog dialog = new TextInputDialog(tarefa.getDescricao());
+        Dialog<Tarefa> dialog = new Dialog<>();
         dialog.setTitle("Editar Tarefa");
-        dialog.setHeaderText("Editando a tarefa: " + tarefa.getDescricao());
-        dialog.setContentText("Nova descrição:");
 
-        dialog.showAndWait().ifPresent(novaDescricao -> {
-            if (!novaDescricao.trim().isEmpty()) {
-                tarefa.setDescricao(novaDescricao.trim());
-                atualizarTarefa(tarefa);
-                tabelaTarefas.refresh();
+        // Configura os botões
+        ButtonType salvarButtonType = new ButtonType("Salvar", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(salvarButtonType, ButtonType.CANCEL);
+
+        // Cria os campos de texto
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20, 150, 10, 10));
+
+        TextField tituloField = new TextField(tarefa.getTitulo());
+        tituloField.setPromptText("Título");
+        TextArea descricaoArea = new TextArea(tarefa.getDescricao());
+        descricaoArea.setPromptText("Descrição");
+
+        grid.add(new Label("Título:"), 0, 0);
+        grid.add(tituloField, 1, 0);
+        grid.add(new Label("Descrição:"), 0, 1);
+        grid.add(descricaoArea, 1, 1);
+
+        dialog.getDialogPane().setContent(grid);
+
+        // Converte o resultado para um objeto Tarefa
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == salvarButtonType) {
+                tarefa.setTitulo(tituloField.getText());
+                tarefa.setDescricao(descricaoArea.getText());
+                return tarefa;
             }
+            return null;
         });
+
+        Optional<Tarefa> result = dialog.showAndWait();
+        result.ifPresent(this::atualizarTarefa);
     }
 
     private void confirmarExclusao(Tarefa tarefa) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmar Exclusão");
-        alert.setHeaderText("Excluir tarefa: " + tarefa.getDescricao());
+        alert.setHeaderText("Excluir tarefa: " + tarefa.getTitulo());
         alert.setContentText("Você tem certeza?");
         alert.showAndWait().filter(r -> r == ButtonType.OK).ifPresent(r -> deletarTarefa(tarefa));
     }
@@ -573,6 +627,7 @@ public class MainViewController implements Initializable {
         });
     }
 }
+
 ```
 ---
 
@@ -617,6 +672,15 @@ mvn clean package
 ```bash
 java -jar target/listadetarefas-desktop-1.0-SNAPSHOT.jar
 ```
+
+ou
+
+```bash
+.\mvnw javafx:run
+```
+---
+
+Tela da aplicação desktop:
 
 ![Lista de Tarefas Desktop](https://ricardotecpro.github.io/ads_proj_aplicacao_full_stack/projetos/assets\listadetarefas-desktop.png)
 

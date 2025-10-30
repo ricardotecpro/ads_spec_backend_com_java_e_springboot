@@ -15,7 +15,7 @@ Vamos começar criando nosso projeto com o **Spring Initializr**, a ferramenta o
 
 1.  Acesse [start.spring.io](https://start.spring.io).
 2.  Preencha os metadados do projeto:
-    *   **Project**: `Maven`
+    *   **Project**: `Maven` 📌 | ⚠️ Atenção não usar Gradle
     *   **Language**: `Java`
     *   **Spring Boot**: Use a versão estável mais recente (ex: 3.x.x).
     *   **Group**: `br.com.curso`
@@ -295,7 +295,7 @@ public class TarefaController {
 }
 ```
 
-**Para testar:** Use uma ferramenta como o Postman ou Insomnia para enviar uma requisição `POST` para `http://localhost:8080/tarefas` com o seguinte corpo (JSON):
+**Para testar:** Use uma ferramenta como o Y.A.R.C, Postman ou Insomnia para enviar uma requisição `POST` para `http://localhost:8080/tarefas` com o seguinte corpo (JSON):
 
 ```json
 {
@@ -419,6 +419,24 @@ Com esses novos módulos, sua `TarefaController` e `TarefaService` estarão comp
 2.  **Tratamento de Exceções**: Criar um handler global para tratar erros de forma mais elegante.
 3.  **Paginação**: Implementar paginação no endpoint de listagem para lidar com grandes volumes de dados.
 4.  **Banco de Dados Real**: Trocar o H2 por um banco de dados como PostgreSQL ou MySQL.
+
+
+---
+
+
+### 3\. Parte 1: Executando a API e o App Web (Spring Boot)
+
+Há duas formas fáceis de fazer isso no VS Code:
+
+#### Método: Linha de Comando
+
+1.  No explorador de arquivos, navegue até o seu projeto `listadetarefas.api`.
+2.  Encontre o arquivo da sua aplicação principal:
+
+```bash
+mvn spring-boot:run
+```
+
 ---
 
 ### 🚀 [ricardotecpro.github.io](https://ricardotecpro.github.io/)

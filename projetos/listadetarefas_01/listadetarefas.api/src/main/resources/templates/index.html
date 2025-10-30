@@ -31,6 +31,8 @@
         .btn-save:hover { background-color: #218838; }
         .btn-cancel { background-color: #6c757d; }
         .btn-cancel:hover { background-color: #5a6268; }
+        .btn-refresh { background-color: #007bff; }
+        .btn-refresh:hover { background-color: #0069d9; }
 
         /* Container para os botões de ação (Editar/Deletar) */
         .actions {
@@ -39,19 +41,31 @@
             align-items: center;
         }
 
-        /* Estilo geral para inputs de texto */
-        input[type="text"] {
+        /* Estilo geral para inputs e textareas */
+        input[type="text"], textarea {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            flex-grow: 1;
+            font-family: inherit;
+            width: 100%;
+            box-sizing: border-box; /* Garante que padding não afete a largura final */
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
         }
 
         /* Formulário de nova tarefa (na parte inferior da página) */
         form#new-task-form {
             margin-top: 2rem;
             display: flex;
+            flex-direction: column; /* Empilha os campos */
             gap: 10px;
+        }
+
+        form#new-task-form button {
+            align-self: flex-start; /* Alinha o botão à esquerda */
         }
 
         /* Formulário de edição que aparece na linha da tabela */
@@ -63,24 +77,42 @@
             margin: 0; /* Remove margens para alinhar dentro da célula */
         }
 
+        /* Layout para o cabeçalho com título e botão de refresh */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            color: #888;
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Minha Lista de Tarefas</h1>
+    <div class="header-container">
+        <h1>Minha Lista de Tarefas</h1>
+        <button class="btn-refresh" hx-get="/tarefas/list" hx-target="#tabela-tarefas" hx-swap="innerHTML">Atualizar</button>
+    </div>
 
     <table>
         <thead>
             <tr>
                 <th style="width: 10%;">Status</th>
                 <th>Título</th>
-                <th style="width: 25%;">Ações</th>
+                <th>Descrição</th>
+                <th style="width: 20%;">Ações</th>
             </tr>
         </thead>
         <tbody id="tabela-tarefas">
-            <th:block th:each="tarefa : ${tarefas}">
-                <tr th:replace="~{fragments :: linha-tarefa(tarefa=${tarefa})}"></tr>
-            </th:block>
+            <th:block th:replace="~{fragments :: lista-tarefas(tarefas=${tarefas})}"></th:block>
         </tbody>
     </table>
 
@@ -90,8 +122,13 @@
           hx-swap="beforeend"
           hx-on::after-request="this.reset()">
         <input type="text" name="titulo" placeholder="O que precisa ser feito?" required>
-        <button type="submit">Adicionar</button>
+        <textarea name="descricao" placeholder="Adicione uma descrição..."></textarea>
+        <button type="submit" class="btn-save">Adicionar</button>
     </form>
+
+    <footer>
+        <p>Lista de Tarefas (c)2025</p>
+    </footer>
 
 </body>
 </html>

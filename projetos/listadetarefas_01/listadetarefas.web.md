@@ -390,52 +390,307 @@ HTMX funciona trocando pedaços de HTML. Precisamos de um bloco de HTML que repr
 
 ---
 
-### Etapa 10.3: 
+## 🔄 Módulo 11: Refatorando e Implementando novas funcionalidades 
 
-2.  **Código (classe `TarefaController`):**
 
-    ```java
-    // ... (as importações @PostMapping e @PathVariable já devem existir)
-
-    @PostMapping("/tarefas/{id}/toggle")
-    public String toggleTarefaConcluida(@PathVariable Long id, Model model) {
-        // Busca a tarefa no banco
-        tarefaService.findById(id).ifPresent(tarefa -> {
-            // Inverte o estado de 'concluida'
-            tarefa.setConcluida(!tarefa.isConcluida());
-            // Salva a tarefa atualizada
-            Tarefa tarefaAtualizada = tarefaService.atualizarTarefa(id, tarefa).orElse(tarefa);
-            // Adiciona ao modelo para enviar de volta ao fragmento
-            model.addAttribute("tarefa", tarefaAtualizada);
-        });
-
-        // Retorna o fragmento da linha atualizado
-        return "fragments :: linha-tarefa";
-    }
-    ```
+1.  **Ação:** No arquivo Java `TarefaWebController.java` no pacote `br.com.curso.listadetarefas.api.tarefa`.
     
+2.  **Código:** Adicione o seguinte conteúdo completo ao arquivo:
+
+```java
+    package br.com.curso.listadetarefas.api.tarefa;
+
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.ui.Model;
+    import org.springframework.web.bind.annotation.*;
+    
+    import java.util.Comparator;
+    import java.util.stream.Collectors;
+    
+    @Controller
+    @RequestMapping("/")
+    public class TarefaWebController {
+    
+        private final TarefaService tarefaService;
+    
+        public TarefaWebController(TarefaService tarefaService) {
+            this.tarefaService = tarefaService;
+        }
+    
+        @GetMapping
+        public String index(Model model) {
+            var tarefasOrdenadas = tarefaService.listarTodas()
+                    .stream()
+                    .sorted(Comparator.comparing(Tarefa::getId))
+                    .collect(Collectors.toList());
+            model.addAttribute("tarefas", tarefasOrdenadas);
+            return "index";
+        }
+    
+        @PostMapping("/web/tarefas")
+        public String criarTarefa(@RequestParam String titulo, Model model) {
+            Tarefa novaTarefa = new Tarefa();
+            novaTarefa.setTitulo(titulo);
+            novaTarefa.setDescricao("");
+            novaTarefa.setConcluida(false);
+            Tarefa tarefaSalva = tarefaService.salvar(novaTarefa);
+            model.addAttribute("tarefa", tarefaSalva);
+            return "fragments :: linha-tarefa";
+        }
+    
+        @DeleteMapping("/web/tarefas/{id}")
+        @ResponseBody
+        public ResponseEntity<Void> deletarTarefa(@PathVariable Long id) {
+            tarefaService.deletarTarefa(id);
+            return ResponseEntity.ok().build();
+        }
+    
+        @PostMapping("/web/tarefas/{id}/toggle")
+        public String toggleTarefa(@PathVariable Long id, Model model) {
+            return tarefaService.atualizarStatusTarefa(id)
+                    .map(tarefa -> {
+                        model.addAttribute("tarefa", tarefa);
+                        return "fragments :: linha-tarefa";
+                    })
+                    .orElse("");
+        }
+    
+        @GetMapping("/web/tarefas/{id}/edit")
+        public String getEditForm(@PathVariable Long id, Model model) {
+            return tarefaService.findById(id)
+                    .map(tarefa -> {
+                        model.addAttribute("tarefa", tarefa);
+                        return "fragments :: edit-form";
+                    })
+                    .orElse("");
+        }
+    
+        @PutMapping("/web/tarefas/{id}")
+        public String atualizarTarefaWeb(@PathVariable Long id, @RequestParam String titulo, Model model) {
+            return tarefaService.findById(id)
+                    .map(tarefaExistente -> {
+                        tarefaExistente.setTitulo(titulo);
+                        Tarefa tarefaAtualizada = tarefaService.salvar(tarefaExistente);
+                        model.addAttribute("tarefa", tarefaAtualizada);
+                        return "fragments :: linha-tarefa";
+                    })
+                    .orElse("");
+        }
+    
+        @GetMapping("/web/tarefas/{id}")
+        public String getTarefa(@PathVariable Long id, Model model) {
+            return tarefaService.findById(id)
+                    .map(tarefa -> {
+                        model.addAttribute("tarefa", tarefa);
+                        return "fragments :: linha-tarefa";
+                    })
+                    .orElse("");
+        }
+    }
+```
 
 ---
-### Etapa 10.4: 
 
-2.  **Código (adicionar dentro da classe `TarefaWebController`):**
+3.  **Ação:** Dentro de `templates`, no arquivo chamado `index.html`.
 
-    ```java
-    // ... (as importações @PostMapping e @PathVariable já devem existir)
+4.  **Código:** Adicione o seguinte conteúdo completo ao arquivo:
 
-    @PostMapping("/tarefas/{id}/toggle")
-    public String toggleTarefaConcluida(@PathVariable Long id, Model model) {
-        // Busca a tarefa no banco
-        tarefaService.findById(id).ifPresent(tarefa -> {
-            // Inverte o estado de 'concluida'
-            tarefa.setConcluida(!tarefa.isConcluida());
-            // Salva a tarefa atualizada
-            Tarefa tarefaAtualizada = tarefaService.atualizarTarefa(id, tarefa).orElse(tarefa);
-            // Adiciona ao modelo para enviar de volta ao fragmento
-            model.addAttribute("tarefa", tarefaAtualizada);
-        });
+```html
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas Dinâmica</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 
-        // Retorna o fragmento da linha atualizado
-        return "fragments :: linha-tarefa";
-    }
-    ```
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem; background-color: #f9f9f9; color: #333; }
+        h1, h2 { color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        thead { background-color: #0056b3; color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: middle; }
+        tr:nth-child(even) { background-color: #f2f9ff; }
+        tr:hover { background-color: #e6f2ff; }
+        .concluida-texto { text-decoration: line-through; color: #888; }
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            color: white;
+            white-space: nowrap; /* Impede que o texto do botão quebre */
+        }
+        .btn-delete { background-color: #dc3545; }
+        .btn-delete:hover { background-color: #c82333; }
+        .btn-edit { background-color: #ffc107; color: #212529; }
+        .btn-edit:hover { background-color: #e0a800; }
+        .btn-save { background-color: #28a745; }
+        .btn-save:hover { background-color: #218838; }
+        .btn-cancel { background-color: #6c757d; }
+        .btn-cancel:hover { background-color: #5a6268; }
+        .btn-refresh { background-color: #007bff; }
+        .btn-refresh:hover { background-color: #0069d9; }
+
+        /* Container para os botões de ação (Editar/Deletar) */
+        .actions {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        /* Estilo geral para inputs e textareas */
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            width: 100%;
+            box-sizing: border-box; /* Garante que padding não afete a largura final */
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        /* Formulário de nova tarefa (na parte inferior da página) */
+        form#new-task-form {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column; /* Empilha os campos */
+            gap: 10px;
+        }
+
+        form#new-task-form button {
+            align-self: flex-start; /* Alinha o botão à esquerda */
+        }
+
+        /* Formulário de edição que aparece na linha da tabela */
+        form.edit-form {
+            display: flex;
+            width: 100%;
+            gap: 5px;
+            align-items: center;
+            margin: 0; /* Remove margens para alinhar dentro da célula */
+        }
+
+        /* Layout para o cabeçalho com título e botão de refresh */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Minha Lista de Tarefas</h1>
+        <button class="btn-refresh" hx-get="/tarefas/list" hx-target="#tabela-tarefas" hx-swap="innerHTML">Atualizar</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 10%;">Status</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th style="width: 20%;">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-tarefas">
+            <th:block th:replace="~{fragments :: lista-tarefas(tarefas=${tarefas})}"></th:block>
+        </tbody>
+    </table>
+
+    <h2>Nova Tarefa</h2>
+    <form id="new-task-form" hx-post="/tarefas"
+          hx-target="#tabela-tarefas"
+          hx-swap="beforeend"
+          hx-on::after-request="this.reset()">
+        <input type="text" name="titulo" placeholder="O que precisa ser feito?" required>
+        <textarea name="descricao" placeholder="Adicione uma descrição..."></textarea>
+        <button type="submit" class="btn-save">Adicionar</button>
+    </form>
+
+    <footer>
+        <p>Lista de Tarefas (c)2025</p>
+    </footer>
+
+</body>
+</html>
+```
+
+---
+
+5. **Código (`templates/fragments.html`):**
+
+```html
+    <!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- FRAGMENTO: Lista de Tarefas -->
+<th:block th:fragment="lista-tarefas(tarefas)">
+    <th:block th:each="tarefa : ${tarefas}">
+        <tr th:replace="~{fragments :: linha-tarefa(tarefa=${tarefa})}"></tr>
+    </th:block>
+</th:block>
+
+<!-- FRAGMENTO: Linha da Tabela -->
+<tr th:fragment="linha-tarefa(tarefa)" th:id="'tarefa-' + ${tarefa.id}">
+    <!-- Célula do Checkbox -->
+    <td th:classappend="${tarefa.concluida} ? 'concluida-texto' : ''">
+        <input type="checkbox" th:checked="${tarefa.concluida}"
+               th:hx-post="'/tarefas/' + ${tarefa.id} + '/toggle'"
+               th:hx-target="'#tarefa-' + ${tarefa.id}"
+               hx-swap="outerHTML">
+    </td>
+    <!-- Célula do Título -->
+    <td th:text="${tarefa.titulo}" th:classappend="${tarefa.concluida} ? 'concluida-texto' : ''"></td>
+    <!-- Célula da Descrição -->
+    <td th:text="${tarefa.descricao}" th:classappend="${tarefa.concluida} ? 'concluida-texto' : ''"></td>
+    <!-- Célula das Ações -->
+    <td class="actions">
+        <button class="btn-edit"
+                th:hx-get="'/tarefas/' + ${tarefa.id} + '/edit'"
+                th:hx-target="'#tarefa-' + ${tarefa.id}"
+                hx-swap="outerHTML">Editar</button>
+        <button class="btn-delete"
+                th:hx-delete="'/tarefas/' + ${tarefa.id}"
+                hx-target="closest tr"
+                hx-swap="outerHTML"
+                hx-confirm="Tem certeza que deseja apagar esta tarefa?">Deletar</button>
+    </td>
+</tr>
+
+<!-- FRAGMENTO: Formulário de Edição -->
+<tr th:fragment="edit-form(tarefa)" th:id="'tarefa-' + ${tarefa.id}">
+    <td colspan="4">
+        <form class="edit-form" th:hx-put="'/tarefas/' + ${tarefa.id}" th:hx-target="'#tarefa-' + ${tarefa.id}" hx-swap="outerHTML">
+            <input type="text" name="titulo" th:value="${tarefa.titulo}" class="edit-input">
+            <textarea name="descricao" th:text="${tarefa.descricao}" class="edit-input"></textarea>
+            <button type="submit" class="btn-save">Salvar</button>
+            <button type="button" class="btn-cancel" th:hx-get="'/tarefas/' + ${tarefa.id}" th:hx-target="'#tarefa-' + ${tarefa.id}">Cancelar</button>
+        </form>
+    </td>
+</tr>
+
+</body>
+</html>
+```
+
+---
+

@@ -13,10 +13,14 @@ import java.util.List;
 public class TarefaApiService {
     private final HttpClient client = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private final String API_URL = "http://localhost:8080/api/tarefas";
+    private final String API_URL = "http://localhost:8080/tarefas";
 
     public List<Tarefa> listarTarefas() {
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(API_URL)).GET().build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(API_URL))
+                .header("Accept", "application/json")
+                .GET()
+                .build();
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() == 200) {
@@ -34,6 +38,7 @@ public class TarefaApiService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL))
                     .header("Content-Type", "application/json")
+                    .header("Accept", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -48,6 +53,7 @@ public class TarefaApiService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL + "/" + tarefa.getId()))
                     .header("Content-Type", "application/json")
+                    .header("Accept", "application/json")
                     .PUT(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -60,6 +66,7 @@ public class TarefaApiService {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL + "/" + id))
+                    .header("Accept", "application/json")
                     .DELETE()
                     .build();
             client.send(request, HttpResponse.BodyHandlers.ofString());
