@@ -15,13 +15,15 @@
 * **[Jogo Genius 02 Classic](./projetos/jogo_genius_02)**
 
 * **[Jogo Genius 03](./projetos/jogo_genius_03)**
+
+
 * **[Zipado Jogo Genius 03](./projetos/jogo_genius_03.zip)**
 
-* **[Jogo Genius Sons](./projetos/jogo_genius_sons.zip)**
+* **[Zipado Jogo Genius Sons](./projetos/jogo_genius_sons.zip)**
 
 ---
 
-* **[Jogo  Black jack 21  ](./projetos/jogo_blackjack_21)**
+* **[Jogo BlackJack - 21](./projetos/jogo_blackjack_21)**
 
 --- 
 

@@ -651,8 +651,6 @@ public class JogoDaMemoria extends JFrame implements ActionListener {
 
 ```java
 
-```
-
 /**
  * Jogo da Memória Simples em Java Swing
  * Foco: Lógica de Programação, Swing Básico, Eventos (ActionListener) e Timer.
@@ -880,9 +878,9 @@ public class JogoDaMemoria extends JFrame implements ActionListener {
     }
 }
 
+```
 
 ---
-
 
 
 ### ✅ Etapa 8: Melhorias Opcionais (Desafios)
