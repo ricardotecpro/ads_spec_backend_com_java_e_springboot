@@ -64,10 +64,9 @@ public class ContadorFXApp extends Application {
 ```
 
 ---
-## Passo 2 **Arquivo:** `pom.xml`
+### Passo 2 **Arquivo:** `pom.xml`
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -92,7 +91,7 @@ public class ContadorFXApp extends Application {
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/main/java</sourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -469,28 +468,14 @@ public class ContadorFXApp extends Application {
             labelContador.setText("Contador: " + contador);
         });
 
-        // --- ATUALIZAÇÕES DE LAYOUT E ESTILO ---
-
-        // 1. Aumenta o espaçamento entre os elementos
-        VBox root = new VBox(20); 
-        
-        // 2. Aplica a classe CSS ".root" ao VBox
+        VBox root = new VBox(20); // Aumentado o espaçamento
         root.getStyleClass().add("root");
-        
-        // 3. Centraliza o VBox
         root.setAlignment(Pos.CENTER);
-        
-        // 4. Inverte a ordem (Label primeiro, depois Botão)
         root.getChildren().addAll(labelContador, botaoClique);
 
-        // 5. Ajusta o tamanho da cena
         Scene scene = new Scene(root, 350, 200);
-
-        // 6. CARREGA O ARQUIVO CSS
-        // O caminho é relativo à raiz do classpath (que é 'resources')
         scene.getStylesheets().add(getClass().getResource("/com/example/styles.css").toExternalForm());
 
-        // 7. Atualiza o título da janela
         primaryStage.setTitle("Contador Moderno");
         primaryStage.setScene(scene);
         primaryStage.show();
