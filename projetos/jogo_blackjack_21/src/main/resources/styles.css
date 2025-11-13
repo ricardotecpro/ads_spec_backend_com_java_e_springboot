@@ -1,0 +1,93 @@
+.root {
+    -fx-background-color: #0a5c0a; /* Verde clássico */
+    -fx-font-family: 'Arial';
+}
+
+/* Títulos */
+.titulo-principal {
+    -fx-text-fill: white;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 1);
+}
+
+.titulo-area {
+    -fx-text-fill: #ffc107; /* Dourado */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Container das Mãos (Areas) */
+.area-jogo {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-border-color: #ffc107;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-min-width: 600;
+}
+
+/* A Carta Visual */
+.carta {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #333;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-pref-width: 80;
+    -fx-pref-height: 120;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 8, 0, 2, 2);
+}
+
+.carta-texto {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.carta-naipe-grande {
+    -fx-font-size: 36px;
+}
+
+.red { -fx-text-fill: #d90000; }
+.black { -fx-text-fill: black; }
+
+/* Carta Oculta (Verso) */
+.carta-oculta {
+    -fx-background-color: linear-gradient(to bottom right, #444, #666);
+    -fx-background-radius: 8;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+}
+
+/* Mensagem de Status */
+.status-msg {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+}
+
+/* Botões */
+.button {
+    -fx-background-color: #ffc107;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.button:hover {
+    -fx-background-color: #ffd54f;
+}
+
+.button:disabled {
+    -fx-background-color: #999;
+    -fx-opacity: 0.7;
+}

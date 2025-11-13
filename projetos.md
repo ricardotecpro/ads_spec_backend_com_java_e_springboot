@@ -1,5 +1,28 @@
 # ⚒️ Projetos
 
+* **[Contador 01 Java Swing](./projetos/contador_01)**
+
+* **[Contador 02 Java FX](./projetos/contador_02)**
+
+---
+
+* **[Jogo da Memória 01 ](./projetos/jogo_memoria_01)**
+
+---
+
+* **[Jogo Genius 01](./projetos/jogo_genius_01)**
+
+* **[Jogo Genius 02 Classic](./projetos/jogo_genius_02)**
+
+* **[Jogo Genius 03](./projetos/jogo_genius_03)**
+* **[Zipado Jogo Genius 03](./projetos/jogo_genius_03.zip)**
+
+* **[Jogo Genius Sons](./projetos/jogo_genius_sons.zip)**
+
+---
+
+* **[Jogo  Black jack 21  ](./projetos/jogo_blackjack_21)**
+
 --- 
 
 * **[Lista de Tarefa 01 - Backend API](./projetos/listadetarefas_01/listadetarefas.api.md)**
