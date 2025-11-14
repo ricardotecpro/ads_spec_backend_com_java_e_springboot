@@ -3,6 +3,7 @@
 * **[Contador 01 Java Swing](./projetos/contador_01)**
 
 * **[Contador 02 Java FX](./projetos/contador_02)**
+* - [Zipado Contador 02 Java FX](./projetos/contador_02.zip)
 
 ---
 
