@@ -1,29 +1,29 @@
 # ⚒️ Projetos
 
-* **[Contador 01 Java Swing](projetos/contador_01_sw)**
+* **[Contador 01 - Java Swing](projetos/contador_01_sw)**
 
-* **[Contador 02 Java FX](projetos/contador_02_fx)**
-* - [Zipado Contador 02 Java FX](./projetos/contador_02.zip)
-
----
-
-* **[Jogo da Memória 01 ](projetos/jogo_memoria_01_sw)**
+* **[Contador 02 - Java FX](projetos/contador_02_fx)**
+* - [Zipado Contador 02 - Java FX](./projetos/contador_02_fx.zip)
 
 ---
 
-* **[Jogo Genius 01](projetos/jogo_genius_01_sw)**
+* **[Jogo da Memória 01 - Java Swing](projetos/jogo_memoria_01_sw)**
 
-* **[Jogo Genius 02 Classic](projetos/jogo_genius_02_sw)**
+---
 
-* **[Jogo Genius 03](projetos/jogo_genius_03_sw)**
+* **[Jogo Genius 01 - Java Swing](projetos/jogo_genius_01_sw)**
 
- -[Zipado Jogo Genius 03](./projetos/jogo_genius_03.zip)
+* **[Jogo Genius 02 Classic - Java Swing](projetos/jogo_genius_02_sw)**
+
+* **[Jogo Genius 03 - Java Swing](projetos/jogo_genius_03_sw)**
+
+ -[Zipado Jogo Genius 03 - Java Swing](./projetos/jogo_genius_03_sw.zip)
 
  -[Zipado Jogo Genius Sons](./projetos/jogo_genius_sons.zip)
 
 ---
 
-* **[Jogo BlackJack - 21](projetos/jogo_blackjack_21_fx)**
+* **[Jogo BlackJack - 21 - Java FX](projetos/jogo_blackjack_21_fx)**
 
 --- 
 

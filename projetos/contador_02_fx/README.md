@@ -503,3 +503,8 @@ mvn clean javafx:run
 2.  **`src/main/resources` vs. `src/main/java`:** O Maven trata estes diretórios de forma diferente. `java` é para código-fonte a ser compilado. `resources` é para arquivos estáticos (CSS, imagens, XML) que devem ser copiados *como estão* para o *classpath* do produto final (o arquivo JAR ou o diretório `target/classes`).
 3.  **Seletores JavaFX:** O JavaFX mapeia automaticamente seus componentes a classes CSS. Um `Button` pode ser estilizado com `.button`. Um `Label` com `.label`. Você pode criar classes customizadas (como fizemos com `.root`) e aplicá-las manualmente com `componente.getStyleClass().add("minha-classe")`.
 4.  **Carregamento de Recursos:** A linha `getClass().getResource("/com/example/styles.css")` é a forma padrão em Java para carregar um arquivo do *classpath*. O `/` no início significa "procurar a partir da raiz do classpath" (que, para o Maven, é `target/classes`, onde o conteúdo de `src/main/resources` foi copiado).
+
+---
+
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

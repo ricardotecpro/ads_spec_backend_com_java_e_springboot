@@ -871,3 +871,7 @@ Unit test uses injected Random to guarantee deterministic sequence for assertion
 * Code is ready for extensions. I can provide versions with sounds, high-score persistence or a JavaFX port — tell me which extension you want.
 
 
+---
+
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

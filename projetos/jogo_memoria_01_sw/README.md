@@ -893,3 +893,8 @@ Como professor, eu sempre deixo alguns desafios para os alunos curiosos:
 2.  **Usar Imagens (Ícones):** Em vez de números ("1", "2"...), tente usar `ImageIcon`. Você terá que associar o `ImageIcon` ao `JButton` (`botao.setIcon(...)`) em vez de `botao.setText(...)`. O desafio aqui é como comparar se dois ícones são "iguais". (Dica: compare os *nomes dos arquivos* das imagens\!).
 3.  **Cronômetro:** Use um `javax.swing.Timer` (dessa vez um que se repete a cada segundo) para contar o tempo que o jogador leva.
 
+
+---
+
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
