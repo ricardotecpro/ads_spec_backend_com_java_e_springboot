@@ -34,6 +34,13 @@
 
 --- 
 
+## Java Fullstack 
+ 
+- API (Spring Boot) 
+- Web (Thymeleaf)
+- Desktop (Java FX)
+
+ 
 * **[Lista de Tarefa 01 - Backend API](./projetos/listadetarefas_01/listadetarefas.api.md)**
   
 * **[Lista de Tarefa 01 - Frontend Web](./projetos/listadetarefas_01/listadetarefas.web.md)**
@@ -41,6 +48,8 @@
 * **[Lista de Tarefa 01 - Scripts](./projetos/listadetarefas_01/listadetarefas.scripts.md)**
 
 ---
+
+## Java Web
 
 * **[Biblioteca de Jogos 01](./projetos/bibliotecajogos_01)**
   - [Spring Initialzr](./projetos/bibliotecajogos_01/bibliotecajogos.zip)
