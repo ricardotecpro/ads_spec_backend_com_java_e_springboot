@@ -562,6 +562,14 @@ Use o Maven para compilar, empacotar os recursos (o CSS) e executar a aplicaçã
 mvn clean javafx:run
 ```
 
+
+```bash
+mvn -DskipTests clean package
+mvn -DskipTests javafx:run
+```
+
+
+
 -----
 
 ### 🎓 Dissecando a Arquitetura (Revisão Didática)
