@@ -32,6 +32,16 @@
 * **[Jogo BlackJack - 21 - Java FX](projetos/jogo_blackjack_21_fx)**
   - [Zipado Contador 02 - Java FX](./projetos/jogo_blackjack_21_fx.zip)
 
+
+### 📚 Links:
+
+[Maven](https://maven.apache.org/download.cgi)
+
+[Java FX](https://gluonhq.com/products/javafx/)
+
+[SceneBuiilder](https://gluonhq.com/products/scene-builder/)
+
+
 --- 
 
 ## Java Fullstack 
