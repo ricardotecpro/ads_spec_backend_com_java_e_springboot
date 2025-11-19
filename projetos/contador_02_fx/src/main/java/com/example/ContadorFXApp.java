@@ -10,23 +10,19 @@ import javafx.stage.Stage;
 
 public class ContadorFXApp extends Application {
 
-    private int contador;
-    private Button botaoClique;
-    private Label labelContador;
+    private int contador = 0;
 
     @Override
     public void start(Stage primaryStage) {
-
-        contador = 0;
-        botaoClique = new Button("Clique em mim!");
-        labelContador = new Label("Contador: " + contador);
+        Button botaoClique = new Button("Clique em mim!");
+        Label labelContador = new Label("Contador: " + contador);
 
         botaoClique.setOnAction(event -> {
             contador++;
             labelContador.setText("Contador: " + contador);
         });
 
-        VBox root = new VBox(20); // Aumentado o espaçamento
+        VBox root = new VBox(20);
         root.getStyleClass().add("root");
         root.setAlignment(Pos.CENTER);
         root.getChildren().addAll(labelContador, botaoClique);

@@ -474,7 +474,7 @@ public class ContadorFXApp extends Application {
         root.getChildren().addAll(labelContador, botaoClique);
 
         Scene scene = new Scene(root, 350, 200);
-        scene.getStylesheets().add(getClass().getResource("/com/example/styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/src/main/java/com/example/styles.css").toExternalForm());
 
         primaryStage.setTitle("Contador Moderno");
         primaryStage.setScene(scene);
