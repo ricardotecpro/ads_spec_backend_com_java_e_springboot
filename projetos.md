@@ -1,15 +1,11 @@
 # ⚒️ Projetos
 
+
+## Java Swing
+
 * **[Contador 01 - Java Swing](projetos/contador_01_sw)**
 
-* **[Contador 02 - Java FX](projetos/contador_02_fx)**
-  - [Zipado Contador 02 - Java FX](./projetos/contador_02_fx.zip)
-
----
-
 * **[Jogo da Memória 01 - Java Swing](projetos/jogo_memoria_01_sw)**
-
----
 
 * **[Jogo Genius 01 - Java Swing](projetos/jogo_genius_01_sw)**
 
@@ -21,6 +17,11 @@
     - [Zipado Jogo Genius Sons](./projetos/jogo_genius_sons.zip)
 
 ---
+
+## Java FX
+
+* **[Contador 02 - Java FX](projetos/contador_02_fx)**
+  - [Zipado Contador 02 - Java FX](./projetos/contador_02_fx.zip)
 
 * **[Jogo BlackJack - 21 - Java FX](projetos/jogo_blackjack_21_fx)**
 

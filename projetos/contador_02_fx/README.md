@@ -474,7 +474,7 @@ public class ContadorFXApp extends Application {
         root.getChildren().addAll(labelContador, botaoClique);
 
         Scene scene = new Scene(root, 350, 200);
-        scene.getStylesheets().add(getClass().getResource("/src/main/java/com/example/styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/com/example/styles.css").toExternalForm());
 
         primaryStage.setTitle("Contador Moderno");
         primaryStage.setScene(scene);
@@ -487,7 +487,74 @@ public class ContadorFXApp extends Application {
 }
 ```
 
-#### 3\. Execute o Projeto
+
+
+
+#### 3\. Atualize a Classe Java (`pom.xml`)
+
+**Arquivo:** `pom.xml` (Versão Final)
+
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>contadorfx</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <javafx.version>21</javafx.version>
+        <!-- plataforma para dependências JavaFX (ajuste para 'win', 'linux' ou 'mac') -->
+        <javafx.platform>win</javafx.platform>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+            <classifier>${javafx.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+            <classifier>${javafx.platform}</classifier>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>${maven.compiler.release}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>com.example.ContadorFXApp</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+```
+
+
+#### 4\. Execute o Projeto
 
 Use o Maven para compilar, empacotar os recursos (o CSS) e executar a aplicação:
 
