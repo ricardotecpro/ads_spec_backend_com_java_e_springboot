@@ -3,7 +3,7 @@
 * **[Contador 01 - Java Swing](projetos/contador_01_sw)**
 
 * **[Contador 02 - Java FX](projetos/contador_02_fx)**
-* - [Zipado Contador 02 - Java FX](./projetos/contador_02_fx.zip)
+  - [Zipado Contador 02 - Java FX](./projetos/contador_02_fx.zip)
 
 ---
 
@@ -16,10 +16,9 @@
 * **[Jogo Genius 02 Classic - Java Swing](projetos/jogo_genius_02_sw)**
 
 * **[Jogo Genius 03 - Java Swing](projetos/jogo_genius_03_sw)**
+    - [Zipado Jogo Genius 03 - Java Swing](./projetos/jogo_genius_03_sw.zip)
 
- -[Zipado Jogo Genius 03 - Java Swing](./projetos/jogo_genius_03_sw.zip)
-
- -[Zipado Jogo Genius Sons](./projetos/jogo_genius_sons.zip)
+    - [Zipado Jogo Genius Sons](./projetos/jogo_genius_sons.zip)
 
 ---
 
@@ -28,7 +27,7 @@
 --- 
 
 * **[Lista de Tarefa 01 - Backend API](./projetos/listadetarefas_01/listadetarefas.api.md)**
-* --[Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip)
+  - [Spring Initialzr](./projetos/loginusuarios_01/loginusuarios01.zip)
  
 * **[Lista de Tarefa 01 - Frontend Web](./projetos/listadetarefas_01/listadetarefas.web.md)**
  
@@ -37,7 +36,7 @@
 ---
 
 * **[Biblioteca de Jogos 01](./projetos/bibliotecajogos_01)**
-* --[Spring Initialzr](./projetos/bibliotecajogos_01/bibliotecajogos.zip)
+  - [Spring Initialzr](./projetos/bibliotecajogos_01/bibliotecajogos.zip)
 
 ---
 

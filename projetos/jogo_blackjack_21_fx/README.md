@@ -542,7 +542,8 @@ Precisamos das bibliotecas do JavaFX.
 
 Salve como `src/main/resources/styles.css`. Isso substitui a necessidade de HTML.
 
-```css.root {
+```css
+.root {
     -fx-background-color: #0a5c0a; /* Verde clássico */
     -fx-font-family: 'Arial';
 }
