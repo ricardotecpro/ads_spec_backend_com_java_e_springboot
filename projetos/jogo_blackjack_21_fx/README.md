@@ -1,9 +1,8 @@
 # Jogo **Blackjack (21)**
 
-
 Vamos construir um **Blackjack (21)** profissional, com arquitetura MVC (Model-View-Controller).
 
------
+---
 
 ### 🏗️ 1. Preparação do Ambiente e Estrutura
 
@@ -44,9 +43,60 @@ Precisamos das bibliotecas do JavaFX.
 </dependencies>
 ```
 
------
+---
 
-### 🃏 2. O Modelo (Model)
+### 🚀 2. Configuração e Execução no Windows
+
+#### Pré-requisitos
+
+- **JDK 21** instalado
+- **Maven** instalado globalmente (ou use o Maven Wrapper incluído)
+
+#### Problema Comum: Maven Wrapper
+
+Se você encontrar o erro:
+
+```
+Get-Content : Cannot find path '.mvn\wrapper\maven-wrapper.properties' because it does not exist.
+```
+
+**Solução:**
+
+1. Abra o PowerShell no diretório do projeto
+2. Execute o comando para regenerar o Maven Wrapper:
+   ```powershell
+   mvn -N wrapper:wrapper
+   ```
+
+#### Como Executar o Projeto
+
+```powershell
+# Navegar para o diretório do projeto
+cd "caminho\para\jogo_blackjack_21_fx"
+
+# Executar a aplicação JavaFX
+.\mvnw javafx:run
+
+# Ou limpar e executar
+.\mvnw clean javafx:run
+```
+
+#### Outros Comandos Úteis
+
+```powershell
+# Apenas compilar
+.\mvnw compile
+
+# Limpar arquivos compilados
+.\mvnw clean
+
+# Executar testes (se houver)
+.\mvnw test
+```
+
+---
+
+### 🃏 4. O Modelo (Model)
 
 Aqui ficam as regras de negócio, independentes da interface visual.
 
@@ -64,7 +114,7 @@ public record Carta(Nipe nipe, Rank rank) {
         final int valor;
         Rank(int valor) { this.valor = valor; }
     }
-    
+
     @Override
     public String toString() {
         return rank + " de " + nipe;
@@ -102,9 +152,9 @@ public class Baralho {
 }
 ```
 
------
+---
 
-### 🧠 3. Lógica de Pontuação (Regra do Ás)
+### 🧠 5. Lógica de Pontuação (Regra do Ás)
 
 O Ás é "tricky". Ele vale 11, a menos que estoure 21, aí passa a valer 1.
 
@@ -149,9 +199,9 @@ public class Mao {
 }
 ```
 
------
+---
 
-### 🎨 4. Interface Moderna e Controle (View & Controller)
+### 🎨 6. Interface Moderna e Controle (View & Controller)
 
 Em vez de usar HTML/DOM (que é Web), usaremos o **Scenegraph** do JavaFX. Para ser didático, farei a interface via código para você ver a estrutura, mas em projetos grandes usamos arquivos FXML.
 
@@ -178,7 +228,7 @@ public class BlackjackGame extends Application {
     private HBox mesaJogador;
     private Label lblStatus;
     private Label lblPontosJogador;
-    
+
     private Button btnPedir;
     private Button btnParar;
     private Button btnReiniciar;
@@ -230,7 +280,7 @@ public class BlackjackGame extends Application {
 
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
-        
+
         stage.setTitle("Blackjack Java 21");
         stage.setScene(scene);
         stage.show();
@@ -242,7 +292,7 @@ public class BlackjackGame extends Application {
         baralho.reiniciar();
         maoJogador.limpar();
         maoDealer.limpar();
-        
+
         btnPedir.setDisable(false);
         btnParar.setDisable(false);
         btnReiniciar.setVisible(false);
@@ -339,7 +389,7 @@ public class BlackjackGame extends Application {
         card.getStyleClass().add("carta-oculta");
         return card;
     }
-    
+
     private Button criarBotao(String texto, String cor) {
         Button btn = new Button(texto);
         btn.setStyle("-fx-background-color: " + cor + "; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
@@ -353,7 +403,7 @@ public class BlackjackGame extends Application {
 }
 ```
 
------
+---
 
 ### 💅 5. Estilização CSS (Moderno e Responsivo)
 
@@ -361,49 +411,49 @@ Salve como `src/main/resources/styles.css`. Isso substitui a necessidade de HTML
 
 ```css
 .root {
-    -fx-font-family: 'Segoe UI', sans-serif;
+  -fx-font-family: "Segoe UI", sans-serif;
 }
 
 .titulo {
-    -fx-font-size: 24px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+  -fx-font-size: 24px;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
 }
 
 .texto-branco {
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
 }
 
 .status {
-    -fx-font-size: 28px;
-    -fx-text-fill: #f1c40f;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  -fx-font-size: 28px;
+  -fx-text-fill: #f1c40f;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
 }
 
 .carta {
-    -fx-background-color: white;
-    -fx-background-radius: 10;
-    -fx-border-color: #333;
-    -fx-border-radius: 10;
-    -fx-border-width: 2;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 5, 5);
+  -fx-background-color: white;
+  -fx-background-radius: 10;
+  -fx-border-color: #333;
+  -fx-border-radius: 10;
+  -fx-border-width: 2;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 5, 5);
 }
 
 .carta-oculta {
-    -fx-background-color: #a93226; /* Vermelho fundo carta */
-    -fx-background-radius: 10;
-    -fx-border-color: white;
-    -fx-border-width: 3;
-    -fx-border-style: dashed;
+  -fx-background-color: #a93226; /* Vermelho fundo carta */
+  -fx-background-radius: 10;
+  -fx-border-color: white;
+  -fx-border-width: 3;
+  -fx-border-style: dashed;
 }
 ```
 
------
+---
 
-### 🚀 6. Gerar Versão Desktop (Java FX)
+### 🚀 8. Gerar Versão Desktop (Java FX)
 
 No Java moderno, não usamos Electron. Usamos **jpackage** (incluso no JDK 21) para criar um `.exe` ou `.msi` nativo.
 
@@ -416,12 +466,11 @@ No Java moderno, não usamos Electron. Usamos **jpackage** (incluso no JDK 21) p
 
 Isso criará um executável que o usuário pode clicar e jogar sem precisar instalar o Java manualmente.
 
------
+---
 
 ### Próximo Passo
 
-### 🚀 7.  Refatoração
-
+### 🚀 9. Refatoração
 
 Esse erro é um clássico no desenvolvimento moderno com JavaFX (pós-JDK 11).
 
@@ -453,10 +502,10 @@ public class Launcher {
 
 Agora, em vez de tentar rodar o `BlackjackApp.java`, **execute o `Launcher.java`**.
 
-  * **Se estiver no VS Code/IntelliJ:** Clique com o botão direito em `Launcher.java` e selecione "Run".
-  * **Se estiver via Linha de Comando:** Aponte para essa classe.
+- **Se estiver no VS Code/IntelliJ:** Clique com o botão direito em `Launcher.java` e selecione "Run".
+- **Se estiver via Linha de Comando:** Aponte para essa classe.
 
------
+---
 
 ### 💡 Alternativa: Rodando via Maven (Recomendado)
 
@@ -472,15 +521,11 @@ Isso deve abrir a janela do jogo imediatamente.
 
 ### Resumo Técnico (Para seu aprendizado)
 
-O erro acontece porque a classe `BlackjackApp` herda de `javafx.application.Application`. A JVM verifica isso na inicialização e exige que os módulos JavaFX estejam no *Module Path*. Ao usar a classe `Launcher` (que é uma classe Java comum), a aplicação inicia normalmente e, quando chama `BlackjackApp.main()`, as bibliotecas já estão carregadas no *Class Path*, contornando a verificação estrita da inicialização.
-
+O erro acontece porque a classe `BlackjackApp` herda de `javafx.application.Application`. A JVM verifica isso na inicialização e exige que os módulos JavaFX estejam no _Module Path_. Ao usar a classe `Launcher` (que é uma classe Java comum), a aplicação inicia normalmente e, quando chama `BlackjackApp.main()`, as bibliotecas já estão carregadas no _Class Path_, contornando a verificação estrita da inicialização.
 
 ---
 
 # Códigos Completos
-
-
-
 
 **Dependências no `pom.xml`:**
 Precisamos das bibliotecas do JavaFX.
@@ -534,9 +579,7 @@ Precisamos das bibliotecas do JavaFX.
 </project>
 ```
 
------
-
-
+---
 
 ### 💅 5. Estilização CSS (Moderno e Responsivo)
 
@@ -544,101 +587,104 @@ Salve como `src/main/resources/styles.css`. Isso substitui a necessidade de HTML
 
 ```css
 .root {
-    -fx-background-color: #0a5c0a; /* Verde clássico */
-    -fx-font-family: 'Arial';
+  -fx-background-color: #0a5c0a; /* Verde clássico */
+  -fx-font-family: "Arial";
 }
 
 /* Títulos */
 .titulo-principal {
-    -fx-text-fill: white;
-    -fx-font-size: 32px;
-    -fx-font-weight: bold;
-    -fx-padding: 20;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 1);
+  -fx-text-fill: white;
+  -fx-font-size: 32px;
+  -fx-font-weight: bold;
+  -fx-padding: 20;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 5, 0, 0, 1);
 }
 
 .titulo-area {
-    -fx-text-fill: #ffc107; /* Dourado */
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+  -fx-text-fill: #ffc107; /* Dourado */
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
 }
 
 /* Container das Mãos (Areas) */
 .area-jogo {
-    -fx-background-color: rgba(0, 0, 0, 0.2);
-    -fx-border-color: #ffc107;
-    -fx-border-width: 2;
-    -fx-border-radius: 10;
-    -fx-background-radius: 10;
-    -fx-padding: 20;
-    -fx-spacing: 15;
-    -fx-alignment: center;
-    -fx-min-width: 600;
+  -fx-background-color: rgba(0, 0, 0, 0.2);
+  -fx-border-color: #ffc107;
+  -fx-border-width: 2;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-padding: 20;
+  -fx-spacing: 15;
+  -fx-alignment: center;
+  -fx-min-width: 600;
 }
 
 /* A Carta Visual */
 .carta {
-    -fx-background-color: white;
-    -fx-background-radius: 8;
-    -fx-border-color: #333;
-    -fx-border-radius: 8;
-    -fx-border-width: 1;
-    -fx-pref-width: 80;
-    -fx-pref-height: 120;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 8, 0, 2, 2);
+  -fx-background-color: white;
+  -fx-background-radius: 8;
+  -fx-border-color: #333;
+  -fx-border-radius: 8;
+  -fx-border-width: 1;
+  -fx-pref-width: 80;
+  -fx-pref-height: 120;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 8, 0, 2, 2);
 }
 
 .carta-texto {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
 }
 
 .carta-naipe-grande {
-    -fx-font-size: 36px;
+  -fx-font-size: 36px;
 }
 
-.red { -fx-text-fill: #d90000; }
-.black { -fx-text-fill: black; }
+.red {
+  -fx-text-fill: #d90000;
+}
+.black {
+  -fx-text-fill: black;
+}
 
 /* Carta Oculta (Verso) */
 .carta-oculta {
-    -fx-background-color: linear-gradient(to bottom right, #444, #666);
-    -fx-background-radius: 8;
-    -fx-border-color: white;
-    -fx-border-width: 2;
-    -fx-border-style: solid;
+  -fx-background-color: linear-gradient(to bottom right, #444, #666);
+  -fx-background-radius: 8;
+  -fx-border-color: white;
+  -fx-border-width: 2;
+  -fx-border-style: solid;
 }
 
 /* Mensagem de Status */
 .status-msg {
-    -fx-text-fill: white;
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-    -fx-padding: 10;
+  -fx-text-fill: white;
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-padding: 10;
 }
 
 /* Botões */
 .button {
-    -fx-background-color: #ffc107;
-    -fx-text-fill: #333;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 5;
-    -fx-cursor: hand;
-    -fx-padding: 10 20;
+  -fx-background-color: #ffc107;
+  -fx-text-fill: #333;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5;
+  -fx-cursor: hand;
+  -fx-padding: 10 20;
 }
 
 .button:hover {
-    -fx-background-color: #ffd54f;
+  -fx-background-color: #ffd54f;
 }
 
 .button:disabled {
-    -fx-background-color: #999;
-    -fx-opacity: 0.7;
+  -fx-background-color: #999;
+  -fx-opacity: 0.7;
 }
 ```
 
------
-
+---
 
 ### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
