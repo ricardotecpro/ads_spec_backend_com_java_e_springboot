@@ -1,71 +1,71 @@
-# Quiz 04 - Documentação e Mocks 📝
+# Quiz - Aula 04 ❓
 
-1. O que é o OpenAPI (OAS)?
-    - [ ] Uma linguagem de programação para backend
-    - [x] Uma especificação padrão para descrever e documentar APIs RESTful
-    - [ ] Um navegador web para desenvolvedores
-    - [ ] Um banco de dados em nuvem
-    *Explicação: O OpenAPI define um formato padrão para descrever recursos, rotas e respostas de uma API.*
+1. **Herança serve principalmente para:**
+   - (A) Deixar o código mais bonito.
+   - (B) Evitar a duplicação de atributos e métodos (reuso).
+   - (C) Aumentar a velocidade do processador.
+   - (D) Impedir que o usuário delete o arquivo.
+   *Resposta: (B)* - Herança permite que classes filhas aproveitem o trabalho das classes pais.
 
-2. Qual a principal diferença entre OpenAPI e Swagger?
-    - [ ] Swagger é pago e OpenAPI é gratuito
-    - [x] OpenAPI é a especificação e Swagger é o conjunto de ferramentas (UI, Editor, etc)
-    - [ ] OpenAPI foi substituída pelo Swagger em 2021
-    - [ ] Não há diferença, são nomes para a mesma cor
-    *Explicação: Pense no OpenAPI como as "regras" e no Swagger como as "ferramentas" que usam essas regras.*
+2. **Qual palavra-chave define herança em Java?**
+   - (A) inherits
+   - (B) extends
+   - (C) implements
+   - (D) parentOf
+   *Resposta: (B)* - 'extends' amplia as capacidades da superclasse.
 
-3. Para que serve o Swagger UI?
-    - [ ] Para editar o banco de dados diretamente
-    - [x] Para gerar uma página visual e interativa onde se pode testar os endpoints documentados
-    - [ ] Para compilar o código Java para o servidor
-    - [ ] Para baixar músicas gratuitas
-    *Explicação: O Swagger UI lê o arquivo YAML/JSON e cria uma interface amigável para humanos.*
+3. **Se a classe `Pai` tem o método `falar()`, a classe `Filho` pode:**
+   - (A) Apenas ignorar o método.
+   - (B) Usar o método sem precisar reescrevê-lo.
+   - (C) Deletar o método do Pai.
+   - (D) Renomear o método no Pai.
+   *Resposta: (B)* - O filho ganha automaticamente os métodos públicos e protegidos do pai.
 
-4. Qual o objetivo principal de um "Mock de API"?
-    - [ ] Substituir o backup do sistema
-    - [x] Simular o comportamento de uma API real para permitir o desenvolvimento paralelo
-    - [ ] Aumentar a segurança contra vírus
-    - [ ] Esconder o endereço IP do servidor
-    *Explicação: Mocks permitem que o Frontend programe contra um servidor "de mentira" enquanto o real não está pronto.*
+4. **Polimorfismo permite que:**
+   - (A) Um objeto tenha apenas uma forma.
+   - (B) Um objeto seja tratado como sua superclasse, mas mantendo seu comportamento específico.
+   - (C) O computador tenha vários teclados.
+   - (D) O código seja lido por várias pessoas.
+   *Resposta: (B)* - Permite flexibilidade na arquitetura.
 
-5. O que significa "Developer Experience" (DX)?
-    - [ ] O tempo que o desenvolvedor gasta jogando videogame
-    - [x] A facilidade e satisfação de um desenvolvedor ao usar sua ferramenta ou API
-    - [ ] A quantidade de memória RAM do monitor
-    - [ ] O nome do sistema operacional dos servidores
-    *Explicação: Uma boa DX significa documentação clara, erros úteis e facilidade de integração.*
+5. **A anotação `@Override` indica que:**
+   - (A) Um novo atributo foi criado.
+   - (B) Um método da superclasse está sendo reescrito (sobre-escrito).
+   - (C) O programa deve ser pausado.
+   - (D) O método é estático.
+   *Resposta: (B)* - Ajuda o programador e o compilador a validarem a sobre-escrita.
 
-6. Qual formato de arquivo é mais utilizado para escrever especificações OpenAPI?
-    - [ ] .html
-    - [x] .yaml ou .json
-    - [ ] .docx
-    - [ ] .pdf
-    *Explicação: YAML é preferido por ser mais legível por humanos e suportar identação clara.*
+6. **O modificar `protected` permite acesso:**
+   - (A) Apenas à própria classe.
+   - (B) À própria classe e às suas subclasses (herança).
+   - (C) A qualquer pessoa na internet.
+   - (D) Apenas ao banco de dados.
+   *Resposta: (B)* - É o nível de acesso ideal para herança.
 
-7. Por que retornar mensagens de erro explicativas no corpo da resposta (Body) é uma boa prática?
-    - [ ] Para o log ficar mais colorido
-    - [x] Para ajudar o consumidor da API a entender exatamente o que errou sem precisar perguntar ao autor
-    - [ ] Porque o HTTP obriga a escrever textos longos
-    - [ ] Para ocupar mais espaço no servidor
-    *Explicação: Um erro `400` com a mensagem `"Data de nascimento é obrigatória"` economiza horas de suporte.*
+7. **Java permite herança múltipla de classes (uma classe ter dois pais)?**
+   - (A) Sim.
+   - (B) Não.
+   - (C) Apenas em versões antigas.
+   - (D) Apenas se forem classes abstratas.
+   *Resposta: (B)* - Java permite herdar apenas de uma única classe por vez.
 
-8. Qual componente do Swagger permite digitar e validar a especificação da API em tempo real?
-    - [ ] Swagger Hub
-    - [x] Swagger Editor
-    - [ ] Swagger Inspector
-    - [ ] Swagger Play
-    *Explicação: O Editor valida a sintaxe YAML e mostra o preview da documentação instantaneamente.*
+8. **O que é o relacionamento "É UM" (is-a)?**
+   - (A) Um objeto que contém outro.
+   - (B) A definição semântica da herança (ex: Carro é um Veículo).
+   - (C) Um erro de lógica.
+   - (D) Um comando SQL.
+   *Resposta: (B)* - Herança deve sempre fazer sentido logicamente.
 
-9. Em qual fase do projeto o "Design de Contrato" deve ocorrer?
-    - [ ] Somente no fim do projeto para arquivar
-    - [x] No início, antes mesmo de começar a codificar as rotas (API First)
-    - [ ] Apenas se o cliente pedir
-    - [ ] Nunca, é perda de tempo
-    *Explicação: No API First, o contrato é acordado primeiro para que as equipes de Front e Back trabalhem em sintaxe.*
+9. **Ao usar `super.metodo()`, estamos chamando:**
+   - (A) O método da classe filha.
+   - (B) O método da superclasse (pai).
+   - (C) Um método do Windows.
+   - (D) O construtor do banco.
+   *Resposta: (B)* - 'super' refere-se ao elemento imediato acima na hierarquia.
 
-10. Qual ferramenta pode ser usada para subir um mock server local a partir de uma collection?
-    - [ ] Microsoft Excel
-    - [x] Postman / Mockoon
-    - [ ] Notepad++
-    - [ ] Windows Paint
-    *Explicação: Postman e Mockoon facilitam a criação de respostas estáticas baseadas em rotas.*
+10. **A capacidade de tratar um conjunto de objetos diferentes (Gato, Cachorro) como um tipo comum (Animal) é um exemplo de:**
+    - (A) Encapsulamento.
+    - (B) Polimorfismo.
+    - (C) Instanciação.
+    - (D) Compilação.
+    *Resposta: (B)* - Facilita o processamento de listas heterogêneas.

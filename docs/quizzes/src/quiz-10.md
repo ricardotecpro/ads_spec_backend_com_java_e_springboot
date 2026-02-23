@@ -1,71 +1,71 @@
-# Quiz 10 - Controle de Acesso (RBAC) 🛡️
+# Quiz - Aula 10 ❓
 
-1. O que significa a sigla RBAC?
-    - [ ] Real-Binary-Authentication-Code
-    - [x] Role-Based Access Control
-    - [ ] Route-Based Authorization Check
-    - [ ] Restricted-Backend-Access-Control
-    *Explicação: É o padrão de mercado para gerenciar permissões baseadas em "perfis" ou "papéis" do usuário.*
+1. **JCheckBox permite ao usuário:**
+   - (A) Selecionar apenas uma opção de um grupo.
+   - (B) Digitar seu nome.
+   - (C) Selecionar múltiplas opções independentes.
+   - (D) Fechar a janela.
+   *Resposta: (C)* - Útil para listas de interesses ou preferências.
 
-2. No RBAC, a quem atribuímos as permissões de acesso?
-    - [ ] A cada usuário individualmente por seu CPF
-    - [x] A um perfil (Role) que pode ser compartilhado por vários usuários
-    - [ ] Apenas ao dono da empresa
-    - [ ] Ao endereço IP do computador
-    *Explicação: Atribuir a perfis facilita a manutenção, especialmente em sistemas com muitos usuários.*
+2. **Para que JRadioButtons funcionem em grupo, eles devem ser adicionados a um:**
+   - (A) JPanel.
+   - (B) ButtonGroup.
+   - (C) JRadioGroup.
+   - (D) JFrame.
+   *Resposta: (B)* - O ButtonGroup gerencia a exclusão mútua das seleções.
 
-3. Qual o código HTTP para "Acesso Negado" (Usuário identificado, mas sem permissão)?
-    - [ ] 401 Unauthorized
-    - [ ] 404 Not Found
-    - [x] 403 Forbidden
-    - [ ] 500 Internal Error
-    *Explicação: O 403 indica que o servidor entendeu quem é você, mas proibiu a ação.*
+3. **Qual componente exibe uma lista suspensa (dropdown)?**
+   - (A) JList.
+   - (B) JComboBox.
+   - (C) JTable.
+   - (D) JMenu.
+   *Resposta: (B)* - Ideal para selecionar um item economizando espaço.
 
-4. Qual a ordem correta dos middlewares em uma rota protegida?
-    - [ ] Primeiro Autorização, depois Autenticação
-    - [x] Primeiro Autenticação, depois Autorização
-    - [ ] Ambos devem rodar ao mesmo tempo
-    - [ ] Apenas um é necessário
-    *Explicação: Primeiro desvendamos QUEM é o usuário (Token), para depois checar O QUE ele pode fazer.*
+4. **Layout Managers servem para:**
+   - (A) Mudar a cor dos botões.
+   - (B) Controlar o posicionamento automático dos componentes.
+   - (C) Criar animações.
+   - (D) Limpar o banco de dados.
+   *Resposta: (B)* - Mantêm a interface organizada ao redimensionar a janela.
 
-5. O que um Middleware de Autorização faz se o usuário não tem o nível necessário?
-    - [ ] Reinicia o servidor
-    - [x] Interrompe a requisição e retorna um erro 403 ao cliente
-    - [ ] Envia a requisição para outra rota aleatória
-    - [ ] Formata o banco de dados
-    *Explicação: O middleware age como uma trava que impede a execução do código do Controller.*
+5. **BorderLayout divide o container em:**
+   - (A) 3 partes (Início, Meio, Fim).
+   - (B) 5 partes (Norte, Sul, Leste, Oeste, Centro).
+   - (C) Uma grade infinita.
+   - (D) Apenas 1 parte central.
+   *Resposta: (B)* - É o layout mais robusto para janelas principais.
 
-6. Por que o Erro 401 (Unauthorized) é retornado quando o token JWT é inválido?
-    - [ ] Porque o usuário é feio
-    - [x] Porque a identidade do usuário não pôde ser confirmada
-    - [ ] Porque o servidor está desligado
-    - [ ] Porque o sistema está em manutenção
-    *Explicação: 401 significa "Quem é você? Não te conheço ou seu crachá é falso".*
+6. **FlowLayout organiza os itens:**
+   - (A) Um em cima do outro.
+   - (B) Em linha, um após o outro, conforme o espaço.
+   - (C) Apenas nos cantos.
+   - (D) De forma aleatória.
+   *Resposta: (B)* - É o layout padrão dos JPanels.
 
-7. Em um sistema de E-commerce, quem deve ter permissão para a rota `DELETE /produtos/:id`?
-    - [ ] Todos os clientes
-    - [x] Apenas usuários com a Role 'ADMIN' ou 'GERENTE'
-    - [ ] Qualquer pessoa sem login
-    - [ ] Apenas o programador que criou o site
-    *Explicação: Ações destrutivas devem ser restritas a perfis de alta confiança.*
+7. **GridLayout é ideal para:**
+   - (A) Menus de topo.
+   - (B) Teclados, planilhas ou grids uniformes.
+   - (C) Colocar apenas um botão gigante.
+   - (D) Carregar imagens de fundo.
+   *Resposta: (B)* - Divide tudo em linhas e colunas iguais.
 
-8. O que é "Hierarquia de Roles"?
-    - [ ] Uma lista de nomes em ordem alfabética
-    - [x] Quando perfis superiores (ex: Admin) herdam automaticamente as permissões de perfis inferiores
-    - [ ] O tamanho da letra no banco de dados
-    - [ ] A ordem de criação dos usuários
-    *Explicação: Facilita o código, evitando ter que listar 'ADMIN' em todas as rotas simples.*
+8. **Para mudar o layout de um painel, usamos:**
+   - (A) painel.setLayout(new LayoutDesejado()).
+   - (B) painel.changeStyle().
+   - (C) painel.reorganize().
+   - (D) painel.update().
+   *Resposta: (A)* - Definimos o gerente de layout na criação ou inicialização.
 
-9. O que acontece se chamarmos a função `next()` dentro de um middleware?
-    - [ ] O servidor para
-    - [x] O processamento passa para o próximo middleware ou para o Controller
-    - [ ] O usuário é deslogado
-    - [ ] Uma nova aba abre no navegador
-    *Explicação: O `next()` é o sinal verde para a requisição seguir seu fluxo.*
+9. **O componente `isSelected()` serve para verificar:**
+   - (A) Se o usuário digitou texto.
+   - (B) O estado de um CheckBox ou RadioButton.
+   - (C) Se a janela está aberta.
+   - (D) Se o mouse está em cima do botão.
+   *Resposta: (B)* - Retorna verdadeiro se o item estiver marcado.
 
-10. Qual a principal vantagem de centralizar a autorização em middlewares?
-    - [ ] O app fica mais bonito
-    - [x] Segurança e Reuso: você protege rotas inteiras com uma única linha de código
-    - [ ] O banco de dados fica mais rápido
-    - [ ] Os usuários ganham descontos
-    *Explicação: Centralizar evita que você esqueça de colocar "if" em algum Controller, deixando brechas de segurança.*
+10. **A vantagem de usar JPanels aninhados (um dentro do outro) é:**
+    - (A) Aumentar a complexidade.
+    - (B) Permitir layouts diferentes para partes diferentes da tela.
+    - (C) Deixar o código mais longo.
+    - (D) Não há vantagem.
+    *Resposta: (B)* - Ex: Um painel Grid para campos e um Flow para botões.

@@ -20,3 +20,9 @@ O site é publicado automaticamente no GitHub Pages via branch `gh-pages`.
 
 ---
 Produzido por [Ricardo TecPro](https://github.com/ricardotecpro).
+
+---
+
+# Legado
+
+* [Legado](_legado/README.md)

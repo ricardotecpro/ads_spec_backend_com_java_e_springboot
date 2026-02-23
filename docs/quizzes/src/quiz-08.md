@@ -1,71 +1,71 @@
-# Quiz 08 - Boas Práticas e Validação de Dados ✅
+# Quiz - Aula 08 ❓
 
-1. Por que o backend nunca deve confiar nos dados vindos do frontend?
-    - [ ] Para economizar bateria do servidor
-    - [x] Porque a requisição pode ter sido interceptada, alterada ou burlada
-    - [ ] Porque o frontend é sempre feito por iniciantes
-    - [ ] Porque os navegadores são lentos
-    *Explicação: Segurança baseada em "confiança" no cliente é uma vulnerabilidade grave.*
+1. **GUI significa:**
+   - (A) Generic User Import.
+   - (B) Graphical User Interface.
+   - (C) Great Unity Index.
+   - (D) Galeria de Usuário Interno.
+   *Resposta: (B)* - Refere-se a sistemas com janelas e elementos visuais.
 
-2. Qual a diferença entre Validar e Sanitizar?
-    - [ ] Validar limpa o dado, Sanitizar checa a regra
-    - [x] Validar checa se o dado está correto, Sanitizar "limpa" o dado de impurezas (espaços, tags HTML)
-    - [ ] São a mesma coisa com nomes diferentes
-    - [ ] Validar é para banco SQL, Sanitizar é para NoSQL
-    *Explicação: Validar diz "SIM ou NÃO", Sanitizar diz "AGORA ESTÁ LIMPO".*
+2. **A biblioteca padrão do Java para criar interfaces desktop clássicas é:**
+   - (A) JavaFX.
+   - (B) Swing.
+   - (C) React.
+   - (D) Kotlin.
+   *Resposta: (B)* - Swing é robusta e vem inclusa no JDK.
 
-3. Para que servem bibliotecas como Zod ou Joi?
-    - [ ] Para acelerar a conexão com o banco
-    - [x] Para definir e aplicar esquemas de validação de forma declarativa e robusta
-    - [ ] Para desenhar gráficos no painel do administrador
-    - [ ] Para comprimir arquivos PDF
-    *Explicação: Essas bibliotecas removem o excesso de "if/else" e centralizam as regras de entrada.*
+3. **Qual classe representa a "Janela" principal?**
+   - (A) JPanel.
+   - (B) JButton.
+   - (C) JFrame.
+   - (D) JWindow.
+   *Resposta: (C)* - O JFrame fornece a moldura com botões de fechar, minimizar, etc.
 
-4. O que é o princípio DRY (Don't Repeat Yourself)?
-    - [ ] Beber água durante o código
-    - [x] Evitar a duplicação de lógica, transformando repetir em funções ou serviços únicos
-    - [ ] Escrever o código o mais rápido possível
-    - [ ] Não usar a tecla Backspace
-    *Explicação: Código repetido é difícil de manter; se a regra muda, você esquece de atualizar em algum lugar.*
+4. **Para tornar uma janela visível, usamos o método:**
+   - (A) showNow().
+   - (B) setVisible(true).
+   - (C) display().
+   - (D) open().
+   *Resposta: (B)* - Por padrão, janelas são criadas ocultas.
 
-5. O que um Middleware de Erro Global faz?
-    - [ ] Impede que o computador trave
-    - [x] Captura qualquer erro não tratado e envia uma resposta padronizada ao cliente
-    - [ ] Apaga os logs do servidor
-    - [ ] Avisa o usuário que a internet caiu
-    *Explicação: Centralizar o erro evita que o servidor "morra" e permite um tratamento profissional de falhas.*
+5. **A programação orientada a eventos foca em:**
+   - (A) Rodar o código de cima para baixo linearmente.
+   - (B) Reagir a ações externas (cliques, teclas, mouse).
+   - (C) Apenas imprimir no console.
+   - (D) Formatar o banco de dados.
+   *Resposta: (B)* - O sistema "espera" algo acontecer.
 
-6. Por que NÃO devemos enviar o Stack Trace (detalhes técnicos do erro) para o usuário final?
-    - [ ] Porque gasta muitos dados de internet
-    - [x] Por segurança, pois revela detalhes da estrutura do banco e do código (ajuda hackers)
-    - [ ] Porque o usuário não entende inglês
-    - [ ] Porque o Stack Trace é feio
-    *Explicação: Informações técnicas sobre o erro devem ser logadas internamente, nunca expostas publicamente.*
+6. **O que é um 'Listener' (Ouvinte)?**
+   - (A) Um alto-falante.
+   - (B) Um objeto que monitora e reage a eventos específicos (ex: clique).
+   - (C) Um erro de áudio.
+   - (D) O microfone do computador.
+   *Resposta: (B)* - Ex: `ActionListener`.
 
-7. Qual a vantagem de usar nomes de funções altamente descritivos?
-    - [ ] O código fica mais colorido no editor
-    - [x] Melhora a legibilidade e facilita a manutenção por outros desenvolvedores (ou por você no futuro)
-    - [ ] O compilador processa nomes longos mais rápido
-    - [ ] Ocupa menos espaço no servidor
-    *Explicação: Código deve ser lido como um livro; o nome da função deve dizer exatamente O QUE ela faz.*
+7. **JPanel é usado para:**
+   - (A) Criar abas.
+   - (B) Organizar componentes dentro de uma janela.
+   - (C) Conectar ao banco.
+   - (D) Tocar vídeos.
+   *Resposta: (B)* - Funciona como um container intermediário.
 
-8. O que caracteriza um Erro 400 (Bad Request)?
-    - [ ] O servidor parou de funcionar
-    - [x] O cliente enviou dados inválidos ou incompletos que o sistema não aceita
-    - [ ] O usuário não tem permissão para acessar
-    - [ ] A página não existe
-    *Explicação: Erros 400 indicam que a culpa é do "lado de lá" (cliente/requisição).*
+8. **Qual comando encerra o programa ao fechar a janela?**
+   - (A) JFrame.EXIT_ON_CLOSE.
+   - (B) JFrame.HIDE_ON_CLOSE.
+   - (C) JFrame.STOP.
+   - (D) System.exit(0).
+   *Resposta: (A)* - Configura o comportamento padrão do botão "X".
 
-9. O que caracteriza um Erro 500 (Internal Server Error)?
-    - [ ] O usuário digitou a senha errada
-    - [x] Ocorreu uma falha inesperada na lógica ou infraestrutura do servidor
-    - [ ] O link está quebrado
-    - [ ] A conta do usuário foi deletada
-    *Explicação: Erros 500 indicam que algo "quebrou" no backend e precisa de reparo.*
+9. **Podemos colocar um botão direto no JFrame?**
+   - (A) Sim, mas o recomendado é usar um container como JPanel.
+   - (B) Não, é proibido.
+   - (C) Apenas se o botão for vermelho.
+   - (D) Apenas se a janela for pequena.
+   *Resposta: (A)* - O JPanel ajuda na organização e layout.
 
-10. Como o Clean Code ajuda na escalabilidade de um projeto?
-    - [ ] Comprimindo o banco de dados
-    - [x] Mantendo o código organizado e modular, facilitando a adição de novas funcionalidades
-    - [ ] Diminuindo o preço da hospedagem
-    - [ ] Aumentando o número de acessos simultâneos
-    *Explicação: Um código limpo é como um quebra-cabeça bem encaixado; é fácil adicionar peças novas.*
+10. **Uma vantagem das interfaces desktop Swing é:**
+    - (A) Precisar de um servidor web para rodar.
+    - (B) Ser independente de plataforma (Write once, run anywhere).
+    - (C) Rodar apenas no Windows 95.
+    - (D) Não usar código Java.
+    *Resposta: (B)* - Roda em qualquer SO que tenha a JRE.

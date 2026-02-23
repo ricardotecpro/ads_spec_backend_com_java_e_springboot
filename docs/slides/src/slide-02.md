@@ -1,127 +1,98 @@
-# Aula 02 - Arquitetura e Gateway 🏗️
-## Orquestrando Microsserviços
+---
+title: Aula 02 - Classes, Objetos e Instanciação
+theme: night
+transition: slide
+---
+
+# Classes e Objetos 🧱
+
+O coração da POO
 
 ---
 
-## Agenda 📅
+## O que é uma Classe?
 
-1. Comunicação entre Serviços { .fragment }
-2. Síncrono vs Assíncrono { .fragment }
-3. O Papel do API Gateway { .fragment }
-4. Service Discovery { .fragment }
-5. Load Balancing { .fragment }
-6. Padrões de Resiliência { .fragment }
+É um **modelo** ou **molde**.
 
----
-
-## 1. Como os Serviços Conversam? 💬
-
-- Microsserviços são ilhas que precisam de pontes. { .fragment }
-- Dois mundos: **Sync** e **Async**. { .fragment }
+Define:
+* O que o objeto **tem** (Atributos)
+* O que o objeto **faz** (Métodos)
 
 ---
 
-## 1.1 Comunicação Síncrona 🔄
+## O que é um Objeto?
 
-- Cliente bloqueia até a resposta. { .fragment }
-- Uso de HTTP/REST ou gRPC. { .fragment }
-- **Risco**: Acoplamento temporal e gargalos. { .fragment }
+É a **instância** real do modelo.
 
----
-
-## 1.2 Comunicação Assíncrona 📬
-
-- Envia e esquece (Eventos). { .fragment }
-- Uso de Filas e Tópicos (Broker). { .fragment }
-- **Vantagem**: Escalabilidade e desacoplamento. { .fragment }
+Exemplo:
+* Classe: `Carro`
+* Objeto: `Meu Fusca Azul`
 
 ---
 
-## 2. API Gateway: O Porteiro 🚪
-
-- Única entrada para o mundo exterior. { .fragment }
-- Esconde a complexidade interna. { .fragment }
-
----
-
-## Gateway Responsibilities
-
-- **Roteamento**: `/p` -> Pagamento, `/e` -> Estoque. { .fragment }
-- **Segurança**: Autenticação centralizada. { .fragment }
-- **Rate Limit**: Proteção contra flood. { .fragment }
-- **Logs & Monitoramento**. { .fragment }
-
----
-
-## 3. Service Discovery 🔎
-
-- Onde está o servidor de pagamentos? { .fragment }
-- Agenda dinâmica de IPs e Portas. { .fragment }
-- **Ferramentas**: Netflix Eureka, Consul. { .fragment }
-
----
-
-## 4. Load Balancing ⚖️
-
-- Distribuição inteligente da carga. { .fragment }
-- Evita que um container "morra" de trabalho. { .fragment }
+## Modelagem no Mermaid
 
 ```mermaid
-graph TD
-    GW[Gateway] --> LB[Load Balancer]
-    LB --> S1[Serviço A]
-    LB --> S2[Serviço B]
-    LB --> S3[Serviço C]
+classDiagram
+    class Celular {
+        +String marca
+        +String modelo
+        +ligar()
+        +tirarFoto()
+    }
 ```
 
 ---
 
-## 5. Resiliência: Circuit Breaker 🔌
+## Atributos vs Métodos
 
-- Detecta serviços lentos ou falhos. { .fragment }
-- Abre o circuito para proteger o resto do sistema. { .fragment }
-- Evita o cascateamento de erros. { .fragment }
-
----
-
-## Comparativo: Sync vs Async
-
-| Característica | Síncrono 🔄 | Assíncrono 📬 |
-| :--- | :--- | :--- |
-| **Resposta** | Imediata | Eventual |
-| **Desempenho** | Limitado pelo destino | Alto débito |
-| **Uso comum** | Cadastro/Login | Geração de Relatórios |
+* **Atributos:** Dados/Estado (cor, nome, preco).
+* **Métodos:** Comportamento/Ação (salvar(), calcular()).
 
 ---
 
-## 6. Prática: O "Dashboard" Agregador 💻
+## Instanciação: O Nascimento
 
-- Como o Gateway une dados de 3 serviços? { .fragment }
-- Agregação de respostas (Aggregation Pattern). { .fragment }
+Usamos a palavra-chave **`new`**.
 
----
-
-## Desafio Relâmpago ⚡
-
-O que acontece se o seu API Gateway cair? Ele é um ponto único de falha?
-
----
-
-## Resumo ✅
-
-- Sync é fácil, Async é escalável. { .fragment }
-- API Gateway protege e organiza. { .fragment }
-- Service Discovery é essencial em containers. { .fragment }
-- Resiliência não é opcional! { .fragment }
+```java
+Celular c1 = new Celular();
+c1.marca = "Apple";
+c1.ligar();
+```
 
 ---
 
-## Próxima Aula: Modelagem REST 📡
+## Memória Heap 🧠
 
-- Verbos HTTP. { .fragment }
-- Status Codes. { .fragment }
-- O contrato ideal. { .fragment }
+Quando fazemos `new`, o Java reserva um espaço na memória para aquele objeto específico.
+
+Independentemente de outros objetos da mesma classe.
 
 ---
 
-## Dúvidas? 🏗️
+## Atributo de Instância
+
+Cada objeto tem sua própria cópia dos atributos.
+
+Alterar o preço do `Produto A` não afeta o `Produto B`.
+
+---
+
+## Convenção Java 📌
+
+* **Classes:** Inciam com Maiúscula (`Produto`).
+* **Objetos/Variáveis:** Letra minúscula (`meuProduto`).
+* **Padrão:** camelCase.
+
+---
+
+## Resumo da Aula
+
+* Classe = Molde
+* Objeto = Realidade
+* `new` = Criar
+
+---
+
+## Próximo Passo: Encapsulamento! 🔒

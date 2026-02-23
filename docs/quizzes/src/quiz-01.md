@@ -1,71 +1,71 @@
-# Quiz 01 - Introdução a Microsserviços 🌐
+# Quiz - Aula 01 ❓
 
-1. Qual a principal característica de uma arquitetura Monolítica?
-    - [ ] É composta por vários serviços independentes
-    - [x] O sistema é um único bloco de código onde tudo está acoplado
-    - [ ] É escrita apenas em JavaScript
-    - [ ] Não utiliza banco de dados
-    *Explicação: No monólito, todas as funcionalidades residem em um único processo e base de código.*
+1. **O que caracteriza uma aplicação Desktop?**
+   - (A) Roda apenas dentro do navegador.
+   - (B) Precisa de internet 100% do tempo.
+   - (C) É instalada e executada localmente no sistema operacional.
+   - (D) É o mesmo que um site.
+   *Resposta: (C)* - Aplicações desktop rodam diretamente no Windows, Linux ou macOS.
 
-2. Qual vantagem é mais associada aos Microsserviços?
-    - [ ] Simplicidade de deploy inicial
-    - [ ] Baixo custo de infraestrutura
-    - [x] Escalabilidade granular e isolamento de falhas
-    - [ ] Facilidade em depurar logs centralizados
-    *Explicação: Microsserviços permitem escalar apenas a parte do sistema que precisa de mais fôlego (ex: pagamentos).*
+2. **Qual destes é um exemplo clássico de sistema Desktop?**
+   - (A) Gmail.
+   - (B) ERP (Sistemas de Gestão).
+   - (C) Facebook.
+   - (D) Instagram Web.
+   *Resposta: (B)* - ERPs e PDVs são os exemplos mais comuns de aplicações desktop corporativas.
 
-3. O que é "Escalabilidade Horizontal"?
-    - [ ] Aumentar a memória RAM de um único servidor
-    - [x] Adicionar mais máquinas ou instâncias para dividir a carga
-    - [ ] Trocar o banco de dados SQL por NoSQL
-    - [ ] Aumentar o tamanho das tabelas
-    *Explicação: É o ato de adicionar mais "trabalhadores" ao sistema ao invés de aumentar o poder de um só (vertical).*
+3. **O que significa a sigla IDE?**
+   - (A) Integrated Development Environment.
+   - (B) Internet Data Engine.
+   - (C) Internal Desktop Entry.
+   - (D) Interactive Design Editor.
+   *Resposta: (A)* - Ambiente de Desenvolvimento Integrado.
 
-4. Qual o papel de uma API (Application Programming Interface)?
-    - [ ] Criar o design da interface do usuário
-    - [x] Permitir a comunicação e troca de dados entre sistemas
-    - [ ] Servir como o sistema operacional do servidor
-    - [ ] Substituir o banco de dados
-    *Explicação: APIs são os contratos de comunicação entre o backend e seus clientes ou outros serviços.*
+4. **Qual o processo de transformar código-fonte em algo executável?**
+   - (A) Formatação.
+   - (B) Depuração.
+   - (C) Compilação.
+   - (D) Transmissão.
+   *Resposta: (C)* - A compilação traduz o código humano para a máquina.
 
-5. Sobre Microsserviços, o que significa ser "Poliglota"?
-    - [ ] Falar várias línguas humanas
-    - [x] A liberdade de usar diferentes linguagens/tecnologias para cada serviço
-    - [ ] Rodar apenas em servidores internacionais
-    - [ ] Usar apenas tradução automática nas rotas
-    *Explicação: Um serviço pode ser em Node.js e outro em Java, dependendo da necessidade técnica.*
+5. **Uma vantagem de aplicações Desktop é:**
+   - (A) Não ocupar espaço em disco.
+   - (B) Acesso direto ao hardware do computador.
+   - (C) Não precisar de sistema operacional.
+   - (D) Rodar apenas na nuvem.
+   *Resposta: (B)* - Sistemas desktop têm permissões de baixo nível mais fáceis.
 
-6. Qual destas ferramentas é usada para testar requisições para uma API sem precisar de frontend?
-    - [ ] Photoshop
-    - [x] Postman / Insomnia
-    - [ ] Excel
-    - [ ] Docker
-    *Explicação: Clients HTTP como o Postman permitem enviar verbos como GET, POST, etc., e ver a resposta direta.*
+6. **O que é o Bytecode em Java?**
+   - (A) O arquivo .java inicial.
+   - (B) O código binário final do Windows.
+   - (C) Um formato intermediário lido pela JVM.
+   - (D) Um erro de programação.
+   *Resposta: (C)* - O bytecode permite que Java seja "escreva uma vez, rode em qualquer lugar".
 
-7. O que acontece se um módulo de um monólito tiver um "Memory Leak" crítico?
-    - [ ] Apenas aquele módulo para de funcionar
-    - [ ] O banco de dados se apaga automaticamente
-    - [x] Provavelmente todo o sistema ficará instável ou sairá do ar
-    - [ ] O sistema migra sozinho para microsserviços
-    *Explicação: Como tudo roda no mesmo processo, falhas críticas afetam o bloco inteiro.*
+7. **Qual comando Java compila um arquivo .java?**
+   - (A) java file.java
+   - (B) javac file.java
+   - (C) build file.java
+   - (D) run file.java
+   *Resposta: (B)* - 'javac' é o Java Compiler.
 
-8. Qual o formato de dados mais comum usado hoje para comunicação entre serviços?
-    - [ ] XML
-    - [x] JSON
-    - [ ] CSV
-    - [ ] TXT
-    *Explicação: O JSON é leve, legível por humanos e o padrão de facto para APIs REST.*
+8. **PDV significa:**
+   - (A) Ponto de Venda.
+   - (B) Programa de Viagem.
+   - (C) Processamento de Vídeo.
+   - (D) Porta de Valor.
+   *Resposta: (A)* - Refere-se aos sistemas de caixa.
 
-9. Por que Microsserviços são considerados mais complexos operacionalmente?
-    - [ ] Porque exigem mais linhas de código
-    - [x] Devido à necessidade de monitorar muitos serviços, redes e consistência distribuída
-    - [ ] Porque só funcionam com Linux
-    - [ ] Porque requerem hardware da NASA
-    *Explicação: Manter 50 serviços conversando entre si exige muito mais automação e observabilidade.*
+9. **As aplicações desktop são sempre mais lentas que as web?**
+   - (A) Sim, sempre.
+   - (B) Não, geralmente são mais rápidas por rodarem localmente.
+   - (C) Depende apenas do navegador.
+   - (D) Ambas têm a mesma velocidade obrigatoriamente.
+   *Resposta: (B)* - Por usarem recursos locais, costumam ter menor latência.
 
-10. Qual ferramenta ajuda a garantir que o ambiente de desenvolvimento seja idêntico ao de produção?
-    - [ ] Git
-    - [ ] Postman
-    - [ ] VS Code
-    - [x] Docker (Containerização)
-    *Explicação: O Docker isola o serviço e suas dependências em um container que roda igual em qualquer lugar.*
+10. **A manutenção de um sistema desktop exige:**
+    - (A) Atualização apenas no servidor central.
+    - (B) Atualização em cada máquina onde o sistema está instalado.
+    - (C) Nenhuma atualização.
+    - (D) Compra de um novo computador.
+    *Resposta: (B)* - Este é um dos desafios do desktop em comparação com web.

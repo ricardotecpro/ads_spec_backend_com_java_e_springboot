@@ -1,140 +1,90 @@
-# Aula 01 - Introdução a Microsserviços 🌐
-## De Monólitos a Sistemas Distribuídos
+---
+title: Aula 01 - Introdução ao Desenvolvimento Desktop
+theme: league
+transition: slide
+---
+
+# Introdução ao Desenvolvimento Desktop 🖥️
 
 ---
 
-## Agenda de Hoje 📅
+## O que vamos aprender?
 
-1. Panorama do Software Moderno { .fragment }
-2. Monólitos vs Microsserviços { .fragment }
-3. A Economia das APIs { .fragment }
-4. Escalabilidade Vertical vs Horizontal { .fragment }
-5. Cinto de Utilidades (Ferramentas) { .fragment }
-6. Setup do Ambiente { .fragment }
+* O que é software desktop 🤔
+* Diferença entre Web e Desktop 🌐 vs 💻
+* Estrutura de um projeto corporativo 🏗️
+* Ambiente de desenvolvimento (JDK + IDE) 🛠️
 
 ---
 
-## 1. O Mundo Cloud-Native ☁️
+## O que é Software Desktop?
 
-- Sistemas globais exigem disponibilidade **24/7**. { .fragment }
-- Milhões de requisições por segundo. { .fragment }
-- Deploy contínuo (várias vezes ao dia). { .fragment }
+São aplicações instaladas diretamente no SO (Windows, Mac, Linux).
 
----
-
-## 2. A Evolução da Arquitetura 🏛️➡️🏗️
+* **Vantagens:** Acesso total ao hardware, arquivos locais e performance 🚀.
+* **Exemplos:** Photoshop, Office, PDVs de mercado.
 
 ---
 
-## 2.1 O Monólito 🏛️
-
-- Um único projeto, um único deploy. { .fragment }
-- Tudo ou nada: erro em um lugar afeta tudo. { .fragment }
-- Difícil de escalar partes específicas. { .fragment }
-- **Ideal para**: Projetos pequenos, MVPs rápidos. { .fragment }
-
----
-
-## 2.2 Microsserviços 🏗️
-
-- Conjunto de serviços independentes. { .fragment }
-- Comunicação via rede (APIs). { .fragment }
-- Cada um com seu banco de dados. { .fragment }
-- **Ideal para**: Sistemas complexos e escaláveis. { .fragment }
-
----
-
-## 3. O Papel das APIs 📡
-
-- **Contract-First**: Acordo de comunicação. { .fragment }
-- REST como padrão dominante. { .fragment }
-- JSON: A língua universal. { .fragment }
-
----
-
-## Escalabilidade: Vertical vs Horizontal
-
-| Vertical (Scale Up) | Horizontal (Scale Out) |
-| :--- | :--- |
-| Aumenta CPU/RAM | Adiciona mais servidores |
-| Tem limite físico | Virtualmente ilimitada |
-| Causa downtime no upgrade | Zero downtime (Redundância) |
-
----
-
-## Arquitetura de Microsserviços
+## Estrutura do Projeto
 
 ```mermaid
-graph LR
-    User[Cliente] --> AGW[API Gateway]
-    AGW --> S1[Usuários]
-    AGW --> S2[Pedidos]
-    AGW --> S3[Pagamentos]
-    S1 --> DB1[(DB)]
-    S2 --> DB2[(DB)]
-    S3 --> DB3[(DB)]
+graph TD
+    A[Usuário] --> B[Interface GUI]
+    B --> C[Lógica de Negócio]
+    C --> D[Banco de Dados]
 ```
 
 ---
 
-## 4. Ferramentas Indispensáveis 🛠️
+## Por que Desktop ainda é relevante?
+
+* Funciona sem internet (offline) 📶
+* Menor latência (resposta instantânea) ⚡
+* Integração com periféricos (impressoras, scanners) 🖨️
 
 ---
 
-## Client HTTP: Postman & Insomnia
+## Ambiente Java
 
-- Testar rotas sem Frontend. { .fragment }
-- Analisar Headers e Status Codes. { .fragment }
-- Simular diferentes cenários de erro. { .fragment }
+Precisamos do **JDK** (Java Development Kit) para desenvolver.
 
----
-
-## Containerização: Docker 🐋
-
-- "Roda na minha máquina, roda em qualquer lugar". { .fragment }
-- Isola dependências e versões. { .fragment }
-- Facilita a subida de múltiplos serviços locais. { .fragment }
+O **JRE** serve apenas para rodar o software pronto.
 
 ---
 
-## 5. Estrutura de Projeto Backend 📂
+## Ciclo de Vida Java
 
-- Divisão clara de responsabilidades. { .fragment }
-- Controllers, Services e Repositories. { .fragment }
-- Tratamento global de exceções. { .fragment }
-
----
-
-## 6. Setup do Ambiente 🚀
+1. Código Fonte (`.java`)
+2. Compilação (`javac`)
+3. Bytecode (`.class`)
+4. Execução (`java`) na **JVM**
 
 ---
 
-## Requisitos:
+## IDE: Nossa Oficina
 
-- IDE: VS Code ou IntelliJ. { .fragment }
-- Postman (Desktop ou Extensão). { .fragment }
-- Docker Desktop. { .fragment }
-- Git & GitHub. { .fragment }
+Utilizaremos ferramentas profissionais como **IntelliJ IDEA**, **Eclipse** ou **VS Code**.
 
----
-
-## Resumo da Aula ✅
-
-- Microsserviços trazem resiliência e escala. { .fragment }
-- APIs são o coração da comunicação moderna. { .fragment }
-- Ferramentas como Docker mudaram o jogo. { .fragment }
-- Começamos nossa jornada Fullstack! { .fragment }
+Facilitam:
+* Auto-complete
+* Debug
+* Gestão de arquivos
 
 ---
 
-## Próxima Aula: Arquitetura e Gateway 🏗️
+## Primeiro Desafio! 🏁
 
-- Como os serviços conversam? { .fragment }
-- O que é Service Discovery? { .fragment }
-- Protegendo a porta de entrada. { .fragment }
+Vamos configurar o Java e rodar o famoso **Hello World**.
 
 ---
 
-## Dúvidas? 🤔
+## Resumo da Aula
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+* Desktop = Local
+* Orientado a Objetos = Padrão de Mercado
+* Ambiente Seguro e Robusto
+
+---
+
+## Próxima Aula: Classes e Objetos! 🚀

@@ -1,104 +1,76 @@
-# Aula 06 - Services e Regras de Negócio 🧠
-## O Cérebro da Aplicação
+---
+title: Aula 06 - Organização de Projetos
+theme: serif
+transition: slide
+---
+
+# Organização de Projetos 📂
+
+Software Profissional
 
 ---
 
-## Agenda 📅
+## O Problema do Caos 🤯
 
-1. Por que separar as coisas? { .fragment }
-2. Responsabilidades do Service { .fragment }
-3. O Fluxo: Controller -> Service { .fragment }
-4. Tratamento de Erros Profissional { .fragment }
-5. DTOs: Protegendo os Dados { .fragment }
-6. Service vs ViewModel (Mobile) { .fragment }
+Muitas classes em uma mesma pasta dificultam a manutenção.
+
+A solução? **Pacotes (Packages)**.
 
 ---
 
-## 1. O Problema: "Controller Gordo" 🍔
+## Padrão de Nomenclatura
 
-- Lógica de negócio misturada com HTTP. { .fragment }
-- Código impossível de reutilizar. { .fragment }
-- Difícil de testar. { .fragment }
+Domínio invertido:
+`br.com.empresa.projeto.modulo`
 
----
-
-## 2. A Solução: Layered Architecture 🧱
-
-- **Controller**: Trata o transporte (HTTP). { .fragment }
-- **Service**: Trata a regra (O QUE fazer). { .fragment }
+Evita conflitos globais de nomes.
 
 ---
 
-## 3. O que vai no Service? ⚖️
+## Camadas (N-Tier)
 
-- Validações complexas. { .fragment }
-- Cálculos de valores. { .fragment }
-- Envio de e-mails/notificações. { .fragment }
-- Integração com repositórios. { .fragment }
+Dividir o sistema por responsabilidades.
 
----
-
-## 4. Tratamento de Erros ⚠️
-
-- O Service **Lança** (Throws). { .fragment }
-- O Controller **Captura** (Catches). { .fragment }
-
-```javascript
-// Service
-if (!saldo) throw new Error("Saldo Insuficiente");
-
-// Controller
-try { ... } catch (e) { res.status(400)... }
+```mermaid
+graph TD
+    V[View] --> C[Controller]
+    C --> M[Model]
 ```
 
 ---
 
-## 5. DTOs: Filtrando a Saída 📦
+## Benefícios da Separação
 
-- Nunca envie "tudo" do banco para o cliente. { .fragment }
-- Proteja campos sensíveis (Ex: `senha_hash`). { .fragment }
-- Melhore a performance (menos dados trafegados). { .fragment }
-
----
-
-## 6. Service vs ViewModel 🆚
-
-- No Backend: **Service** é o cérebro. { .fragment }
-- No Mobile/Front: **ViewModel** é o cérebro. { .fragment }
-- Ambos servem para "limpar" a camada de visualização. { .fragment }
+* **Manutenibilidade:** Erros fáceis de achar.
+* **Testabilidade:** Cada parte pode ser testada sozinha.
+* **Reuso:** O Model serve para Desktop e Web.
 
 ---
 
-## 7. Prática: Validando um Cadastro 💻
+## Pacotes Essenciais
 
-- Verificando se o e-mail é válido. { .fragment }
-- Verificando se o usuário já existe. { .fragment }
-- Lançando erros específicos. { .fragment }
-
----
-
-## Desafio: Onde colocar? ⚡
-
-Se uma regra diz: "Usuários VIP ganham 20% de desconto", essa regra deve ficar no **Controller** ou no **Service**?
+* `model`: Dados e Entidades.
+* `view`: Telas (Swing/Janelas).
+* `controller`: Lógica e fluxo.
 
 ---
 
-## Resumo ✅
+## O comando `import`
 
-- Controllers recebem, Services processam. { .fragment }
-- Mantenha seus Controllers "finos" (Slim Controllers). { .fragment }
-- Centralize as regras para facilitar a manutenção. { .fragment }
-- DTOs são as fronteiras dos dados. { .fragment }
+Traz classes de outros pacotes para o arquivo atual.
 
----
-
-## Próxima Aula: Onde os dados vivem! 🗄️
-
-### Repositories e Banco de Dados
-
-- PostgreSQL e SQL básico. { .fragment }
-- Camada de persistência. { .fragment }
+```java
+import java.util.List;
+```
 
 ---
 
-## Dúvidas? 🧠
+## Resumo da Aula
+
+* Package = Pasta lógica
+* Camadas = Organização por função
+* MVC = O padrão de ouro
+
+---
+
+## Próximo Passo: Padrão MVC! 🏗️

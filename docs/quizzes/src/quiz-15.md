@@ -1,71 +1,71 @@
-# Quiz 15 - Navegação com React Router 🚦
+# Quiz - Aula 15 ❓
 
-1. O que é uma SPA (Single Page Application)?
-    - [ ] Um site que só funciona em um navegador
-    - [x] Uma aplicação onde o HTML é carregado uma única vez e o Javascript troca o conteúdo da tela
-    - [ ] Um site que não tem Javascript
-    - [ ] Um aplicativo de celular que não usa internet
-    *Explicação: SPAs oferecem uma experiência fluida, parecida com um app nativo, sem recarregamentos de página.*
+1. **SQL Injection é um ataque que visa:**
+   - (A) Roubar o mouse do usuário.
+   - (B) Executar comandos SQL maliciosos através de entradas do sistema.
+   - (C) Queimar o processador.
+   - (D) Mudar a cor do Windows.
+   *Resposta: (B)* - Tira proveito de falhas na montagem das queries SQL.
 
-2. Qual componente é obrigatório para envolver toda a aplicação que usará rotas?
-    - [ ] <Route>
-    - [ ] <Link>
-    - [x] <BrowserRouter>
-    - [ ] <RouterManager>
-    *Explicação: Ele é o "contexto" que permite ao React monitorar a URL do navegador.*
+2. **A melhor forma de evitar SQL Injection é usar:**
+   - (A) Statements simples.
+   - (B) PreparedStatement com parâmetros (?).
+   - (C) Não usar banco de dados.
+   - (D) Escrever SQL em letras maiúsculas.
+   *Resposta: (B)* - O driver limpa e valida os dados antes de enviar ao banco.
 
-3. Como definimos uma rota específica para a página de contato?
-    - [ ] <Route url="/contato" component={Contato} />
-    - [x] <Route path="/contato" element={<Contato />} />
-    - [ ] <Link to="/contato" />
-    - [ ] <a href="/contato">
-    *Explicação: No React Router v6, usamos os atributos `path` e `element`.*
+3. **Logging serve para:**
+   - (A) Deixar o código mais bonito.
+   - (B) Registrar eventos e erros para análise posterior.
+   - (C) Deletar arquivos velhos.
+   - (D) Acelerar a internet.
+   *Resposta: (B)* - Fundamental para descobrir por que um erro aconteceu no computador do cliente.
 
-4. Por que não devemos usar a tag `<a>` para navegar entre rotas no React?
-    - [ ] Porque ela é proibida pelo Google
-    - [ ] Porque ela gasta mais bateria
-    - [x] Porque ela causa um recarregamento total da página, perdendo o estado do React
-    - [ ] Porque ela não aceita CSS
-    *Explicação: O componente `<Link>` intercepta o clique para manter a troca de telas interna.*
+4. **Debugging (Depuração) é o ato de:**
+   - (A) Digitar o código rápido.
+   - (B) Executar o código passo a passo para encontrar e corrigir erros.
+   - (C) Instalar o Java.
+   - (D) Comprar hardware novo.
+   *Resposta: (B)* - Ferramenta essencial do programador.
 
-5. Para que serve o caractere `*` no atributo `path`?
-    - [ ] Para indicar uma rota secreta
-    - [x] Como um "coringa" para capturar qualquer URL que não foi definida anteriormente (Página 404)
-    - [ ] Para multiplicar o número de páginas
-    - [ ] Para aceitar qualquer tipo de arquivo
-    *Explicação: É a forma padrão de lidar com links inexistentes.*
+5. **Um 'Breakpoint' serve para:**
+   - (A) Quebrar o computador.
+   - (B) Pausar a execução do programa em uma linha específica durante o Debug.
+   - (C) Adicionar um espaço em branco.
+   - (D) Terminar o loop.
+   *Resposta: (B)* - Permite inspecionar o valor das variáveis naquele momento.
 
-6. Qual hook usamos para capturar parâmetros da URL (ex: o ID em `/post/10`)?
-    - [ ] useID()
-    - [ ] useRoute()
-    - [x] useParams()
-    - [ ] useQuery()
-    *Explicação: Os parâmetros definidos com `:` na rota são extraídos por este hook.*
+6. **Boas Práticas de programação ajudam a:**
+   - (A) Escrever menos código.
+   - (B) Criar softwares mais seguros, legíveis e fáceis de manter.
+   - (C) Ganhar prêmios de design.
+   - (D) Gastar menos energia elétrica.
+   *Resposta: (B)* - Foca na qualidade e longevidade do projeto.
 
-7. Como redirecionamos o usuário para a Home após ele clicar em um botão de "Sair"?
-    - [ ] window.location.href = "/"
-    - [x] const navigate = useNavigate(); navigate("/");
-    - [ ] <Link to="/" />
-    - [ ] useRoute("/")
-    *Explicação: O hook `useNavigate` permite navegação via lógica de programação.*
+7. **O princípio DRY (Don't Repeat Yourself) prega que:**
+   - (A) Devemos copiar e colar código sempre.
+   - (B) Evitemos a repetição de lógica, criando métodos ou classes reutilizáveis.
+   - (C) O código deve ser escrito apenas uma vez por dia.
+   - (D) O teclado não deve ser usado muito.
+   *Resposta: (B)* - "Não se repita".
 
-8. O que acontece se removermos o componente `<Routes>` e deixarmos apenas os `<Route>`?
-    - [ ] O app continua funcionando
-    - [x] O React Router gerará um erro, pois os Route precisam estar dentro de um provedor de rotas
-    - [ ] O site fica mais lento
-    - [ ] O menu desaparece
-    *Explicação: `<Routes>` é o componente que escolhe qual rota renderizar baseada na URL atual.*
+8. **Tratamento de exceções (try-catch) na segurança serve para:**
+   - (A) Esconder erros do programador.
+   - (B) Evitar que o sistema exponha detalhes técnicos sensíveis ao usuário final.
+   - (C) Não salvar no banco.
+   - (D) Deixar o código colorido.
+   *Resposta: (B)* - Segurança através da obscuridade de detalhes técnicos.
 
-9. Em qual pacote extra encontramos as ferramentas de roteamento do React?
-    - [ ] react-dom
-    - [ ] react-router
-    - [x] react-router-dom
-    - [ ] vite-plugin-router
-    *Explicação: O `react-router-dom` é a versão específica para navegadores web.*
+9. **Consultas parametrizadas são mais seguras porque:**
+   - (A) São mais curtas.
+   - (B) Separam o comando SQL dos dados fornecidos pelo usuário.
+   - (C) São escritas em inglês.
+   - (D) Usam mais memória.
+   *Resposta: (B)* - Impede que dados sejam interpretados como comandos.
 
-10. Como definimos um parâmetro dinâmico chamado `slug` na URL?
-    - [ ] path="/blog/slug"
-    - [x] path="/blog/:slug"
-    - [ ] path="/blog/{slug}"
-    - [ ] path="/blog/*slug"
-    *Explicação: O uso dos dois pontos (`:`) sinaliza que aquela parte da URL é uma variável.*
+10. **Refatoração é o processo de:**
+    - (A) Mudar o que o software faz.
+    - (B) Melhorar a estrutura do código sem alterar seu comportamento externo.
+    - (C) Reinstalar o Windows.
+    - (D) Trocar de monitor.
+    *Resposta: (B)* - Limpeza e otimização do código existente.

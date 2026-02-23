@@ -1,71 +1,71 @@
-# Quiz 05 - Implementação de APIs ⚙️
+# Quiz - Aula 05 ❓
 
-1. Qual a principal responsabilidade da camada de Controller?
-    - [ ] Salvar dados no banco de dados
-    - [x] Gerenciar a requisição HTTP e retornar a resposta adequada
-    - [ ] Fazer cálculos complexos de impostos
-    - [ ] Criar a interface gráfica do usuário
-    *Explicação: O Controller age como um intermediário entre o mundo externo (HTTP) e a lógica interna do sistema.*
+1. **Uma classe abstrata pode ter objetos criados diretamente (`new`)?**
+   - (A) Sim.
+   - (B) Não.
+   - (C) Apenas se todos os métodos forem públicos.
+   - (D) Sim, em domingos e feriados.
+   *Resposta: (B)* - Classes abstratas servem apenas como base.
 
-2. O que é um "Handler" em um sistema de rotas?
-    - [ ] Um tipo de vírus de computador
-    - [x] A função específica que é executada quando uma rota é chamada
-    - [ ] O nome do servidor de hospedagem
-    - [ ] O arquivo onde guardamos as senhas
-    *Explicação: Cada rota (Verbo + Path) é mapeada para um Handler que processa aquela ação específica.*
+2. **Um método abstrato é aquele que:**
+   - (A) Tem muito código.
+   - (B) Não possui corpo (implementação) e deve ser sobre-escrito pelos filhos.
+   - (C) É invisível para os filhos.
+   - (D) Só roda em servidores.
+   *Resposta: (B)* - Ele define apenas a assinatura (nome, retorno e parâmetros).
 
-3. Qual a melhor forma de capturar o ID de um usuário para uma busca individual (ex: /usuarios/10)?
-    - [ ] Query Param (?id=10)
-    - [x] Path Param (/usuarios/:id)
-    - [ ] Request Body ({ "id": 10 })
-    - [ ] Através de um cookie
-    *Explicação: Path Params são ideais para identificar recursos de forma única e hierárquica na URI.*
+3. **Qual palavra-chave é usada para implementar uma interface?**
+   - (A) extends
+   - (B) implements
+   - (C) uses
+   - (D) include
+   *Resposta: (B)* - 'implements' indica que a classe cumprirá o contrato.
 
-4. Quando devemos usar "Query Params"?
-    - [ ] Para enviar a senha do usuário
-    - [x] Para filtros, ordenação e paginação (ex: ?cor=azul)
-    - [ ] Para atualizar o nome de um produto
-    - [ ] Para deletar o banco de dados
-    *Explicação: Query Params são usados para modificar ou filtrar a representação dos dados retornados.*
+4. **Diferente de classes, uma classe Java pode implementar:**
+   - (A) Nenhuma interface.
+   - (B) Apenas uma interface.
+   - (C) Múltiplas interfaces (sem limite).
+   - (D) Apenas interfaces privadas.
+   *Resposta: (C)* - Isso permite que uma classe tenha múltiplos comportamentos.
 
-5. Em qual objeto da requisição costuma vir o JSON enviado via POST?
-    - [ ] req.params
-    - [ ] req.query
-    - [x] req.body
-    - [ ] req.headers
-    *Explicação: O Body é a parte da mensagem HTTP reservada para o transporte de dados complexos e volumosos.*
+5. **Interfaces podem conter variáveis que mudam de valor?**
+   - (A) Sim.
+   - (B) Não, apenas constantes (public static final).
+   - (C) Apenas se forem strings.
+   - (D) Apenas se o banco de dados permitir.
+   *Resposta: (B)* - Interfaces definem o "que", não o estado variável.
 
-6. Qual analogia melhor define o papel do Controller?
-    - [ ] O cozinheiro que prepara o prato
-    - [x] O garçom que anota o pedido e entrega o prato
-    - [ ] O dono do restaurante que cuida do banco de dados
-    - [ ] O cliente que come a comida
-    *Explicação: O Controller apenas coordena a entrada e a saída, delegando a "preparação" para outras camadas.*
+6. **Se uma classe herda de uma Classe Abstrata, ela é obrigada a:**
+   - (A) Deletar todos os métodos.
+   - (B) Implementar todos os métodos abstratos (ou também ser abstrata).
+   - (C) Mudar de nome.
+   - (D) Criar um novo arquivo.
+   *Resposta: (B)* - É uma obrigatoriedade do compilador.
 
-7. Por que a Injeção de Dependência é útil nos Controllers?
-    - [ ] Para o código ficar mais pesado e seguro
-    - [x] Para facilitar a troca de comportamentos e a criação de testes automatizados
-    - [ ] Para economizar espaço no HD
-    - [ ] Porque o Google obriga
-    *Explicação: Receber dependências prontas torna o Controller menos acoplado e mais fácil de manter.*
+7. **Qual o símbolo Mermaid para uma interface?**
+   - (A) <<abstract>>
+   - (B) <<interface>>
+   - (C) [Interface]
+   - (D) {Interface}
+   *Resposta: (B)* - Usamos estereótipos no classDiagram.
 
-8. O que acontece se o Controller não retornar um Status Code?
-    - [ ] O servidor explode
-    - [x] O cliente pode receber um status padrão (ex: 200) que não condiz com o resultado real
-    - [ ] O computador trava
-    - [ ] A internet cai
-    *Explicação: É vital ser explícito sobre o que aconteceu (201 para sucesso, 400 para erro, etc).*
+8. **Abstração serve para:**
+   - (A) Complicar o sistema.
+   - (B) Focar no essencial e esconder a complexidade desnecessária.
+   - (C) Usar mais memória RAM.
+   - (D) Diminuir o brilho da tela.
+   *Resposta: (B)* - É um pilar fundamental da POO.
 
-9. Onde configuramos o mapeamento de Verbo + Path no backend?
-    - [ ] No banco de dados
-    - [x] No arquivo de roteamento (Router)
-    - [ ] No arquivo de interface (CSS)
-    - [ ] Dentro do arquivo de imagem .png
-    *Explicação: O roteador é quem diz: "Se chegar esse verbo nesse caminho, chame essa função".*
+9. **Podemos ter métodos comuns (com código) dentro de uma Classe Abstrata?**
+   - (A) Sim.
+   - (B) Não.
+   - (C) Apenas se forem estáticos.
+   - (D) Apenas se não houver herança.
+   *Resposta: (A)* - Esta é uma das diferenças em relação às Interfaces clássicas.
 
-10. Qual a vantagem de padronizar as respostas de erro em JSON?
-    - [ ] Para o erro ficar mais bonito
-    - [x] Para que o frontend consiga ler a mensagem e exibir um alerta amigável ao usuário
-    - [ ] Para economizar bateria do servidor
-    - [ ] Para esconder o código do erro
-    *Explicação: Um JSON de erro estruturado permite que o app reaja de forma inteligente a falhas.*
+10. **Uma interface é ideal para:**
+    - (A) Guardar dados de usuários.
+    - (B) Definir comportamentos comuns a classes não relacionadas hierarquicamente.
+    - (C) Criar janelas desktop.
+    - (D) Configurar o driver de vídeo.
+    *Resposta: (B)* - Ex: `Imprimivel`, `Serializavel`.

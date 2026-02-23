@@ -1,110 +1,89 @@
-# Aula 04 - Documentação e Mocks 📝
-## Developer Experience e Contratos
+---
+title: Aula 04 - Herança e Polimorfismo
+theme: solarized
+transition: slide
+---
+
+# Herança e Polimorfismo 🧬
+
+Reuso e Flexibilidade
 
 ---
 
-## Agenda 📅
+## Herança: O Reuso
 
-1. Por que documentar? { .fragment }
-2. OpenAPI vs Swagger { .fragment }
-3. Swagger UI e Editor { .fragment }
-4. O Poder dos Mocks { .fragment }
-5. Developer Experience (DX) { .fragment }
-6. Ferramentas de Simulação { .fragment }
+Permite que uma classe herde tudo o que outra já tem.
+
+Classe Pai (Superclasse) ➔ Classe Filho (Subclasse)
 
 ---
 
-## 1. Documentação é DX 🚀
+## Exemplo Prático
 
-- Sua API é seu produto. { .fragment }
-- Documentar economiza tempo de suporte. { .fragment }
-- Facilita a integração com Front/Mobile. { .fragment }
-
----
-
-## 2. OpenAPI (OAS) 📜
-
-- O padrão mundial. { .fragment }
-- Arquivo YAML ou JSON descritivo. { .fragment }
-- Agnóstico de linguagem. { .fragment }
+```mermaid
+classDiagram
+    Pessoa <|-- Aluno
+    Pessoa <|-- Professor
+    class Pessoa {
+        +String nome
+    }
+```
 
 ---
 
-## 3. Swagger: O Canivete Suíço 🛠️
+## Palavra-chave: `extends`
 
-- **Editor**: Escreva e valide o contrato. { .fragment }
-- **UI**: Gere a página visual de testes. { .fragment }
-- **Codegen**: Gere código (client/server) automaticamente. { .fragment }
+Define quem é o pai.
 
----
-
-## Swagger UI em Ação
-
-- Permite testar endpoints no próprio navegador. { .fragment }
-- Mostra exemplos de JSON de entrada e saída. { .fragment }
-- Exibe todos os Status Codes possíveis. { .fragment }
+```java
+public class Aluno extends Pessoa {
+    private String matricula;
+}
+```
 
 ---
 
-## 4. O Poder dos Mocks 🎭
+## Polimorfismo
 
-- **Development in Parallel**: Front não espera pelo Back. { .fragment }
-- Servidor "Fake" que retorna dados reais. { .fragment }
-- Valide a experiência antes da implementação complexa. { .fragment }
+"Muitas formas".
 
----
-
-## 5. Developer Experience (DX) 👨‍💻
-
-Como ser amado por outros devs:
-
-- Nomes de rotas claros. { .fragment }
-- Erros descritivos no Body. { .fragment }
-- Exemplos de requisição. { .fragment }
-- Documentação atualizada (ou gerada pelo código). { .fragment }
+Um objeto pode ser referido pelo tipo do pai, mas se comporta como o filho.
 
 ---
 
-## 6. Ferramentas Recomendadas 🧰
+## Sobre-escrita (`@Override`)
 
-- **Swagger Editor**: Online ou Local. { .fragment }
-- **Mockoon**: Mock local amigável. { .fragment }
-- **Prism**: Mock via CLI. { .fragment }
-- **Postman**: Collections documentadas. { .fragment }
+Mudar o comportamento de um método herdado.
 
----
-
-## 7. Prática: Editando um YAML 💻
-
-- Desenhando um endpoint `GET /tarefas`. { .fragment }
-- Definindo parâmetros de entrada. { .fragment }
-- Criando esquemas de dados. { .fragment }
+```java
+@Override
+public void falar() {
+    System.out.println("Olá, eu sou um Aluno!");
+}
+```
 
 ---
 
-## Desafio: Mock vs Stubs ⚡
+## O Uso do `super`
 
-Qual a principal vantagem de um Mock Server online (como Postman) em relação a um Mock rodando apenas no computador do desenvolvedor?
-
----
-
-## Resumo ✅
-
-- OpenAPI é o contrato. { .fragment }
-- Swagger UI é a vitrine da sua API. { .fragment }
-- Mocks destravam o desenvolvimento da equipe. { .fragment }
-- DX é o diferencial de uma boa API. { .fragment }
+Acessa membros da superclasse diretamente.
 
 ---
 
-## Próxima Aula: Implementação Backend! 💻
+## Vantagens 🚀
 
-### Módulo 2: Manipulação de Dados
-
-- Controllers e Services. { .fragment }
-- Repositories e Banco de Dados. { .fragment }
-- Mão na massa com código real! { .fragment }
+* Menos código repetido.
+* Sistema fácil de expandir.
+* Código mais genérico e flexível.
 
 ---
 
-## Dúvidas? 📝
+## Resumo da Aula
+
+* Herança = "É um" 
+* Polimorfismo = Flexibilidade
+* `@Override` = Especialização
+
+---
+
+## Próximo Passo: Abstração e Interfaces! 🧩

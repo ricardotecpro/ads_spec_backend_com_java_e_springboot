@@ -8,22 +8,22 @@ A principal promessa de Java é: **"Escreva uma vez, execute em qualquer lugar."
 
 ## 📂 Tópicos
 
-* **[Tópicos](/topicos.md)**: Trilhas de Aprendizagem.
+* **[Tópicos](topicos.md)**: Trilhas de Aprendizagem.
 
-* **[Exemplos](/exemplos.md)** Exemplos
+* **[Exemplos](exemplos.md)**: Exemplos Práticos.
 
-* **[Exercicios](/exercicios.md)** Exemplos
+* **[Exercícios](exercicios.md)**: Exercícios de Fixação.
  
-* **[Desafios](/desafios.md)** Exemplos
+* **[Desafios](desafios.md)**: Desafios e Atividades.
  
-* **[Projetos](/projetos.md)** Projetos
+* **[Projetos](projetos.md)**: Projetos Hands-on.
 
 ---
 
 ## 📄 Slides
 
-* **[Slides html](/slides.html)**: Slides
-* **[Slides md](/slides.md)**: Slides
+* **[Slides HTML](slides.html)**: Visualização via navegador.
+* **[Slides Markdown](slides.md)**: Documentação dos slides.
 
 ---
 
@@ -79,7 +79,7 @@ A combinação de **Java** e **Spring Boot** é imbatível quando o assunto é c
 
 ## ✉️ Contatos
 
-* **[Contatos](https://ricardotecpro.github.io/contatos.html)**: Contatos / Contacts
+* **[Contatos](https://ricardotecpro.github.io/contatos/)**: Contatos / Contacts
 
 ---
 

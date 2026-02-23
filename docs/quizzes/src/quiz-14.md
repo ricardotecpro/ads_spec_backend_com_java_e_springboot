@@ -1,71 +1,71 @@
-# Quiz 14 - Efeitos e APIs (useEffect) 🌐
+# Quiz - Aula 14 ❓
 
-1. O que é um "Efeito Colateral" no React?
-    - [ ] É um bug que trava o computador
-    - [x] Uma ação que acontece fora do fluxo normal de renderizar a interface (ex: buscar dados, timers)
-    - [ ] É o nome de uma biblioteca de animação
-    - [ ] É quando o CSS muda a cor do botão
-    *Explicação: Efeitos saem do campo puro de "desenhar componentes" e tocam o mundo externo.*
+1. **O padrão DAO serve para:**
+   - (A) Criar interfaces gráficas.
+   - (B) Isolar e gerenciar o acesso aos dados da aplicação.
+   - (C) Aumentar a segurança do Windows.
+   - (D) Formatar o código-fonte.
+   *Resposta: (B)* - 'Data Access Object' isola o SQL do restante da lógica.
 
-2. Qual o segundo parâmetro do `useEffect`?
-    - [ ] Um número inteiro
-    - [x] O array de dependências
-    - [ ] O nome do componente
-    - [ ] Um arquivo CSS
-    *Explicação: Esse array decide quando o efeito deve ser re-executado.*
+2. **No CRUD, o 'R' (Read) corresponde ao SQL:**
+   - (A) INSERT.
+   - (B) UPDATE.
+   - (C) SELECT.
+   - (D) DELETE.
+   *Resposta: (C)* - Operação de leitura/consulta.
 
-3. O que acontece se passarmos um array de dependências vazio `[]`?
-    - [ ] O efeito nunca roda
-    - [ ] O efeito roda em todo "re-render"
-    - [x] O efeito roda apenas uma vez, quando o componente é montado (aparece na tela)
-    - [ ] O app fecha com erro
-    *Explicação: É o padrão usado para buscar dados iniciais de uma API.*
+3. **No CRUD, o 'U' (Update) serve para:**
+   - (A) Criar um usuário novo.
+   - (B) Atualizar dados de um registro existente.
+   - (C) Unir duas tabelas.
+   - (D) Desinstalar o sistema.
+   *Resposta: (B)* - Comando SQL UPDATE.
 
-4. Como fazemos para que um efeito rode toda vez que o estado `tema` mudar?
-    - [ ] useEffect(() => { ... })
-    - [ ] useEffect(() => { ... }, [])
-    - [x] useEffect(() => { ... }, [tema])
-    - [ ] useEffect([tema], () => { ... })
-    *Explicação: Incluir a variável no array obriga o React a monitorá-la.*
+4. **A classe DAO deve retornar para o Controller:**
+   - (A) Comandos SQL em branco.
+   - (B) Objetos ou Listas de Objetos (do Model).
+   - (C) A cor da tela.
+   - (D) Nada.
+   *Resposta: (B)* - O Controller lida com objetos de negócio, não com SQL.
 
-5. O que a função `fetch()` retorna?
-    - [ ] O dado final em formato JSON
-    - [x] Uma Promise (Promessa)
-    - [ ] Um número de erro
-    - [ ] Uma string de texto
-    *Explicação: Chamadas de rede são assíncronas; o fetch promete que trará o dado no futuro.*
+5. **Se mudarmos o nome de uma coluna no banco, o que acontece?**
+   - (A) Alteramos apenas a classe DAO.
+   - (B) Temos que refazer a tela inteira.
+   - (C) O Windows para de funcionar.
+   - (D) Nada, o Java descobre sozinho.
+   *Resposta: (A)* - Esta é a grande vantagem do isolamento do DAO.
 
-6. Para que serve o `.then(res => res.json())`?
-    - [ ] Para salvar o dado no disco
-    - [ ] Para fechar a conexão
-    - [x] Para converter a resposta bruta da rede em um objeto Javascript que possamos usar
-    - [ ] Para criptografar os dados
-    *Explicação: A resposta inicial é um objeto de rede; precisamos extrair o corpo dela em JSON.*
+6. **PreparedStatement ajuda no DAO a:**
+   - (A) Organizar o código.
+   - (B) Prevenir SQL Injection e facilitar a passagem de parâmetros.
+   - (C) Deixar a fonte maior.
+   - (D) Conectar ao Wi-Fi.
+   *Resposta: (B)* - Uso obrigatório para segurança e organização.
 
-7. Qual a maneira correta de lidar com o estado de "Carregando"?
-    - [ ] Usar um cronômetro de 5 segundos
-    - [x] Criar um estado booleano `isLoading` e exibi-lo enquanto a API não responde
-    - [ ] Pedir para o usuário clicar em "Refresh"
-    - [ ] Não precisa lidar, o React faz sozinho
-    *Explicação: Feedback para o usuário é essencial para uma boa experiência (UX).*
+7. **O método `listarTodos()` no DAO geralmente retorna:**
+   - (A) Um único número.
+   - (B) Uma List<Objeto> (ex: List<Produto>).
+   - (C) Uma String gigante.
+   - (D) Um arquivo PDF.
+   *Resposta: (B)* - Permite que a View mostre todos os itens em uma tabela.
 
-8. O que acontece se você atualizar um estado dentro de um `useEffect` sem o array `[]`?
-    - [ ] O estado não muda
-    - [x] Pode gerar um loop infinito (o efeito muda o estado, que re-renderiza, que roda o efeito...)
-    - [ ] O site fica mais rápido
-    - [ ] O computador reinicia
-    *Explicação: Este é um dos erros mais comuns de iniciantes no React.*
+8. **A camada DAO fica localizada entre:**
+   - (A) A View e o Controller.
+   - (B) O Controller e o Banco de Dados.
+   - (C) A View e o Usuário.
+   - (D) O Teclado e a Memória.
+   *Resposta: (B)* - É a camada mais próxima da persistência.
 
-9. Onde devemos colocar a chamada `fetch` para que ela não rode milhares de vezes sem necessidade?
-    - [ ] Fora do componente
-    - [ ] No meio do JSX
-    - [x] Dentro de um `useEffect` com dependências controladas
-    - [ ] Dentro do CSS
-    *Explicação: O useEffect isola a lógica de disparos de rede.*
+9. **Um DAO para a classe `Usuario` deveria se chamar:**
+   - (A) UsuarioWindow.
+   - (B) UsuarioDAO.
+   - (C) LogicUsuario.
+   - (D) SQLData.
+   *Resposta: (B)* - Convenção de nomenclatura Clara.
 
-10. Se quisermos limpar um timer ou fechar um socket quando o componente sumir da tela, onde fazemos isso?
-    - [ ] Em outro componente
-    - [ ] No `useState`
-    - [x] Na função de "cleanup" retornada pelo `useEffect`
-    - [ ] Deletando o arquivo
-    *Explicação: O useEffect permite retornar uma função que o React chama ao "desmontar" o componente.*
+10. **A operação 'Delete' do CRUD deve ser usada:**
+    - (A) Livremente a qualquer momento.
+    - (B) Com cuidado, geralmente pedindo confirmação ao usuário.
+    - (C) Apenas pelo gerente.
+    - (D) Apenas se o banco estiver cheio.
+    *Resposta: (B)* - Operações destrutivas exigem validação de UX.

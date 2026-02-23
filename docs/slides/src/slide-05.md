@@ -1,102 +1,77 @@
-# Aula 05 - Implementação de APIs ⚙️
-## Controllers e Rotas
+---
+title: Aula 05 - Classes Abstratas e Interfaces
+theme: moon
+transition: slide
+---
+
+# Abstração e Interfaces 🧩
+
+Desenhando Contratos
 
 ---
 
-## Agenda 📅
+## Classes Abstratas
 
-1. Camadas do Backend { .fragment }
-2. O Papel do Controller { .fragment }
-3. Rotas e Handlers { .fragment }
-4. Capturando Dados (Params/Body) { .fragment }
-5. Status Codes na Prática { .fragment }
-6. Injeção de Dependência { .fragment }
+Incompletas por natureza. Não podem ser instanciadas.
+
+Servem apenas como molde base.
 
 ---
 
-## 1. Organização em Camadas 🧱
+## Métodos Abstratos
 
-- **Controller**: Trata a entrada (HTTP). { .fragment }
-- **Service**: Regras de negócio. { .fragment }
-- **Repository**: Acesso ao banco. { .fragment }
+Assinaturas sem corpo. **Obrigam** o filho a implementar.
 
----
-
-## 2. O Papel do Controller 🎮
-
-- Ele é o ponto de entrada. { .fragment }
-- **Não deve ter lógica complexa!** { .fragment }
-- Deve apenas orquestrar a execução. { .fragment }
-
-> **Controller** = Garçom 🤵
-> **Service** = Cozinheiro 👨‍🍳
-
----
-
-## 3. Rotas e Handlers 📍
-
-- **Rota**: Verbo HTTP + Path. { .fragment }
-- **Handler**: Função executada. { .fragment }
-
-```javascript
-router.post('/login', controller.realizarLogin);
+```java
+public abstract void calcularArea();
 ```
 
 ---
 
-## 4. Capturando Dados 📥
+## Interfaces: O Contrato
 
-- **Path Params**: `/id/123` (Identificação). { .fragment }
-- **Query Params**: `?q=busca` (Filtro). { .fragment }
-- **Body**: Enviando JSON (Criação/Update). { .fragment }
+Define **o que** uma classe deve fazer.
 
----
-
-## 5. Respostas de Qualidade 📤
-
-- Nunca esqueça o Status Code! { .fragment }
-- Sucesso: 200, 201, 204. { .fragment }
-- Erro: 400, 401, 404, 500. { .fragment }
+```java
+public interface Autenticavel {
+    boolean login(String s);
+}
+```
 
 ---
 
-## 6. Injeção de Dependência 💉
+## Mermaid: Interfaces
 
-- Receber serviços prontos. { .fragment }
-- Facilita testar o Controller "isolado". { .fragment }
-
----
-
-## 7. Prática: O Primeiro Endpoint 💻
-
-- Mapeando um `GET /ping`. { .fragment }
-- Retornando um `pong` em JSON. { .fragment }
-- Testando no Insomnia/Postman. { .fragment }
+```mermaid
+classDiagram
+    class Autenticavel {
+        <<interface>>
+        +login(s)
+    }
+    Autenticavel <|.. Usuario
+```
 
 ---
 
-## Desafio: Params vs Query ⚡
+## Qual a diferença? 🤔
 
-Se você quer listar todos os alunos de uma sala com o nome "Pedro", qual tipo de parâmetro você usaria para o nome?
-
----
-
-## Resumo ✅
-
-- Controllers são a porta de entrada. { .fragment }
-- Devem ser leves e objetivos. { .fragment }
-- Capturam dados e retornam status/JSON. { .fragment }
-- Seguem as rotas definidas. { .fragment }
+* **Classe Abstrata:** Pode ter código pronto. Representa "O que eu SOU".
+* **Interface:** Apenas assinaturas. Representa "O que eu FAÇO".
 
 ---
 
-## Próxima Aula: Regras de Negócio! 🧠
+## Múltiplas Interfaces
 
-### Services e Validações
-
-- Onde o cálculo acontece. { .fragment }
-- Isolando o código do "mundo externo". { .fragment }
+Uma classe pode implementar várias interfaces ao mesmo tempo, mas herdar de apenas uma classe.
 
 ---
 
-## Dúvidas? ⚙️
+## Resumo da Aula
+
+* Abstrata = Rascunho
+* Interface = Contrato
+* `implements` = Cumprir a promessa
+
+---
+
+## Próximo Passo: Organização de Projetos! 📂

@@ -1,71 +1,71 @@
-# Quiz 13 - Estado e Reatividade (useState) 🎣
+# Quiz - Aula 13 ❓
 
-1. O que acontece quando o valor de um "State" muda no React?
-    - [ ] O computador reinicia
-    - [x] O React re-seta (redesenha) o componente na tela com os novos dados
-    - [ ] O código Javascript é deletado
-    - [ ] Nada, o desenvolvedor deve atualizar a tela manualmente
-    *Explicação: A reatividade automática é um dos maiores poderes do React.*
+1. **O JDBC permite que o Java se conecte a:**
+   - (A) Apenas bancos MySQL.
+   - (B) Qualquer banco de dados que possua um driver compatível.
+   - (C) Apenas arquivos de texto.
+   - (D) Sites da internet.
+   *Resposta: (B)* - É uma API universal de conexão.
 
-2. Qual a forma correta de criar um estado para guardar um número?
-    - [ ] let x = 0;
-    - [ ] const x = 0;
-    - [x] const [x, setX] = useState(0);
-    - [ ] val x by state(0);
-    *Explicação: Usamos o "Array Destructuring" para pegar a variável e a função disparadora.*
+2. **DriverManager serve para:**
+   - (A) Gerenciar os arquivos do projeto.
+   - (B) Obter uma conexão com o banco de dados via URL.
+   - (C) Deletar o driver.
+   - (D) Abrir o navegador.
+   *Resposta: (B)* - Localiza o driver correto e abre o canal de comunicação.
 
-3. Por que não podemos fazer `contador = contador + 1` diretamente?
-    - [ ] Porque gasta muita energia
-    - [ ] Porque o Javascript proíbe
-    - [x] Porque o React não ficará sabendo da mudança e não atualizará a tela
-    - [ ] Porque isso apaga o banco de dados
-    *Explicação: A função `set...` é quem avisa ao React que algo mudou.*
+3. **Uma URL de conexão JDBC geralmente começa com:**
+   - (A) http://
+   - (B) jdbc:
+   - (C) ftp:
+   - (D) database://
+   *Resposta: (B)* - Indica ao Java que é uma conexão de banco de dados.
 
-4. O que é um Hook?
-    - [ ] Um erro CSS
-    - [x] Uma função especial (como useState) que permite "enganchar" recursos do React em componentes de função
-    - [ ] Um tipo de cabo USB
-    - [ ] O vilão do Peter Pan
-    *Explicação: Hooks revolucionaram o React, removendo a necessidade de usar "Classes" complexas.*
+4. **O que é um erro do tipo `SQLException`?**
+   - (A) Erro de memória RAM.
+   - (B) Erro relacionado a operações de banco de dados e conexão.
+   - (C) Erro de digitação no teclado.
+   - (D) Erro de internet.
+   *Resposta: (B)* - É a exceção base para problemas com JDBC/SQL.
 
-5. Qual o evento correto para detectar o clique em um botão no React?
-    - [ ] onclick
-    - [x] onClick (com o C maiúsculo)
-    - [ ] click
-    - [ ] on-press
-    *Explicação: Eventos no React seguem o padrão CamelCase.*
+5. **A boa prática de usar o `try-with-resources` garante que:**
+   - (A) O banco nunca falhe.
+   - (B) A conexão seja fechada automaticamente ao final do bloco.
+   - (C) O código fique mais rápido.
+   - (D) A senha seja criptografada.
+   *Resposta: (B)* - Previne vazamentos de memória (memory leaks).
 
-6. Como você adiciona um novo elemento em um array de estado `lista` sem quebrar a imutabilidade?
-    - [ ] lista.push(novo)
-    - [ ] lista += novo
-    - [x] setLista([...lista, novo])
-    - [ ] setLista(novo)
-    *Explicação: Usamos o "Spread Operator" (...) para criar uma cópia da lista original com o novo item.*
+6. **Para adicionar o Driver JDBC ao projeto Java, geralmente adicionamos um arquivo:**
+   - (A) .txt
+   - (B) .jar
+   - (C) .exe
+   - (D) .png
+   *Resposta: (B)* - Arquivos JAR contêm as bibliotecas necessárias.
 
-7. Em um "Input Controlado", quem manda no valor que aparece na caixinha de texto?
-    - [ ] O usuário
-    - [ ] O Teclado
-    - [x] O Estado (State)
-    - [ ] O CSS
-    *Explicação: O valor do input é amarrado ao estado, garantindo que o JS tenha controle total do que é digitado.*
+7. **A conexão com o banco deve ser aberta:**
+   - (A) Uma vez no início do programa e nunca fechada.
+   - (B) Apenas quando for necessária e fechada logo após o uso.
+   - (C) A cada 1 segundo.
+   - (D) Apenas se o usuário pedir.
+   *Resposta: (B)* - Economiza recursos do servidor/máquina local.
 
-8. O que o parâmetro `e` em `onChange={(e) => ...}` representa?
-    - [ ] Erro
-    - [ ] Estilo
-    - [x] O Objeto de Evento que contém dados como `target.value`
-    - [ ] Email
-    *Explicação: O evento contém todas as informações sobre a interação que acabou de acontecer.*
+8. **O que acontece se o Driver JDBC não for encontrado?**
+   - (A) O Java baixa sozinho.
+   - (B) Lança uma `ClassNotFoundException`.
+   - (C) O programa trava em silêncio.
+   - (D) O banco de dados é deletado.
+   *Resposta: (B)* - Indica que o "tradutor" não está disponível.
 
-9. Qual o valor inicial de `cont` em `const [cont, setCont] = useState(10)`?
-    - [ ] 0
-    - [ ] null
-    - [x] 10
-    - [ ] undefined
-    *Explicação: O valor dentro dos parênteses do useState define o ponto de partida.*
+9. **Em uma rede local, para conectar ao banco do colega, na URL usamos:**
+   - (A) localhost
+   - (B) O endereço IP da máquina dele.
+   - (C) 127.0.0.1
+   - (D) O nome da rua dele.
+   *Resposta: (B)* - Permite conexões remotas.
 
-10. Se um componente pai muda seu estado, o que acontece com seus componentes filhos?
-    - [ ] Eles param de funcionar
-    - [x] Eles também são re-renderizados pelo React
-    - [ ] Eles ficam travados
-    - [ ] Eles mudam de cor sozinhos
-    *Explicação: O fluxo de dados no React é descendente; se o pai muda, a árvore abaixo dele se atualiza.*
+10. **Connection conn = ...; O objeto `conn` representa:**
+    - (A) O banco de dados inteiro.
+    - (B) O canal de comunicação ativo entre o programa e o banco.
+    - (C) Uma tabela.
+    - (D) O usuário logado no Windows.
+    *Resposta: (B)* - É a "ponte" por onde os comandos SQL passarão.

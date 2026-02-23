@@ -1,130 +1,92 @@
-# Aula 03 - Modelagem de APIs RESTful 📡
-## Recursos, Verbos e Contratos
+---
+title: Aula 03 - Encapsulamento e Construtores
+theme: blood
+transition: slide
+---
+
+# Encapsulamento e Construtores 🔒
+
+Protegendo seus dados
 
 ---
 
-## Agenda 📅
+## O que é Encapsulamento?
 
-1. O que é REST? { .fragment }
-2. Recursos e URIs { .fragment }
-3. Verbos HTTP (GET, POST, PUT...) { .fragment }
-4. Status Codes { .fragment }
-5. JSON: A Linguagem das APIs { .fragment }
-6. Boas Práticas de Design { .fragment }
+É a técnica de esconder os detalhes internos e proteger o estado do objeto.
+
+Pense em um **comprimido**: a cápsula protege o remédio.
 
 ---
 
-## 1. REST: A "Língua" da Web 🌐
+## Modificadores de Acesso 🛠️
 
-- Style arquitetural para sistemas distribuídos. { .fragment }
-- Baseado no protocolo **HTTP**. { .fragment }
-- Independência entre Client e Server. { .fragment }
-
----
-
-## Princípios REST
-
-- **Stateless**: Cada requisição é única. { .fragment }
-- **Uniform Interface**: Padrões compartilhados. { .fragment }
-- **Cacheable**: Melhore a performance. { .fragment }
+* **`public`**: Todos veem.
+* **`private`**: Apenas a própria classe vê.
+* **`protected`**: Apenas a classe e seus "filhos" veem.
 
 ---
 
-## 2. Identificando Recursos 📍
+## Getters e Setters
 
-- Um recurso é qualquer coisa que expomos. { .fragment }
-- **URI**: O endereço do recurso. { .fragment }
+Mecanismos de controle.
 
-### O que NÃO fazer:
-`GET /obterUsuarios` ❌
-
-### O que fazer:
-`GET /usuarios` ✅ (Sempre substantivos no plural!)
-
----
-
-## 3. Os Verbos HTTP 🛠️
-
-Eles definem a intenção da chamada:
-
-- **GET**: Buscar dados. { .fragment }
-- **POST**: Criar novo dado. { .fragment }
-- **PUT**: Atualizar (Trocar tudo). { .fragment }
-- **PATCH**: Atualizar (Apenas um pedaço). { .fragment }
-- **DELETE**: Remover dado. { .fragment }
+```mermaid
+graph LR
+    U[Usuário] -->|getNome| C[Objeto]
+    U -->|setNome| C
+```
 
 ---
 
-## Idempotência e Segurança
+## Por que usar Setters? 🛡️
 
-| Verbo | Seguro? | Idempotente? |
-| :--- | :--- | :--- |
-| GET | Sim ✅ | Sim ✅ |
-| POST | Não ❌ | Não ❌ |
-| PUT | Não ❌ | Sim ✅ |
-| DELETE | Não ❌ | Sim ✅ |
+Para **validar** dados!
 
----
-
-## 4. Status Codes: A Resposta 🚦
-
-- **2xx**: Deu certo! (200, 201, 204). { .fragment }
-- **4xx**: Você (cliente) errou algo (400, 401, 404). { .fragment }
-- **5xx**: Eu (servidor) quebrei (500, 503). { .fragment }
-
----
-
-## 5. O Formato JSON 🏗️
-
-```json
-{
-  "nome": "Curso Backend",
-  "modulo": 1,
-  "ativo": true
+```java
+public void setIdade(int idade) {
+    if (idade > 0) {
+        this.idade = idade;
+    }
 }
 ```
 
-- Leve, legível e universal. { .fragment }
+---
+
+## Construtores
+
+O método que "roda" no `new`.
+
+Garante que o objeto nasça com os dados essenciais.
 
 ---
 
-## 6. Design de URIs Complexas
+## O uso do `this`
 
-Como buscar os pedidos de um usuário específico?
+Resolve o conflito entre o nome do atributo e o nome do parâmetro.
 
-`GET /usuarios/123/pedidos` ✅
-
-- Hierarquia lógica e limpa. { .fragment }
-
----
-
-## 7. Prática: Postman em Ação 💻
-
-- Testando verbos em APIs reais. { .fragment }
-- Analisando Headers e Body. { .fragment }
+```java
+public Cliente(String nome) {
+    this.nome = nome;
+}
+```
 
 ---
 
-## Desafio REST ⚡
+## Sobrecarga (Overloading)
 
-Se você quer mudar apenas o e-mail de um usuário, qual verbo deve usar: PUT ou PATCH?
+Ter dois ou mais construtores com parâmetros diferentes.
 
----
-
-## Resumo ✅
-
-- REST é sobre recursos e padrões. { .fragment }
-- URIs usam substantivos no plural. { .fragment }
-- Status codes guiam o frontend. { .fragment }
-- JSON é o padrão de facto. { .fragment }
+* `new Cliente()`
+* `new Cliente("João")`
 
 ---
 
-## Próxima Aula: Swagger e Mocks 📝
+## Resumo da Aula
 
-- Documentação automática. { .fragment }
-- Como trabalhar sem o backend pronto? { .fragment }
+* Atributos = Quase sempre `private`
+* Métodos = Quase sempre `public`
+* Construtor = Inicialização segura
 
 ---
 
-## Dúvidas? 📡
+## Próximo Passo: Herança e Polimorfismo! 🧬
