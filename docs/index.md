@@ -10,22 +10,22 @@ Ao longo de 16 aulas, vamos evoluir do básico de Java até a criação de um si
 
 <div class="grid cards" markdown>
 
--   **Módulo 1: Fundamentos OO** 🧱
+-   :material-cube-outline: **Módulo 1: Fundamentos OO**
     ---
     Classes, Objetos, Encapsulamento, Herança e Polimorfismo.
     [Ver Aulas](aulas/aula-01.md)
 
--   **Módulo 2: Arquitetura MVC** 🏗️
+-   :material-office-building-cog: **Módulo 2: Arquitetura MVC**
     ---
     Organização profissional em camadas e separação de responsabilidades.
     [Ver Aulas](aulas/aula-06.md)
 
--   **Módulo 3: Interface Gráfica (GUI)** 🎨
+-   :material-palette-swatch: **Módulo 3: Interface Gráfica (GUI)**
     ---
     Criação de janelas, botões, tabelas e menus usando Swing.
     [Ver Aulas](aulas/aula-08.md)
 
--   **Módulo 4: Banco de Dados** 🗄️
+-   :material-database-cog: **Módulo 4: Banco de Dados**
     ---
     Persistência real com SQL, JDBC e o padrão DAO.
     [Ver Aulas](aulas/aula-12.md)

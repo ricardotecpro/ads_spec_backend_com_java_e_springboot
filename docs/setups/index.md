@@ -1,22 +1,22 @@
-# Ambientes de Desenvolvimento 🛠️
+# Configuração do Ambiente 🛠️
 
-Guias para configurar seu computador para o desenvolvimento mobile.
+Guias passo a passo para preparar sua máquina para o desenvolvimento Java Desktop.
 
 <div class="grid cards" markdown>
 
--   :material-android: **Android**
+-   :material-java: **Desenvolvimento Java**
     ---
-    Instalação do Android Studio, SDK e emuladores.
-    - [Setup 01 - Android Studio](setup-01.md)
+    Instalação do JDK 17+ e configuração das variáveis de ambiente.
+    - [Setup 01 - JDK 17+](setup-01.md)
 
--   :material-apple: **iOS (Opcional/Referência)**
+-   :material-fountain-pen-tip: **IDE (Ambiente)**
     ---
-    Configuração básica de Xcode e ferramentas Mac.
-    - [Setup 02 - Xcode Foundation](setup-02.md)
+    Configuração do IntelliJ IDEA ou Eclipse para projetos Java.
+    - [Setup 02 - IntelliJ IDEA](setup-02.md)
 
--   :material-cog: **Ferramentas de Apoio**
+-   :material-database: **Banco de Dados**
     ---
-    Git, Terminais e Postman/Insomnia para testes de API.
-    - [Setup 03 - Tools](setup-03.md)
+    Instalação do SQLite e ferramentas de visualização (DB Browser).
+    - [Setup 03 - SQLite Tools](setup-03.md)
 
 </div>

@@ -1,0 +1,141 @@
+HERE= C:\Python\Python313\Lib\site-packages\mkdocs_revealjs
+DIRNAME= docs/revealjs
+WARNING -  Config value 'plugins': Plugin 'mkdocs-revealjs' option 'revealjs_config': Unrecognised configuration name: revealjs_config
+INFO    -  [macros] - No default module `main` found
+INFO    -  [macros] - Config variables: ['extra', 'config', 'environment', 'plugin', 'git', 'social', 'version', 'macros', 'filters', 'filters_builtin']
+INFO    -  [macros] - Config macros: ['context', 'macros_info', 'now', 'fix_url']
+INFO    -  [macros] - Config filters: ['pretty', 'relative_url']
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\site
+WARNING -  [git-authors-plugin] D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\exercicios\index.md has not been committed yet. Lines are not counted
+WARNING -  [git-authors-plugin] D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\projetos\index.md has not been committed yet. Lines are not counted
+[git-revision-date-localized-plugin] 'D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\projetos\index.md' has no git logs, using current timestamp
+[git-revision-date-localized-plugin] 'D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\exercicios\index.md' has no git logs, using current timestamp
+[git-revision-date-localized-plugin] 'D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\exercicios\index.md' has no git logs, using current timestamp
+[git-revision-date-localized-plugin] 'D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\projetos\index.md' has no git logs, using current timestamp
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - projetos\teste.md
+  - quizzes\src\quiz-01.md
+  - quizzes\src\quiz-02.md
+  - quizzes\src\quiz-03.md
+  - quizzes\src\quiz-04.md
+  - quizzes\src\quiz-05.md
+  - quizzes\src\quiz-06.md
+  - quizzes\src\quiz-07.md
+  - quizzes\src\quiz-08.md
+  - quizzes\src\quiz-09.md
+  - quizzes\src\quiz-10.md
+  - quizzes\src\quiz-11.md
+  - quizzes\src\quiz-12.md
+  - quizzes\src\quiz-13.md
+  - quizzes\src\quiz-14.md
+  - quizzes\src\quiz-15.md
+  - quizzes\src\quiz-16.md
+  - setups\setup-03.md
+  - setups\setup-04.md
+  - setups\setup-05.md
+  - setups\setup-06.md
+  - setups\setup-07.md
+  - setups\setup-08.md
+  - setups\setup-09.md
+  - slides\src\slide-01.md
+  - slides\src\slide-02.md
+  - slides\src\slide-03.md
+  - slides\src\slide-04.md
+  - slides\src\slide-05.md
+  - slides\src\slide-06.md
+  - slides\src\slide-07.md
+  - slides\src\slide-08.md
+  - slides\src\slide-09.md
+  - slides\src\slide-10.md
+  - slides\src\slide-11.md
+  - slides\src\slide-12.md
+  - slides\src\slide-13.md
+  - slides\src\slide-14.md
+  - slides\src\slide-15.md
+  - slides\src\slide-16.md
+WARNING:root:First revision timestamp is older than last revision timestamp for page exercicios\index.md. This can be due to a quirk in `git` follow behaviour. You can try to set `enable_git_follow: false` in the plugin configuration.
+INFO    -  [RSS-plugin]: Dates could not be retrieved for page: D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\exercicios\index.md.
+WARNING:root:First revision timestamp is older than last revision timestamp for page projetos\index.md. This can be due to a quirk in `git` follow behaviour. You can try to set `enable_git_follow: false` in the plugin configuration.
+INFO    -  [RSS-plugin]: Dates could not be retrieved for page: D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\docs\projetos\index.md.
+Copiando slides HTML...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Python\Python313\Scripts\mkdocs.exe\__main__.py", line 6, in <module>
+    sys.exit(cli())
+             ~~~^^
+  File "C:\Python\Python313\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Python\Python313\Lib\site-packages\click\core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Python\Python313\Lib\site-packages\mkdocs\__main__.py", line 288, in build_command
+    build.build(cfg, dirty=not clean)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\mkdocs\commands\build.py", line 347, in build
+    config.plugins.on_post_build(config=config)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\mkdocs\plugins.py", line 602, in on_post_build
+    return self.run_event('post_build', config=config)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\mkdocs\plugins.py", line 568, in run_event
+    result = method(**kwargs)
+  File "D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\hooks\copy_slides.py", line 59, in on_post_build
+    copy_slides(config)
+    ~~~~~~~~~~~^^^^^^^^
+  File "D:\SourceCode\REPOS\github.io\ads_spec_backend_com_java_e_springboot\hooks\copy_slides.py", line 37, in copy_slides
+    print(f"  [blue]\u2192 {slide.name}[/blue]")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\__init__.py", line 74, in print
+    return write_console.print(*objects, sep=sep, end=end)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\console.py", line 1697, in print
+    with self:
+         ^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\console.py", line 870, in __exit__
+    self._exit_buffer()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python\Python313\Lib\site-packages\rich\console.py", line 826, in _exit_buffer
+    self._check_buffer()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python\Python313\Lib\site-packages\rich\console.py", line 2038, in _check_buffer
+    self._write_buffer()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python\Python313\Lib\site-packages\rich\console.py", line 2074, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\_windows_renderer.py", line 17, in legacy_windows_render
+    term.write_styled(text, style)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\_win32_console.py", line 441, in write_styled
+    self.write_text(text)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\colorama\ansitowin32.py", line 47, in write
+    self.__convertor.write(text)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\colorama\ansitowin32.py", line 177, in write
+    self.write_and_convert(text)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\colorama\ansitowin32.py", line 205, in write_and_convert
+    self.write_plain_text(text, cursor, len(text))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\site-packages\colorama\ansitowin32.py", line 210, in write_plain_text
+    self.wrapped.write(text[start:end])
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 0: character maps to <undefined>
+  
